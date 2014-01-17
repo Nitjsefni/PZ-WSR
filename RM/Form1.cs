@@ -30,8 +30,13 @@ namespace RM
                                     imie_pacjenta = c.imie,
                                     nazwisko_pacjenta = c.nazwisko,
                                     numer_ubezpieczenia_pacj = c.nr_ubezpieczenia,
-                                    data_przyjecia_pacj = c.data_przyjecia,
-                                    miejscowosc_pacj = c.miejscowosc
+                                   
+                                    miejscowosc_pacj = c.miejscowosc,
+                                    kod_pocz_pacj = c.kod_pocztowy,
+                                    ulica_pacj = c.ulica,
+                                    opis_pacj = c.opis,
+                                    uwagi_pacj = c.uwagi,
+                                    lekarz_pacjenta = c.lekarz
                                     
                                 };
 

@@ -35,8 +35,8 @@
     <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="lekarz" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="ID_lekarz" Type="Int64" />
-    <Property Name="data_przyjecia" Type="DateTime" Precision="3" />
-    <Property Name="data_wypisania" Type="DateTime" Precision="3" />
+    <Property Name="data_przyjecia" Type="DateTime" Precision="3" Nullable="false" />
+    <Property Name="data_wypisania" Type="DateTime" Precision="3" Nullable="false" />
     <NavigationProperty Name="Personel1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Pacjenci1" ToRole="Personel1" />
   </EntityType>
   <EntityType Name="Personel1">
@@ -47,7 +47,7 @@
     <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="stanowisko" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="specjalizacja" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="specjalizacja" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" Nullable="false" />
     <NavigationProperty Name="Pacjenci1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Personel1" ToRole="Pacjenci1" />
   </EntityType>
   <EntityType Name="Wypadek">

@@ -25,8 +25,8 @@ namespace RM
         public string uwagi { get; set; }
         public string lekarz { get; set; }
         public Nullable<long> ID_lekarz { get; set; }
-        public Nullable<System.DateTime> data_przyjecia { get; set; }
-        public Nullable<System.DateTime> data_wypisania { get; set; }
+        public System.DateTime data_przyjecia { get; set; }
+        public System.DateTime data_wypisania { get; set; }
     
         public virtual Personel1 Personel1 { get; set; }
     }
