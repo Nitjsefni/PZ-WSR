@@ -18,7 +18,7 @@ namespace RM
             DisplayCustomers();
         }
 
-        private void DisplayCustomers()
+       private void DisplayCustomers()
         {
             using (var dc = new RMEntities())
             {
@@ -26,10 +26,13 @@ namespace RM
                                 select new
                                 {
                                    
-                                    pesel_pacjenta1 = c.PESEL,
+                                    pesel_pacjenta = c.PESEL,
                                     imie_pacjenta = c.imie,
                                     nazwisko_pacjenta = c.nazwisko,
-                                    numer_ubezpieczenia_pacj = c.nr_ubezpieczenia
+                                    numer_ubezpieczenia_pacj = c.nr_ubezpieczenia,
+                                    data_przyjecia_pacj = c.data_przyjecia,
+                                    miejscowosc_pacj = c.miejscowosc
+                                    
                                 };
 
                 dataGridView4.DataSource = customers.ToList();
