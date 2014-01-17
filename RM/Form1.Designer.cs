@@ -30,8 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+<<<<<<< HEAD
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+=======
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
             this.dod_karetke = new System.Windows.Forms.Button();
@@ -80,6 +83,12 @@
             this.pacjenci = new System.Windows.Forms.TabPage();
             this.dod_pacj = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
+=======
+            this.pacjenci1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rMDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.rMDataSet = new RM.RMDataSet();
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.label10 = new System.Windows.Forms.Label();
             this.lekarze = new System.Windows.Forms.TabPage();
             this.label15 = new System.Windows.Forms.Label();
@@ -100,8 +109,12 @@
             this.pacjenci_lekarza = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.uwagi_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
             this.pacjenci1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+=======
+            this.pacjenci1TableAdapter = new RM.RMDataSetTableAdapters.Pacjenci1TableAdapter();
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.pesel_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imie_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwisko_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,11 +136,20 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.pacjenci.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+<<<<<<< HEAD
             this.lekarze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pacjenci1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).BeginInit();
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pacjenci1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rMDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rMDataSet)).BeginInit();
+            this.lekarze.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.SuspendLayout();
             // 
             // tabcontrol
@@ -534,15 +556,16 @@
             // 
             // dataGridView4
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView4.AutoGenerateColumns = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
@@ -558,12 +581,60 @@
             this.przypisz_lekarz_pacj,
             this.lekarz_pacjenta,
             this.wypisz_pacj});
+<<<<<<< HEAD
             this.dataGridView4.Location = new System.Drawing.Point(3, 18);
+=======
+            this.dataGridView4.DataSource = this.pacjenci1BindingSource;
+            this.dataGridView4.Location = new System.Drawing.Point(2, 18);
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 15;
-            this.dataGridView4.Size = new System.Drawing.Size(1326, 472);
+            this.dataGridView4.Size = new System.Drawing.Size(1317, 472);
             this.dataGridView4.TabIndex = 1;
+            // 
+<<<<<<< HEAD
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(626, 3);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(81, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Lista pacjentów";
+            // 
+            // lekarze
+            // 
+            this.lekarze.Controls.Add(this.label15);
+            this.lekarze.Controls.Add(this.dataGridView6);
+            this.lekarze.Controls.Add(this.dod_lekarza);
+            this.lekarze.Controls.Add(this.dataGridView5);
+            this.lekarze.Controls.Add(this.label11);
+            this.lekarze.Location = new System.Drawing.Point(4, 22);
+            this.lekarze.Name = "lekarze";
+            this.lekarze.Padding = new System.Windows.Forms.Padding(3);
+            this.lekarze.Size = new System.Drawing.Size(1336, 562);
+            this.lekarze.TabIndex = 2;
+            this.lekarze.Text = "Lekarze";
+            this.lekarze.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+=======
+            // pacjenci1BindingSource
+            // 
+            this.pacjenci1BindingSource.DataMember = "Pacjenci1";
+            this.pacjenci1BindingSource.DataSource = this.rMDataSetBindingSource;
+            // 
+            // rMDataSetBindingSource
+            // 
+            this.rMDataSetBindingSource.DataSource = this.rMDataSet;
+            this.rMDataSetBindingSource.Position = 0;
+            // 
+            // rMDataSet
+            // 
+            this.rMDataSet.DataSetName = "RMDataSet";
+            this.rMDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label10
             // 
@@ -591,6 +662,7 @@
             // 
             // label15
             // 
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(988, 12);
             this.label15.Name = "label15";
@@ -714,6 +786,7 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista lekarzy";
             // 
+<<<<<<< HEAD
             // pacjenci1BindingSource
             // 
             this.pacjenci1BindingSource.DataSource = typeof(RM.Pacjenci1);
@@ -725,24 +798,45 @@
             // pesel_pacjenta
             // 
             this.pesel_pacjenta.DataPropertyName = "pesel_pacjenta";
+=======
+            // pacjenci1TableAdapter
+            // 
+            this.pacjenci1TableAdapter.ClearBeforeFill = true;
+            // 
+            // pesel_pacjenta
+            // 
+            this.pesel_pacjenta.DataPropertyName = "PESEL";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.pesel_pacjenta.HeaderText = "Pesel";
             this.pesel_pacjenta.Name = "pesel_pacjenta";
             // 
             // imie_pacjenta
             // 
+<<<<<<< HEAD
             this.imie_pacjenta.DataPropertyName = "imie_pacjenta";
+=======
+            this.imie_pacjenta.DataPropertyName = "imie";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.imie_pacjenta.HeaderText = "Imię";
             this.imie_pacjenta.Name = "imie_pacjenta";
             // 
             // nazwisko_pacjenta
             // 
+<<<<<<< HEAD
             this.nazwisko_pacjenta.DataPropertyName = "nazwisko_pacjenta";
+=======
+            this.nazwisko_pacjenta.DataPropertyName = "nazwisko";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.nazwisko_pacjenta.HeaderText = "Nazwisko";
             this.nazwisko_pacjenta.Name = "nazwisko_pacjenta";
             // 
             // numer_ubezpieczenia_pacj
             // 
+<<<<<<< HEAD
             this.numer_ubezpieczenia_pacj.DataPropertyName = "numer_ubezpieczenia_pacj";
+=======
+            this.numer_ubezpieczenia_pacj.DataPropertyName = "nr_ubezpieczenia";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.numer_ubezpieczenia_pacj.HeaderText = "Numer ubezpieczenia";
             this.numer_ubezpieczenia_pacj.Name = "numer_ubezpieczenia_pacj";
             // 
@@ -758,31 +852,51 @@
             // 
             // miejscowosc_pacj
             // 
+<<<<<<< HEAD
             this.miejscowosc_pacj.DataPropertyName = "miejscowosc_pacj";
+=======
+            this.miejscowosc_pacj.DataPropertyName = "miejscowosc";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.miejscowosc_pacj.HeaderText = "Miejscowość";
             this.miejscowosc_pacj.Name = "miejscowosc_pacj";
             // 
             // kod_pocz_pacj
             // 
+<<<<<<< HEAD
             this.kod_pocz_pacj.DataPropertyName = "kod_pocz_pacj";
+=======
+            this.kod_pocz_pacj.DataPropertyName = "kod_pocztowy";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.kod_pocz_pacj.HeaderText = "Kod pocztowy";
             this.kod_pocz_pacj.Name = "kod_pocz_pacj";
             // 
             // ulica_pacj
             // 
+<<<<<<< HEAD
             this.ulica_pacj.DataPropertyName = "ulica_pacj";
+=======
+            this.ulica_pacj.DataPropertyName = "ulica";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.ulica_pacj.HeaderText = "Ulica";
             this.ulica_pacj.Name = "ulica_pacj";
             // 
             // opis_pacj
             // 
+<<<<<<< HEAD
             this.opis_pacj.DataPropertyName = "opis_pacj";
+=======
+            this.opis_pacj.DataPropertyName = "opis";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.opis_pacj.HeaderText = "Opis";
             this.opis_pacj.Name = "opis_pacj";
             // 
             // uwagi_pacj
             // 
+<<<<<<< HEAD
             this.uwagi_pacj.DataPropertyName = "uwagi_pacj";
+=======
+            this.uwagi_pacj.DataPropertyName = "uwagi";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.uwagi_pacj.HeaderText = "Uwagi";
             this.uwagi_pacj.Name = "uwagi_pacj";
             // 
@@ -794,7 +908,11 @@
             // 
             // lekarz_pacjenta
             // 
+<<<<<<< HEAD
             this.lekarz_pacjenta.DataPropertyName = "lekarz_pacjenta";
+=======
+            this.lekarz_pacjenta.DataPropertyName = "lekarz";
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.lekarz_pacjenta.HeaderText = "Lekarz prowadzący";
             this.lekarz_pacjenta.Name = "lekarz_pacjenta";
             // 
@@ -811,6 +929,7 @@
             this.Controls.Add(this.tabcontrol);
             this.Name = "Form1";
             this.Text = "System wspomagania Ratownictwa Medycznego";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabcontrol.ResumeLayout(false);
             this.karetki.ResumeLayout(false);
             this.karetki.PerformLayout();
@@ -822,12 +941,21 @@
             this.pacjenci.ResumeLayout(false);
             this.pacjenci.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+<<<<<<< HEAD
+=======
+            ((System.ComponentModel.ISupportInitialize)(this.pacjenci1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rMDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rMDataSet)).EndInit();
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.lekarze.ResumeLayout(false);
             this.lekarze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.pacjenci1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).EndInit();
+=======
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
             this.ResumeLayout(false);
 
         }
@@ -902,8 +1030,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn specjalizacja_lekarz;
         private System.Windows.Forms.DataGridViewComboBoxColumn pacjenci_lekarza;
         private System.Windows.Forms.DataGridViewTextBoxColumn uwagi_lekarz;
+<<<<<<< HEAD
         private System.Windows.Forms.BindingSource pacjenci1BindingSource;
         private System.Windows.Forms.BindingSource rMEntitiesBindingSource;
+=======
+        private System.Windows.Forms.BindingSource rMDataSetBindingSource;
+        private RMDataSet rMDataSet;
+        private System.Windows.Forms.BindingSource pacjenci1BindingSource;
+        private RMDataSetTableAdapters.Pacjenci1TableAdapter pacjenci1TableAdapter;
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
         private System.Windows.Forms.DataGridViewTextBoxColumn pesel_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn imie_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_pacjenta;

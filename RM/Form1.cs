@@ -18,6 +18,7 @@ namespace RM
             DisplayCustomers();
         }
 
+<<<<<<< HEAD
        private void DisplayCustomers()
         {
             using (var dc = new RMEntities())
@@ -43,6 +44,19 @@ namespace RM
                 dataGridView4.DataSource = customers.ToList();
             }
         }
+=======
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'rMDataSet.Pacjenci1' table. You can move, or remove it, as needed.
+            this.pacjenci1TableAdapter.Fill(this.rMDataSet.Pacjenci1);
+
+        }
+
+
+
+
+
+>>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
 
     }
 }
