@@ -17,6 +17,17 @@ namespace RM
             InitializeComponent();
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'rMDataSet.Pacjenci1' table. You can move, or remove it, as needed.
+            this.pacjenci1TableAdapter.Fill(this.rMDataSet.Pacjenci1);
+
+        }
+
+
+
+
+
 
     }
 }
