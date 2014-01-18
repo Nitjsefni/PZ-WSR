@@ -12,24 +12,51 @@ namespace RM
 {
     public partial class Form1 : Form
     {
+        dod_pacjentow form2 = new dod_pacjentow();
         public Form1()
         {
             InitializeComponent();
+            
+            form2.Show();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+
+
+
+        private void DisplayPatients()
         {
-            // TODO: This line of code loads data into the 'rMDataSet.Wypadek' table. You can move, or remove it, as needed.
-            this.wypadekTableAdapter.Fill(this.rMDataSet.Wypadek);
-            // TODO: This line of code loads data into the 'rMDataSet.Personel1' table. You can move, or remove it, as needed.
-            this.personel1TableAdapter.Fill(this.rMDataSet.Personel1);
-            // TODO: This line of code loads data into the 'rMDataSet.Pacjenci1' table. You can move, or remove it, as needed.
-            this.pacjenci1TableAdapter.Fill(this.rMDataSet.Pacjenci1);
+            using (var dc = new RMEntities())
+            {
+                var patients = from c in dc.Pacjenci1
+                               select new
+                               {
+
+                                   pesel_pacjenta = c.PESEL,
+                                   imie_pacjenta = c.imie,
+                                   nazwisko_pacjenta = c.nazwisko,
+                                   numer_ubezpieczenia_pacj = c.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = c.data_przyjecia,
+                                   miejscowosc_pacj = c.miejscowosc,
+                                   kod_pocz_pacj = c.kod_pocztowy,
+                                   ulica_pacj = c.ulica,
+                                   opis_pacj = c.opis,
+                                   uwagi_pacj = c.uwagi,
+                                   lekarz_pacjenta = c.lekarz
+
+                               };
+
+                dataGridView4.DataSource = patients.ToList();
+            }
+
+
+
 
         }
 
-
-
+        private void dod_pacj_Click(object sender, EventArgs e)
+        {
+            DisplayPatients();
+        }
 
 
 

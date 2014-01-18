@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="RMEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Karetkas" EntityType="RMModel.Karetka" />
+    <EntitySet Name="Pacjenci1" EntityType="RMModel.Pacjenci1" />
+    <EntitySet Name="Personel1" EntityType="RMModel.Personel1" />
+    <EntitySet Name="Wypadeks" EntityType="RMModel.Wypadek" />
+    <AssociationSet Name="Lekarz2Pacjent" Association="RMModel.Lekarz2Pacjent">
+      <End Role="Personel1" EntitySet="Personel1" />
+      <End Role="Pacjenci1" EntitySet="Pacjenci1" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Karetka">
+    <Key>
+      <PropertyRef Name="ID_karetki" />
+    </Key>
+    <Property Name="ID_karetki" Type="Int32" Nullable="false" />
+    <Property Name="typ_numer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ID_skladu" Type="Int32" Nullable="false" />
+    <Property Name="wyposazenie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Pacjenci1">
+    <Key>
+      <PropertyRef Name="PESEL" />
+    </Key>
+    <Property Name="PESEL" Type="Int64" Nullable="false" />
+    <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="nr_ubezpieczenia" Type="Int32" Nullable="false" />
+    <Property Name="miejscowosc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="kod_pocztowy" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
+    <Property Name="ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="lekarz" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="ID_lekarz" Type="Int64" />
+    <Property Name="data_przyjecia" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="data_wypisania" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Personel1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Pacjenci1" ToRole="Personel1" />
+  </EntityType>
+  <EntityType Name="Personel1">
+    <Key>
+      <PropertyRef Name="ID_lekarz" />
+    </Key>
+    <Property Name="ID_lekarz" Type="Int64" Nullable="false" />
+    <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="stanowisko" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="specjalizacja" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="Pacjenci1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Personel1" ToRole="Pacjenci1" />
+  </EntityType>
+  <EntityType Name="Wypadek">
+    <Key>
+      <PropertyRef Name="ID_wypadku" />
+    </Key>
+    <Property Name="ID_wypadku" Type="Int32" Nullable="false" />
+    <Property Name="miejsce_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="liczba_rannych" Type="Int32" Nullable="false" />
+    <Property Name="typ_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+    <Property Name="data_godz_zgl" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ID_skladu" Type="Int32" Nullable="false" />
+    <Property Name="numer_zgl" Type="Int32" />
+    <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+  </EntityType>
+  <Association Name="Lekarz2Pacjent">
+    <End Role="Personel1" Type="RMModel.Personel1" Multiplicity="0..1" />
+    <End Role="Pacjenci1" Type="RMModel.Pacjenci1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Personel1">
+        <PropertyRef Name="ID_lekarz" />
+      </Principal>
+      <Dependent Role="Pacjenci1">
+        <PropertyRef Name="ID_lekarz" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

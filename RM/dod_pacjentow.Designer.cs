@@ -59,6 +59,7 @@
             this.dod_pacjenta_okno.TabIndex = 0;
             this.dod_pacjenta_okno.Text = "Dodaj pacjenta";
             this.dod_pacjenta_okno.UseVisualStyleBackColor = true;
+            this.dod_pacjenta_okno.Click += new System.EventHandler(this.dod_pacjenta_okno_Click_1);
             // 
             // label1
             // 
