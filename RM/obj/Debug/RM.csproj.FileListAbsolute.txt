@@ -10,18 +10,19 @@ C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM\RM\obj\Debug\RM.Propert
 C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM\RM\obj\Debug\RM.csproj.GenerateResource.Cache
 C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM\RM\obj\Debug\RM.exe
 C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM\RM\obj\Debug\RM.pdb
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\RM.exe.config
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.exe
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.pdb
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\RM.mdf
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\RM_log.ldf
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\RM.exe
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\RM.pdb
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\EntityFramework.dll
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\bin\Debug\EntityFramework.xml
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.dod_lekarza.resources
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.dod_pacjentow.resources
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.dod_wypadek.resources
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.Form1.resources
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.Properties.Resources.resources
-C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\WRM\RM\obj\Debug\RM.csproj.GenerateResource.Cache
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\RM.exe.config
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.exe
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.pdb
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\RM.mdf
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\RM_log.ldf
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\RM.exe
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\RM.pdb
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\EntityFramework.dll
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\bin\Debug\EntityFramework.xml
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.csprojResolveAssemblyReference.cache
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.dod_lekarza.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.dod_pacjentow.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.dod_wypadek.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.Form1.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.Properties.Resources.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\RM - Kopia\RM\obj\Debug\RM.csproj.GenerateResource.Cache

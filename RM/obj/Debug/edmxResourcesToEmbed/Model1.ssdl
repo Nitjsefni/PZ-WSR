@@ -35,7 +35,7 @@
     <Property Name="uwagi" Type="text" />
     <Property Name="lekarz" Type="text" />
     <Property Name="ID_lekarz" Type="bigint" />
-    <Property Name="data_przyjecia" Type="datetime" />
+    <Property Name="data_przyjecia" Type="datetime" Nullable="false" />
     <Property Name="data_wypisania" Type="datetime" />
   </EntityType>
   <EntityType Name="Personel1">

@@ -1021,6 +1021,7 @@ namespace RM {
                 this.columnopis.MaxLength = 2147483647;
                 this.columnuwagi.MaxLength = 2147483647;
                 this.columnlekarz.MaxLength = 2147483647;
+                this.columndata_przyjecia.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2078,12 +2079,7 @@ namespace RM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public System.DateTime data_przyjecia {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tablePacjenci1.data_przyjeciaColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'data_przyjecia\' in table \'Pacjenci1\' is DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tablePacjenci1.data_przyjeciaColumn]));
                 }
                 set {
                     this[this.tablePacjenci1.data_przyjeciaColumn] = value;
@@ -2163,18 +2159,6 @@ namespace RM {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetID_lekarzNull() {
                 this[this.tablePacjenci1.ID_lekarzColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool Isdata_przyjeciaNull() {
-                return this.IsNull(this.tablePacjenci1.data_przyjeciaColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void Setdata_przyjeciaNull() {
-                this[this.tablePacjenci1.data_przyjeciaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2727,7 +2711,7 @@ SELECT ID_karetki, typ_numer, ID_skladu, wyposazenie, uwagi FROM Karetka WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString;
+            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3046,7 +3030,7 @@ SELECT ID_karetki, typ_numer, ID_skladu, wyposazenie, uwagi FROM Karetka WHERE (
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Pacjenci1] WHERE (([PESEL] = @Original_PESEL) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([nr_ubezpieczenia] = @Original_nr_ubezpieczenia) AND ([kod_pocztowy] = @Original_kod_pocztowy) AND ((@IsNull_ID_lekarz = 1 AND [ID_lekarz] IS NULL) OR ([ID_lekarz] = @Original_ID_lekarz)) AND ((@IsNull_data_przyjecia = 1 AND [data_przyjecia] IS NULL) OR ([data_przyjecia] = @Original_data_przyjecia)) AND ((@IsNull_data_wypisania = 1 AND [data_wypisania] IS NULL) OR ([data_wypisania] = @Original_data_wypisania)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Pacjenci1] WHERE (([PESEL] = @Original_PESEL) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([nr_ubezpieczenia] = @Original_nr_ubezpieczenia) AND ([kod_pocztowy] = @Original_kod_pocztowy) AND ((@IsNull_ID_lekarz = 1 AND [ID_lekarz] IS NULL) OR ([ID_lekarz] = @Original_ID_lekarz)) AND ([data_przyjecia] = @Original_data_przyjecia) AND ((@IsNull_data_wypisania = 1 AND [data_wypisania] IS NULL) OR ([data_wypisania] = @Original_data_wypisania)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PESEL", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PESEL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_imie", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "imie", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3055,7 +3039,6 @@ SELECT ID_karetki, typ_numer, ID_skladu, wyposazenie, uwagi FROM Karetka WHERE (
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kod_pocztowy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kod_pocztowy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_lekarz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_lekarz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_lekarz", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_lekarz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_przyjecia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_przyjecia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_wypisania", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_wypisania", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_wypisania", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_wypisania", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3079,7 +3062,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@data_wypisania", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_wypisania", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Pacjenci1] SET [PESEL] = @PESEL, [imie] = @imie, [nazwisko] = @nazwisko, [nr_ubezpieczenia] = @nr_ubezpieczenia, [miejscowosc] = @miejscowosc, [kod_pocztowy] = @kod_pocztowy, [ulica] = @ulica, [opis] = @opis, [uwagi] = @uwagi, [lekarz] = @lekarz, [ID_lekarz] = @ID_lekarz, [data_przyjecia] = @data_przyjecia, [data_wypisania] = @data_wypisania WHERE (([PESEL] = @Original_PESEL) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([nr_ubezpieczenia] = @Original_nr_ubezpieczenia) AND ([kod_pocztowy] = @Original_kod_pocztowy) AND ((@IsNull_ID_lekarz = 1 AND [ID_lekarz] IS NULL) OR ([ID_lekarz] = @Original_ID_lekarz)) AND ((@IsNull_data_przyjecia = 1 AND [data_przyjecia] IS NULL) OR ([data_przyjecia] = @Original_data_przyjecia)) AND ((@IsNull_data_wypisania = 1 AND [data_wypisania] IS NULL) OR ([data_wypisania] = @Original_data_wypisania)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Pacjenci1] SET [PESEL] = @PESEL, [imie] = @imie, [nazwisko] = @nazwisko, [nr_ubezpieczenia] = @nr_ubezpieczenia, [miejscowosc] = @miejscowosc, [kod_pocztowy] = @kod_pocztowy, [ulica] = @ulica, [opis] = @opis, [uwagi] = @uwagi, [lekarz] = @lekarz, [ID_lekarz] = @ID_lekarz, [data_przyjecia] = @data_przyjecia, [data_wypisania] = @data_wypisania WHERE (([PESEL] = @Original_PESEL) AND ([imie] = @Original_imie) AND ([nazwisko] = @Original_nazwisko) AND ([nr_ubezpieczenia] = @Original_nr_ubezpieczenia) AND ([kod_pocztowy] = @Original_kod_pocztowy) AND ((@IsNull_ID_lekarz = 1 AND [ID_lekarz] IS NULL) OR ([ID_lekarz] = @Original_ID_lekarz)) AND ([data_przyjecia] = @Original_data_przyjecia) AND ((@IsNull_data_wypisania = 1 AND [data_wypisania] IS NULL) OR ([data_wypisania] = @Original_data_wypisania)));
 SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica, opis, uwagi, lekarz, ID_lekarz, data_przyjecia, data_wypisania FROM Pacjenci1 WHERE (PESEL = @PESEL)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PESEL", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PESEL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3102,7 +3085,6 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_kod_pocztowy", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "kod_pocztowy", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_ID_lekarz", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_lekarz", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID_lekarz", global::System.Data.SqlDbType.BigInt, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID_lekarz", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_przyjecia", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_przyjecia", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_przyjecia", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_przyjecia", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_data_wypisania", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_wypisania", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_data_wypisania", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "data_wypisania", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3112,7 +3094,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString;
+            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3184,7 +3166,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(long Original_PESEL, string Original_imie, string Original_nazwisko, int Original_nr_ubezpieczenia, string Original_kod_pocztowy, global::System.Nullable<long> Original_ID_lekarz, global::System.Nullable<global::System.DateTime> Original_data_przyjecia, global::System.Nullable<global::System.DateTime> Original_data_wypisania) {
+        public virtual int Delete(long Original_PESEL, string Original_imie, string Original_nazwisko, int Original_nr_ubezpieczenia, string Original_kod_pocztowy, global::System.Nullable<long> Original_ID_lekarz, System.DateTime Original_data_przyjecia, global::System.Nullable<global::System.DateTime> Original_data_wypisania) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((long)(Original_PESEL));
             if ((Original_imie == null)) {
                 throw new global::System.ArgumentNullException("Original_imie");
@@ -3213,21 +3195,14 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_data_przyjecia.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_data_przyjecia.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[7].Value = ((System.DateTime)(Original_data_przyjecia));
             if ((Original_data_wypisania.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((System.DateTime)(Original_data_wypisania.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((System.DateTime)(Original_data_wypisania.Value));
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3249,7 +3224,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(long PESEL, string imie, string nazwisko, int nr_ubezpieczenia, string miejscowosc, string kod_pocztowy, string ulica, string opis, string uwagi, string lekarz, global::System.Nullable<long> ID_lekarz, global::System.Nullable<global::System.DateTime> data_przyjecia, global::System.Nullable<global::System.DateTime> data_wypisania) {
+        public virtual int Insert(long PESEL, string imie, string nazwisko, int nr_ubezpieczenia, string miejscowosc, string kod_pocztowy, string ulica, string opis, string uwagi, string lekarz, global::System.Nullable<long> ID_lekarz, System.DateTime data_przyjecia, global::System.Nullable<global::System.DateTime> data_wypisania) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((long)(PESEL));
             if ((imie == null)) {
                 throw new global::System.ArgumentNullException("imie");
@@ -3306,12 +3281,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
             else {
                 this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((data_przyjecia.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(data_przyjecia.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[11].Value = ((System.DateTime)(data_przyjecia));
             if ((data_wypisania.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[12].Value = ((System.DateTime)(data_wypisania.Value));
             }
@@ -3350,7 +3320,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                     string uwagi, 
                     string lekarz, 
                     global::System.Nullable<long> ID_lekarz, 
-                    global::System.Nullable<global::System.DateTime> data_przyjecia, 
+                    System.DateTime data_przyjecia, 
                     global::System.Nullable<global::System.DateTime> data_wypisania, 
                     long Original_PESEL, 
                     string Original_imie, 
@@ -3358,7 +3328,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                     int Original_nr_ubezpieczenia, 
                     string Original_kod_pocztowy, 
                     global::System.Nullable<long> Original_ID_lekarz, 
-                    global::System.Nullable<global::System.DateTime> Original_data_przyjecia, 
+                    System.DateTime Original_data_przyjecia, 
                     global::System.Nullable<global::System.DateTime> Original_data_wypisania) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((long)(PESEL));
             if ((imie == null)) {
@@ -3416,12 +3386,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
             else {
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            if ((data_przyjecia.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(data_przyjecia.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((System.DateTime)(data_przyjecia));
             if ((data_wypisania.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(data_wypisania.Value));
             }
@@ -3456,21 +3421,14 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                 this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((Original_data_przyjecia.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((System.DateTime)(Original_data_przyjecia.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((System.DateTime)(Original_data_przyjecia));
             if ((Original_data_wypisania.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((System.DateTime)(Original_data_wypisania.Value));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((System.DateTime)(Original_data_wypisania.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -3503,7 +3461,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                     string uwagi, 
                     string lekarz, 
                     global::System.Nullable<long> ID_lekarz, 
-                    global::System.Nullable<global::System.DateTime> data_przyjecia, 
+                    System.DateTime data_przyjecia, 
                     global::System.Nullable<global::System.DateTime> data_wypisania, 
                     long Original_PESEL, 
                     string Original_imie, 
@@ -3511,7 +3469,7 @@ SELECT PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica
                     int Original_nr_ubezpieczenia, 
                     string Original_kod_pocztowy, 
                     global::System.Nullable<long> Original_ID_lekarz, 
-                    global::System.Nullable<global::System.DateTime> Original_data_przyjecia, 
+                    System.DateTime Original_data_przyjecia, 
                     global::System.Nullable<global::System.DateTime> Original_data_wypisania) {
             return this.Update(Original_PESEL, imie, nazwisko, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica, opis, uwagi, lekarz, ID_lekarz, data_przyjecia, data_wypisania, Original_PESEL, Original_imie, Original_nazwisko, Original_nr_ubezpieczenia, Original_kod_pocztowy, Original_ID_lekarz, Original_data_przyjecia, Original_data_wypisania);
         }
@@ -3681,7 +3639,7 @@ SELECT ID_lekarz, imie, nazwisko, stanowisko, specjalizacja FROM Personel1 WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString;
+            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4073,7 +4031,7 @@ SELECT ID_wypadku, miejsce_wypadku, liczba_rannych, typ_wypadku, data_godz_zgl, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString;
+            this._connection.ConnectionString = global::RM.Properties.Settings.Default.RMConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -118,15 +118,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-    <Compile Include="Wypadek.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-=======
+    <Compile Include="RMDataSet.cs">
+      <DependentUpon>RMDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="RMDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RMDataSet.xsd</DependentUpon>
->>>>>>> 200a27f736eb6c67f1ed734cb3a777303ceedb40
+    </Compile>
+    <Compile Include="Wypadek.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <EmbeddedResource Include="dod_lekarza.resx">
       <DependentUpon>dod_lekarza.cs</DependentUpon>
@@ -167,16 +169,7 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
-    <None Include="Properties\DataSources\dod_lekarza.datasource" />
-    <None Include="Properties\DataSources\dod_pacjentow.datasource" />
-    <None Include="Properties\DataSources\dod_wypadek.datasource" />
-    <None Include="Properties\DataSources\Form1.datasource" />
-    <None Include="Properties\DataSources\Karetka.datasource" />
-    <None Include="Properties\DataSources\Pacjenci1.datasource" />
-    <None Include="Properties\DataSources\Personel1.datasource" />
-    <None Include="Properties\DataSources\Program.datasource" />
     <None Include="Properties\DataSources\RMEntities.datasource" />
-    <None Include="Properties\DataSources\Wypadek.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
