@@ -16,8 +16,8 @@ namespace RM
         public Form1()
         {
             InitializeComponent();
+            DisplayPatients();
             
-            form2.Show();
         }
 
 
@@ -54,6 +54,12 @@ namespace RM
         }
 
         private void dod_pacj_Click(object sender, EventArgs e)
+        {
+            form2.Show();
+            
+        }
+
+        private void odswiezanie_Click(object sender, EventArgs e)
         {
             DisplayPatients();
         }

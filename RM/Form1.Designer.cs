@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
             this.dod_karetke = new System.Windows.Forms.Button();
@@ -111,6 +111,7 @@
             this.lekarz_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.wypisz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.odswiezanie = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -520,6 +521,7 @@
             // 
             // pacjenci
             // 
+            this.pacjenci.Controls.Add(this.odswiezanie);
             this.pacjenci.Controls.Add(this.dod_pacj);
             this.pacjenci.Controls.Add(this.dataGridView4);
             this.pacjenci.Controls.Add(this.label10);
@@ -533,7 +535,7 @@
             // 
             // dod_pacj
             // 
-            this.dod_pacj.Location = new System.Drawing.Point(504, 496);
+            this.dod_pacj.Location = new System.Drawing.Point(346, 496);
             this.dod_pacj.Name = "dod_pacj";
             this.dod_pacj.Size = new System.Drawing.Size(342, 23);
             this.dod_pacj.TabIndex = 2;
@@ -543,15 +545,15 @@
             // 
             // dataGridView4
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
@@ -567,7 +569,7 @@
             this.lekarz_pacjenta,
             this.przypisz_lekarz_pacj,
             this.wypisz_pacj});
-            this.dataGridView4.Location = new System.Drawing.Point(2, 18);
+            this.dataGridView4.Location = new System.Drawing.Point(2, 19);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 15;
@@ -739,25 +741,25 @@
             // 
             // imie_pacjenta
             // 
-            this.imie_pacjenta.DataPropertyName = "imie";
+            this.imie_pacjenta.DataPropertyName = "imie_pacjenta";
             this.imie_pacjenta.HeaderText = "Imię";
             this.imie_pacjenta.Name = "imie_pacjenta";
             // 
             // nazwisko_pacjenta
             // 
-            this.nazwisko_pacjenta.DataPropertyName = "nazwisko";
+            this.nazwisko_pacjenta.DataPropertyName = "nazwisko_pacjenta";
             this.nazwisko_pacjenta.HeaderText = "Nazwisko";
             this.nazwisko_pacjenta.Name = "nazwisko_pacjenta";
             // 
             // numer_ubezpieczenia_pacj
             // 
-            this.numer_ubezpieczenia_pacj.DataPropertyName = "nr_ubezpieczenia";
+            this.numer_ubezpieczenia_pacj.DataPropertyName = "numer_ubezpieczenia_pacj";
             this.numer_ubezpieczenia_pacj.HeaderText = "Numer ubezpieczenia";
             this.numer_ubezpieczenia_pacj.Name = "numer_ubezpieczenia_pacj";
             // 
             // data_przyjecia_pacj
             // 
-            this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia";
+            this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
             this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
             this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
             this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -765,37 +767,37 @@
             // 
             // miejscowosc_pacj
             // 
-            this.miejscowosc_pacj.DataPropertyName = "miejscowosc";
+            this.miejscowosc_pacj.DataPropertyName = "miejscowosc_pacj";
             this.miejscowosc_pacj.HeaderText = "Miejscowość";
             this.miejscowosc_pacj.Name = "miejscowosc_pacj";
             // 
             // kod_pocz_pacj
             // 
-            this.kod_pocz_pacj.DataPropertyName = "kod_pocztowy";
+            this.kod_pocz_pacj.DataPropertyName = "kod_pocz_pacj";
             this.kod_pocz_pacj.HeaderText = "Kod pocztowy";
             this.kod_pocz_pacj.Name = "kod_pocz_pacj";
             // 
             // ulica_pacj
             // 
-            this.ulica_pacj.DataPropertyName = "ulica";
+            this.ulica_pacj.DataPropertyName = "ulica_pacj";
             this.ulica_pacj.HeaderText = "Ulica";
             this.ulica_pacj.Name = "ulica_pacj";
             // 
             // opis_pacj
             // 
-            this.opis_pacj.DataPropertyName = "opis";
+            this.opis_pacj.DataPropertyName = "opis_pacj";
             this.opis_pacj.HeaderText = "Opis";
             this.opis_pacj.Name = "opis_pacj";
             // 
             // uwagi_pacj
             // 
-            this.uwagi_pacj.DataPropertyName = "uwagi";
+            this.uwagi_pacj.DataPropertyName = "uwagi_pacj";
             this.uwagi_pacj.HeaderText = "Uwagi";
             this.uwagi_pacj.Name = "uwagi_pacj";
             // 
             // lekarz_pacjenta
             // 
-            this.lekarz_pacjenta.DataPropertyName = "lekarz";
+            this.lekarz_pacjenta.DataPropertyName = "lekarz_pacjenta";
             this.lekarz_pacjenta.HeaderText = "Lekarz prowadzący";
             this.lekarz_pacjenta.Name = "lekarz_pacjenta";
             // 
@@ -809,6 +811,16 @@
             // 
             this.wypisz_pacj.HeaderText = "Wypisać?";
             this.wypisz_pacj.Name = "wypisz_pacj";
+            // 
+            // odswiezanie
+            // 
+            this.odswiezanie.Location = new System.Drawing.Point(708, 496);
+            this.odswiezanie.Name = "odswiezanie";
+            this.odswiezanie.Size = new System.Drawing.Size(202, 23);
+            this.odswiezanie.TabIndex = 3;
+            this.odswiezanie.Text = "Odśwież";
+            this.odswiezanie.UseVisualStyleBackColor = true;
+            this.odswiezanie.Click += new System.EventHandler(this.odswiezanie_Click);
             // 
             // Form1
             // 
@@ -921,6 +933,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lekarz_pacjenta;
         private System.Windows.Forms.DataGridViewButtonColumn przypisz_lekarz_pacj;
         private System.Windows.Forms.DataGridViewButtonColumn wypisz_pacj;
+        private System.Windows.Forms.Button odswiezanie;
     }
 }
 

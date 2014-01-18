@@ -39,16 +39,16 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.data_przyj_pick = new System.Windows.Forms.DateTimePicker();
+            this.opis_box = new System.Windows.Forms.RichTextBox();
+            this.pesel_box = new System.Windows.Forms.TextBox();
+            this.imie_box = new System.Windows.Forms.TextBox();
+            this.nazwisko_box = new System.Windows.Forms.TextBox();
+            this.nr_ubez_box = new System.Windows.Forms.TextBox();
+            this.kod_pocz_box = new System.Windows.Forms.TextBox();
+            this.ulica_box = new System.Windows.Forms.TextBox();
+            this.miejscowosc_box = new System.Windows.Forms.TextBox();
+            this.lekarz_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // dod_pacjenta_okno
@@ -175,97 +175,95 @@
             this.label10.Text = "Opis";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // comboBox1
+            // data_przyj_pick
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(161, 396);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(228, 21);
-            this.comboBox1.TabIndex = 16;
+            this.data_przyj_pick.Location = new System.Drawing.Point(161, 209);
+            this.data_przyj_pick.MaxDate = new System.DateTime(2014, 1, 16, 0, 0, 0, 0);
+            this.data_przyj_pick.MinDate = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
+            this.data_przyj_pick.Name = "data_przyj_pick";
+            this.data_przyj_pick.Size = new System.Drawing.Size(228, 20);
+            this.data_przyj_pick.TabIndex = 17;
+            this.data_przyj_pick.Value = new System.DateTime(2014, 1, 16, 0, 0, 0, 0);
             // 
-            // dateTimePicker1
+            // opis_box
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(161, 209);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2014, 1, 16, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(228, 20);
-            this.dateTimePicker1.TabIndex = 17;
-            this.dateTimePicker1.Value = new System.DateTime(2014, 1, 16, 0, 0, 0, 0);
+            this.opis_box.Location = new System.Drawing.Point(161, 448);
+            this.opis_box.Name = "opis_box";
+            this.opis_box.Size = new System.Drawing.Size(228, 96);
+            this.opis_box.TabIndex = 18;
+            this.opis_box.Text = "";
             // 
-            // richTextBox1
+            // pesel_box
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(161, 448);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 96);
-            this.richTextBox1.TabIndex = 18;
-            this.richTextBox1.Text = "";
+            this.pesel_box.Location = new System.Drawing.Point(161, 27);
+            this.pesel_box.Name = "pesel_box";
+            this.pesel_box.Size = new System.Drawing.Size(228, 20);
+            this.pesel_box.TabIndex = 19;
             // 
-            // textBox1
+            // imie_box
             // 
-            this.textBox1.Location = new System.Drawing.Point(161, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 19;
+            this.imie_box.Location = new System.Drawing.Point(161, 65);
+            this.imie_box.Name = "imie_box";
+            this.imie_box.Size = new System.Drawing.Size(228, 20);
+            this.imie_box.TabIndex = 20;
             // 
-            // textBox2
+            // nazwisko_box
             // 
-            this.textBox2.Location = new System.Drawing.Point(161, 65);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 20;
+            this.nazwisko_box.Location = new System.Drawing.Point(161, 103);
+            this.nazwisko_box.Name = "nazwisko_box";
+            this.nazwisko_box.Size = new System.Drawing.Size(228, 20);
+            this.nazwisko_box.TabIndex = 21;
             // 
-            // textBox3
+            // nr_ubez_box
             // 
-            this.textBox3.Location = new System.Drawing.Point(161, 103);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 20);
-            this.textBox3.TabIndex = 21;
+            this.nr_ubez_box.Location = new System.Drawing.Point(161, 156);
+            this.nr_ubez_box.Name = "nr_ubez_box";
+            this.nr_ubez_box.Size = new System.Drawing.Size(228, 20);
+            this.nr_ubez_box.TabIndex = 22;
             // 
-            // textBox4
+            // kod_pocz_box
             // 
-            this.textBox4.Location = new System.Drawing.Point(161, 156);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(228, 20);
-            this.textBox4.TabIndex = 22;
+            this.kod_pocz_box.Location = new System.Drawing.Point(161, 304);
+            this.kod_pocz_box.Name = "kod_pocz_box";
+            this.kod_pocz_box.Size = new System.Drawing.Size(228, 20);
+            this.kod_pocz_box.TabIndex = 24;
             // 
-            // comboBox2
+            // ulica_box
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(161, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 21);
-            this.comboBox2.TabIndex = 23;
+            this.ulica_box.Location = new System.Drawing.Point(161, 349);
+            this.ulica_box.Name = "ulica_box";
+            this.ulica_box.Size = new System.Drawing.Size(228, 20);
+            this.ulica_box.TabIndex = 25;
             // 
-            // textBox5
+            // miejscowosc_box
             // 
-            this.textBox5.Location = new System.Drawing.Point(161, 304);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(228, 20);
-            this.textBox5.TabIndex = 24;
+            this.miejscowosc_box.Location = new System.Drawing.Point(161, 260);
+            this.miejscowosc_box.Name = "miejscowosc_box";
+            this.miejscowosc_box.Size = new System.Drawing.Size(228, 20);
+            this.miejscowosc_box.TabIndex = 26;
             // 
-            // textBox6
+            // lekarz_box
             // 
-            this.textBox6.Location = new System.Drawing.Point(161, 349);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(228, 20);
-            this.textBox6.TabIndex = 25;
+            this.lekarz_box.Location = new System.Drawing.Point(161, 396);
+            this.lekarz_box.Name = "lekarz_box";
+            this.lekarz_box.Size = new System.Drawing.Size(228, 20);
+            this.lekarz_box.TabIndex = 27;
             // 
             // dod_pacjentow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 610);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.lekarz_box);
+            this.Controls.Add(this.miejscowosc_box);
+            this.Controls.Add(this.ulica_box);
+            this.Controls.Add(this.kod_pocz_box);
+            this.Controls.Add(this.nr_ubez_box);
+            this.Controls.Add(this.nazwisko_box);
+            this.Controls.Add(this.imie_box);
+            this.Controls.Add(this.pesel_box);
+            this.Controls.Add(this.opis_box);
+            this.Controls.Add(this.data_przyj_pick);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -297,15 +295,15 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.DateTimePicker data_przyj_pick;
+        private System.Windows.Forms.RichTextBox opis_box;
+        private System.Windows.Forms.TextBox pesel_box;
+        private System.Windows.Forms.TextBox imie_box;
+        private System.Windows.Forms.TextBox nazwisko_box;
+        private System.Windows.Forms.TextBox nr_ubez_box;
+        private System.Windows.Forms.TextBox kod_pocz_box;
+        private System.Windows.Forms.TextBox ulica_box;
+        private System.Windows.Forms.TextBox miejscowosc_box;
+        private System.Windows.Forms.TextBox lekarz_box;
     }
 }

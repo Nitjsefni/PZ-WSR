@@ -23,23 +23,33 @@ namespace RM
             {
 
                 //Create new Emp object
-                DateTime date = new DateTime(2012, 6, 14, 21, 30, 0);
-                Pacjenci1 d = new Pacjenci1() { PESEL = 1231241424, imie = "Marcin", nazwisko = "Płociennik", data_przyjecia = date, miejscowosc = "Lubon", kod_pocztowy = "50-232", lekarz = "Wąsik", nr_ubezpieczenia = 2382183, ulica = "Lubońska", ID_lekarz = 92929292 };
+                DateTime date = data_przyj_pick.Value;
+                Pacjenci1 d = new Pacjenci1() {
+                    PESEL =  Convert.ToInt32(pesel_box.Text),
+                    imie = imie_box.Text, 
+                    nazwisko = nazwisko_box.Text, 
+                    data_przyjecia = date, 
+                    miejscowosc = miejscowosc_box.Text, 
+                    kod_pocztowy = kod_pocz_box.Text, 
+                    lekarz = lekarz_box.Text, 
+                    nr_ubezpieczenia = Convert.ToInt32(nr_ubez_box.Text), 
+                    ulica = ulica_box.Text
+                     };
 
-
+                
 
                 //Add to memory
 
+
+
                 ctx.Pacjenci1.Add(d);
-
-
-
 
 
                 //Save to database
 
                 ctx.SaveChanges();
-
+                
+                dod_pacjentow.ActiveForm.Close();
             }
         }
 
