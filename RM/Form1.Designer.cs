@@ -62,15 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dod_wyp = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.id_wypadku = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejsce_wyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.liczba_rannych = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typ_wypadku = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.data_zgloszenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numer_zglaszajacego = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uwagi_wypadek = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.czy_obsluzony = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.raport_wyp = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
@@ -99,21 +90,49 @@
             this.stanowisko_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specjalizacja_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacjenci_lekarza = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.uwagi_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.personel1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label11 = new System.Windows.Forms.Label();
             this.pacjenci1TableAdapter = new RM.RMDataSetTableAdapters.Pacjenci1TableAdapter();
+            this.personel1TableAdapter = new RM.RMDataSetTableAdapters.Personel1TableAdapter();
+            this.tableAdapterManager = new RM.RMDataSetTableAdapters.TableAdapterManager();
+            this.iDlekarzDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imieDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwiskoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stanowiskoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specjalizacjaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wypadekBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.wypadekTableAdapter = new RM.RMDataSetTableAdapters.WypadekTableAdapter();
+            this.id_wypadku = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejsce_wyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.liczba_rannych = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typ_wypadku = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.data_zgloszenia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numer_zglaszajacego = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uwagi_wypadek = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.czy_obsluzony = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.raport_wyp = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.iDwypadkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscewypadkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.liczbarannychDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typwypadkuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.datagodzzglDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDskladuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numerzglDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uwagiDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pesel_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imie_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwisko_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numer_ubezpieczenia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_przyjecia_pacj = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.data_przyjecia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.miejscowosc_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kod_pocz_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ulica_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.opis_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.uwagi_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.lekarz_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.wypisz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
@@ -129,6 +148,8 @@
             this.lekarze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personel1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypadekBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabcontrol
@@ -137,6 +158,7 @@
             this.tabcontrol.Controls.Add(this.wypadki);
             this.tabcontrol.Controls.Add(this.pacjenci);
             this.tabcontrol.Controls.Add(this.lekarze);
+            this.tabcontrol.Controls.Add(this.tabPage1);
             this.tabcontrol.Location = new System.Drawing.Point(0, 1);
             this.tabcontrol.Name = "tabcontrol";
             this.tabcontrol.SelectedIndex = 0;
@@ -410,6 +432,7 @@
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoGenerateColumns = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_wypadku,
@@ -420,61 +443,21 @@
             this.numer_zglaszajacego,
             this.uwagi_wypadek,
             this.czy_obsluzony,
-            this.raport_wyp});
+            this.raport_wyp,
+            this.dataGridViewTextBoxColumn1,
+            this.iDwypadkuDataGridViewTextBoxColumn,
+            this.miejscewypadkuDataGridViewTextBoxColumn,
+            this.liczbarannychDataGridViewTextBoxColumn,
+            this.typwypadkuDataGridViewTextBoxColumn,
+            this.datagodzzglDataGridViewTextBoxColumn,
+            this.iDskladuDataGridViewTextBoxColumn,
+            this.numerzglDataGridViewTextBoxColumn,
+            this.uwagiDataGridViewTextBoxColumn1});
+            this.dataGridView2.DataSource = this.wypadekBindingSource;
             this.dataGridView2.Location = new System.Drawing.Point(6, 29);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(846, 368);
             this.dataGridView2.TabIndex = 1;
-            // 
-            // id_wypadku
-            // 
-            this.id_wypadku.HeaderText = "ID Wypadku";
-            this.id_wypadku.Name = "id_wypadku";
-            this.id_wypadku.Visible = false;
-            // 
-            // miejsce_wyp
-            // 
-            this.miejsce_wyp.HeaderText = "Miejsce wypadku";
-            this.miejsce_wyp.Name = "miejsce_wyp";
-            // 
-            // liczba_rannych
-            // 
-            this.liczba_rannych.HeaderText = "Liczba Poszkodowanych";
-            this.liczba_rannych.Name = "liczba_rannych";
-            // 
-            // typ_wypadku
-            // 
-            this.typ_wypadku.HeaderText = "Typ wypadku";
-            this.typ_wypadku.Name = "typ_wypadku";
-            // 
-            // data_zgloszenia
-            // 
-            this.data_zgloszenia.HeaderText = "Data i godzina zgłoszenia";
-            this.data_zgloszenia.Name = "data_zgloszenia";
-            this.data_zgloszenia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_zgloszenia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // numer_zglaszajacego
-            // 
-            this.numer_zglaszajacego.HeaderText = "Numer tel. zgłaszającego";
-            this.numer_zglaszajacego.Name = "numer_zglaszajacego";
-            // 
-            // uwagi_wypadek
-            // 
-            this.uwagi_wypadek.HeaderText = "Uwagi";
-            this.uwagi_wypadek.Name = "uwagi_wypadek";
-            // 
-            // czy_obsluzony
-            // 
-            this.czy_obsluzony.HeaderText = "Czy obsłużony?";
-            this.czy_obsluzony.Name = "czy_obsluzony";
-            // 
-            // raport_wyp
-            // 
-            this.raport_wyp.HeaderText = "Raport z wypadku";
-            this.raport_wyp.Name = "raport_wyp";
-            this.raport_wyp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.raport_wyp.Text = "";
             // 
             // label5
             // 
@@ -555,15 +538,15 @@
             this.ulica_pacj,
             this.opis_pacj,
             this.uwagi_pacj,
-            this.przypisz_lekarz_pacj,
             this.lekarz_pacjenta,
+            this.przypisz_lekarz_pacj,
             this.wypisz_pacj});
             this.dataGridView4.DataSource = this.pacjenci1BindingSource;
             this.dataGridView4.Location = new System.Drawing.Point(2, 18);
             this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.RowHeadersWidth = 15;
-            this.dataGridView4.Size = new System.Drawing.Size(1317, 472);
+            this.dataGridView4.Size = new System.Drawing.Size(1327, 472);
             this.dataGridView4.TabIndex = 1;
             // 
             // pacjenci1BindingSource
@@ -671,6 +654,7 @@
             // 
             // dataGridView5
             // 
+            this.dataGridView5.AutoGenerateColumns = false;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_lekarza,
@@ -679,35 +663,44 @@
             this.stanowisko_lekarz,
             this.specjalizacja_lekarz,
             this.pacjenci_lekarza,
-            this.uwagi_lekarz});
+            this.iDlekarzDataGridViewTextBoxColumn1,
+            this.imieDataGridViewTextBoxColumn1,
+            this.nazwiskoDataGridViewTextBoxColumn1,
+            this.stanowiskoDataGridViewTextBoxColumn,
+            this.specjalizacjaDataGridViewTextBoxColumn});
+            this.dataGridView5.DataSource = this.personel1BindingSource;
             this.dataGridView5.Location = new System.Drawing.Point(23, 37);
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(650, 382);
+            this.dataGridView5.Size = new System.Drawing.Size(647, 382);
             this.dataGridView5.TabIndex = 1;
             // 
             // ID_lekarza
             // 
+            this.ID_lekarza.DataPropertyName = "ID_lekarz";
             this.ID_lekarza.HeaderText = "ID Lekarza";
             this.ID_lekarza.Name = "ID_lekarza";
-            this.ID_lekarza.Visible = false;
             // 
             // imie_lekarz
             // 
+            this.imie_lekarz.DataPropertyName = "imie";
             this.imie_lekarz.HeaderText = "Imię";
             this.imie_lekarz.Name = "imie_lekarz";
             // 
             // nazwisko_lekarz
             // 
+            this.nazwisko_lekarz.DataPropertyName = "nazwisko";
             this.nazwisko_lekarz.HeaderText = "Nazwisko";
             this.nazwisko_lekarz.Name = "nazwisko_lekarz";
             // 
             // stanowisko_lekarz
             // 
+            this.stanowisko_lekarz.DataPropertyName = "stanowisko";
             this.stanowisko_lekarz.HeaderText = "Stanowisko";
             this.stanowisko_lekarz.Name = "stanowisko_lekarz";
             // 
             // specjalizacja_lekarz
             // 
+            this.specjalizacja_lekarz.DataPropertyName = "specjalizacja";
             this.specjalizacja_lekarz.HeaderText = "Specjalizacja";
             this.specjalizacja_lekarz.Name = "specjalizacja_lekarz";
             // 
@@ -716,10 +709,10 @@
             this.pacjenci_lekarza.HeaderText = "Pacjenci";
             this.pacjenci_lekarza.Name = "pacjenci_lekarza";
             // 
-            // uwagi_lekarz
+            // personel1BindingSource
             // 
-            this.uwagi_lekarz.HeaderText = "Uwagi";
-            this.uwagi_lekarz.Name = "uwagi_lekarz";
+            this.personel1BindingSource.DataMember = "Personel1";
+            this.personel1BindingSource.DataSource = this.rMDataSetBindingSource;
             // 
             // label11
             // 
@@ -733,6 +726,181 @@
             // pacjenci1TableAdapter
             // 
             this.pacjenci1TableAdapter.ClearBeforeFill = true;
+            // 
+            // personel1TableAdapter
+            // 
+            this.personel1TableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.KaretkaTableAdapter = null;
+            this.tableAdapterManager.Pacjenci1TableAdapter = null;
+            this.tableAdapterManager.Personel1TableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = RM.RMDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.WypadekTableAdapter = null;
+            // 
+            // iDlekarzDataGridViewTextBoxColumn1
+            // 
+            this.iDlekarzDataGridViewTextBoxColumn1.DataPropertyName = "ID_lekarz";
+            this.iDlekarzDataGridViewTextBoxColumn1.HeaderText = "ID_lekarz";
+            this.iDlekarzDataGridViewTextBoxColumn1.Name = "iDlekarzDataGridViewTextBoxColumn1";
+            // 
+            // imieDataGridViewTextBoxColumn1
+            // 
+            this.imieDataGridViewTextBoxColumn1.DataPropertyName = "imie";
+            this.imieDataGridViewTextBoxColumn1.HeaderText = "imie";
+            this.imieDataGridViewTextBoxColumn1.Name = "imieDataGridViewTextBoxColumn1";
+            // 
+            // nazwiskoDataGridViewTextBoxColumn1
+            // 
+            this.nazwiskoDataGridViewTextBoxColumn1.DataPropertyName = "nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn1.HeaderText = "nazwisko";
+            this.nazwiskoDataGridViewTextBoxColumn1.Name = "nazwiskoDataGridViewTextBoxColumn1";
+            // 
+            // stanowiskoDataGridViewTextBoxColumn
+            // 
+            this.stanowiskoDataGridViewTextBoxColumn.DataPropertyName = "stanowisko";
+            this.stanowiskoDataGridViewTextBoxColumn.HeaderText = "stanowisko";
+            this.stanowiskoDataGridViewTextBoxColumn.Name = "stanowiskoDataGridViewTextBoxColumn";
+            // 
+            // specjalizacjaDataGridViewTextBoxColumn
+            // 
+            this.specjalizacjaDataGridViewTextBoxColumn.DataPropertyName = "specjalizacja";
+            this.specjalizacjaDataGridViewTextBoxColumn.HeaderText = "specjalizacja";
+            this.specjalizacjaDataGridViewTextBoxColumn.Name = "specjalizacjaDataGridViewTextBoxColumn";
+            // 
+            // wypadekBindingSource
+            // 
+            this.wypadekBindingSource.DataMember = "Wypadek";
+            this.wypadekBindingSource.DataSource = this.rMDataSetBindingSource;
+            // 
+            // wypadekTableAdapter
+            // 
+            this.wypadekTableAdapter.ClearBeforeFill = true;
+            // 
+            // id_wypadku
+            // 
+            this.id_wypadku.DataPropertyName = "ID_wypadku";
+            this.id_wypadku.HeaderText = "ID Wypadku";
+            this.id_wypadku.Name = "id_wypadku";
+            this.id_wypadku.Visible = false;
+            // 
+            // miejsce_wyp
+            // 
+            this.miejsce_wyp.DataPropertyName = "miejsce_wypadku";
+            this.miejsce_wyp.HeaderText = "Miejsce wypadku";
+            this.miejsce_wyp.Name = "miejsce_wyp";
+            // 
+            // liczba_rannych
+            // 
+            this.liczba_rannych.DataPropertyName = "liczba_rannych";
+            this.liczba_rannych.HeaderText = "Liczba Poszkodowanych";
+            this.liczba_rannych.Name = "liczba_rannych";
+            // 
+            // typ_wypadku
+            // 
+            this.typ_wypadku.DataPropertyName = "typ_wypadku";
+            this.typ_wypadku.HeaderText = "Typ wypadku";
+            this.typ_wypadku.Name = "typ_wypadku";
+            // 
+            // data_zgloszenia
+            // 
+            this.data_zgloszenia.DataPropertyName = "data_godz_zgl";
+            this.data_zgloszenia.HeaderText = "Data i godzina zgłoszenia";
+            this.data_zgloszenia.Name = "data_zgloszenia";
+            this.data_zgloszenia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_zgloszenia.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // numer_zglaszajacego
+            // 
+            this.numer_zglaszajacego.DataPropertyName = "numer_zgl";
+            this.numer_zglaszajacego.HeaderText = "Numer tel. zgłaszającego";
+            this.numer_zglaszajacego.Name = "numer_zglaszajacego";
+            // 
+            // uwagi_wypadek
+            // 
+            this.uwagi_wypadek.DataPropertyName = "numer_zgl";
+            this.uwagi_wypadek.HeaderText = "Uwagi";
+            this.uwagi_wypadek.Name = "uwagi_wypadek";
+            // 
+            // czy_obsluzony
+            // 
+            this.czy_obsluzony.HeaderText = "Czy obsłużony?";
+            this.czy_obsluzony.Name = "czy_obsluzony";
+            // 
+            // raport_wyp
+            // 
+            this.raport_wyp.HeaderText = "Raport z wypadku";
+            this.raport_wyp.Name = "raport_wyp";
+            this.raport_wyp.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.raport_wyp.Text = "";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ID_wypadku";
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID_wypadku";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1336, 562);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Wyszukiwanie";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // iDwypadkuDataGridViewTextBoxColumn
+            // 
+            this.iDwypadkuDataGridViewTextBoxColumn.DataPropertyName = "ID_wypadku";
+            this.iDwypadkuDataGridViewTextBoxColumn.HeaderText = "ID_wypadku";
+            this.iDwypadkuDataGridViewTextBoxColumn.Name = "iDwypadkuDataGridViewTextBoxColumn";
+            // 
+            // miejscewypadkuDataGridViewTextBoxColumn
+            // 
+            this.miejscewypadkuDataGridViewTextBoxColumn.DataPropertyName = "miejsce_wypadku";
+            this.miejscewypadkuDataGridViewTextBoxColumn.HeaderText = "miejsce_wypadku";
+            this.miejscewypadkuDataGridViewTextBoxColumn.Name = "miejscewypadkuDataGridViewTextBoxColumn";
+            // 
+            // liczbarannychDataGridViewTextBoxColumn
+            // 
+            this.liczbarannychDataGridViewTextBoxColumn.DataPropertyName = "liczba_rannych";
+            this.liczbarannychDataGridViewTextBoxColumn.HeaderText = "liczba_rannych";
+            this.liczbarannychDataGridViewTextBoxColumn.Name = "liczbarannychDataGridViewTextBoxColumn";
+            // 
+            // typwypadkuDataGridViewTextBoxColumn
+            // 
+            this.typwypadkuDataGridViewTextBoxColumn.DataPropertyName = "typ_wypadku";
+            this.typwypadkuDataGridViewTextBoxColumn.HeaderText = "typ_wypadku";
+            this.typwypadkuDataGridViewTextBoxColumn.Name = "typwypadkuDataGridViewTextBoxColumn";
+            // 
+            // datagodzzglDataGridViewTextBoxColumn
+            // 
+            this.datagodzzglDataGridViewTextBoxColumn.DataPropertyName = "data_godz_zgl";
+            this.datagodzzglDataGridViewTextBoxColumn.HeaderText = "data_godz_zgl";
+            this.datagodzzglDataGridViewTextBoxColumn.Name = "datagodzzglDataGridViewTextBoxColumn";
+            // 
+            // iDskladuDataGridViewTextBoxColumn
+            // 
+            this.iDskladuDataGridViewTextBoxColumn.DataPropertyName = "ID_skladu";
+            this.iDskladuDataGridViewTextBoxColumn.HeaderText = "ID_skladu";
+            this.iDskladuDataGridViewTextBoxColumn.Name = "iDskladuDataGridViewTextBoxColumn";
+            // 
+            // numerzglDataGridViewTextBoxColumn
+            // 
+            this.numerzglDataGridViewTextBoxColumn.DataPropertyName = "numer_zgl";
+            this.numerzglDataGridViewTextBoxColumn.HeaderText = "numer_zgl";
+            this.numerzglDataGridViewTextBoxColumn.Name = "numerzglDataGridViewTextBoxColumn";
+            // 
+            // uwagiDataGridViewTextBoxColumn1
+            // 
+            this.uwagiDataGridViewTextBoxColumn1.DataPropertyName = "uwagi";
+            this.uwagiDataGridViewTextBoxColumn1.HeaderText = "uwagi";
+            this.uwagiDataGridViewTextBoxColumn1.Name = "uwagiDataGridViewTextBoxColumn1";
             // 
             // pesel_pacjenta
             // 
@@ -760,8 +928,11 @@
             // 
             // data_przyjecia_pacj
             // 
+            this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia";
             this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
             this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
+            this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_przyjecia_pacj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // miejscowosc_pacj
             // 
@@ -793,17 +964,17 @@
             this.uwagi_pacj.HeaderText = "Uwagi";
             this.uwagi_pacj.Name = "uwagi_pacj";
             // 
-            // przypisz_lekarz_pacj
-            // 
-            this.przypisz_lekarz_pacj.HeaderText = "Przypisz lekarza";
-            this.przypisz_lekarz_pacj.Name = "przypisz_lekarz_pacj";
-            this.przypisz_lekarz_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // lekarz_pacjenta
             // 
             this.lekarz_pacjenta.DataPropertyName = "lekarz";
             this.lekarz_pacjenta.HeaderText = "Lekarz prowadzący";
             this.lekarz_pacjenta.Name = "lekarz_pacjenta";
+            // 
+            // przypisz_lekarz_pacj
+            // 
+            this.przypisz_lekarz_pacj.HeaderText = "Przypisz lekarza";
+            this.przypisz_lekarz_pacj.Name = "przypisz_lekarz_pacj";
+            this.przypisz_lekarz_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // wypisz_pacj
             // 
@@ -837,6 +1008,8 @@
             this.lekarze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personel1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypadekBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -875,15 +1048,6 @@
         private System.Windows.Forms.ComboBox comboBox3;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_wypadku;
-        private System.Windows.Forms.DataGridViewTextBoxColumn miejsce_wyp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn liczba_rannych;
-        private System.Windows.Forms.DataGridViewComboBoxColumn typ_wypadku;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data_zgloszenia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn numer_zglaszajacego;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uwagi_wypadek;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn czy_obsluzony;
-        private System.Windows.Forms.DataGridViewButtonColumn raport_wyp;
         private System.Windows.Forms.Button dod_pacj;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label10;
@@ -904,29 +1068,57 @@
         private System.Windows.Forms.DataGridViewButtonColumn wezwanie_lekarz_dost;
         private System.Windows.Forms.Button dod_lekarza;
         private System.Windows.Forms.Button dod_karetke;
+        private RMDataSet rMDataSet;
+        private System.Windows.Forms.BindingSource rMDataSetBindingSource;
+        private System.Windows.Forms.BindingSource pacjenci1BindingSource;
+        private RMDataSetTableAdapters.Pacjenci1TableAdapter pacjenci1TableAdapter;
+        private System.Windows.Forms.BindingSource personel1BindingSource;
+        private RMDataSetTableAdapters.Personel1TableAdapter personel1TableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_lekarza;
         private System.Windows.Forms.DataGridViewTextBoxColumn imie_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn stanowisko_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn specjalizacja_lekarz;
         private System.Windows.Forms.DataGridViewComboBoxColumn pacjenci_lekarza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uwagi_lekarz;
-        private System.Windows.Forms.BindingSource rMDataSetBindingSource;
-        private RMDataSet rMDataSet;
-        private System.Windows.Forms.BindingSource pacjenci1BindingSource;
-        private RMDataSetTableAdapters.Pacjenci1TableAdapter pacjenci1TableAdapter;
+        private RMDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDlekarzDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn imieDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazwiskoDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stanowiskoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specjalizacjaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource wypadekBindingSource;
+        private RMDataSetTableAdapters.WypadekTableAdapter wypadekTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_wypadku;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miejsce_wyp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn liczba_rannych;
+        private System.Windows.Forms.DataGridViewComboBoxColumn typ_wypadku;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_zgloszenia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numer_zglaszajacego;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uwagi_wypadek;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn czy_obsluzony;
+        private System.Windows.Forms.DataGridViewButtonColumn raport_wyp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDwypadkuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn miejscewypadkuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn liczbarannychDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typwypadkuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn datagodzzglDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDskladuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numerzglDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uwagiDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesel_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn imie_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn numer_ubezpieczenia_pacj;
-        private System.Windows.Forms.DataGridViewComboBoxColumn data_przyjecia_pacj;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data_przyjecia_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn miejscowosc_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn kod_pocz_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn ulica_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn opis_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn uwagi_pacj;
-        private System.Windows.Forms.DataGridViewButtonColumn przypisz_lekarz_pacj;
         private System.Windows.Forms.DataGridViewTextBoxColumn lekarz_pacjenta;
+        private System.Windows.Forms.DataGridViewButtonColumn przypisz_lekarz_pacj;
         private System.Windows.Forms.DataGridViewButtonColumn wypisz_pacj;
     }
 }

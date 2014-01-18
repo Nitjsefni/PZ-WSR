@@ -1,0 +1,244 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="RMModelStoreContainer">
+          <EntitySet Name="Karetka" EntityType="RMModel.Store.Karetka" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Pacjenci1" EntityType="RMModel.Store.Pacjenci1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Personel1" EntityType="RMModel.Store.Personel1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Wypadek" EntityType="RMModel.Store.Wypadek" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="Lekarz2Pacjent" Association="RMModel.Store.Lekarz2Pacjent">
+            <End Role="Personel1" EntitySet="Personel1" />
+            <End Role="Pacjenci1" EntitySet="Pacjenci1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Karetka">
+          <Key>
+            <PropertyRef Name="ID_karetki" />
+          </Key>
+          <Property Name="ID_karetki" Type="int" Nullable="false" />
+          <Property Name="typ_numer" Type="text" Nullable="false" />
+          <Property Name="ID_skladu" Type="int" Nullable="false" />
+          <Property Name="wyposazenie" Type="text" Nullable="false" />
+          <Property Name="uwagi" Type="text" />
+        </EntityType>
+        <EntityType Name="Pacjenci1">
+          <Key>
+            <PropertyRef Name="PESEL" />
+          </Key>
+          <Property Name="PESEL" Type="bigint" Nullable="false" />
+          <Property Name="imie" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="nazwisko" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="nr_ubezpieczenia" Type="int" Nullable="false" />
+          <Property Name="miejscowosc" Type="text" Nullable="false" />
+          <Property Name="kod_pocztowy" Type="varchar" Nullable="false" MaxLength="7" />
+          <Property Name="ulica" Type="text" Nullable="false" />
+          <Property Name="opis" Type="text" />
+          <Property Name="uwagi" Type="text" />
+          <Property Name="lekarz" Type="text" />
+          <Property Name="ID_lekarz" Type="bigint" />
+          <Property Name="data_przyjecia" Type="datetime" Nullable="false" />
+          <Property Name="data_wypisania" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Personel1">
+          <Key>
+            <PropertyRef Name="ID_lekarz" />
+          </Key>
+          <Property Name="ID_lekarz" Type="bigint" Nullable="false" />
+          <Property Name="imie" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="nazwisko" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="stanowisko" Type="text" Nullable="false" />
+          <Property Name="specjalizacja" Type="text" />
+        </EntityType>
+        <EntityType Name="Wypadek">
+          <Key>
+            <PropertyRef Name="ID_wypadku" />
+          </Key>
+          <Property Name="ID_wypadku" Type="int" Nullable="false" />
+          <Property Name="miejsce_wypadku" Type="text" Nullable="false" />
+          <Property Name="liczba_rannych" Type="int" Nullable="false" />
+          <Property Name="typ_wypadku" Type="text" Nullable="false" />
+          <Property Name="data_godz_zgl" Type="datetime" Nullable="false" />
+          <Property Name="ID_skladu" Type="int" Nullable="false" />
+          <Property Name="numer_zgl" Type="int" />
+          <Property Name="uwagi" Type="text" />
+        </EntityType>
+        <Association Name="Lekarz2Pacjent">
+          <End Role="Personel1" Type="RMModel.Store.Personel1" Multiplicity="0..1" />
+          <End Role="Pacjenci1" Type="RMModel.Store.Pacjenci1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel1">
+              <PropertyRef Name="ID_lekarz" />
+            </Principal>
+            <Dependent Role="Pacjenci1">
+              <PropertyRef Name="ID_lekarz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="RMEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Karetkas" EntityType="RMModel.Karetka" />
+          <EntitySet Name="Pacjenci1" EntityType="RMModel.Pacjenci1" />
+          <EntitySet Name="Personel1" EntityType="RMModel.Personel1" />
+          <EntitySet Name="Wypadeks" EntityType="RMModel.Wypadek" />
+          <AssociationSet Name="Lekarz2Pacjent" Association="RMModel.Lekarz2Pacjent">
+            <End Role="Personel1" EntitySet="Personel1" />
+            <End Role="Pacjenci1" EntitySet="Pacjenci1" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Karetka">
+          <Key>
+            <PropertyRef Name="ID_karetki" />
+          </Key>
+          <Property Name="ID_karetki" Type="Int32" Nullable="false" />
+          <Property Name="typ_numer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ID_skladu" Type="Int32" Nullable="false" />
+          <Property Name="wyposazenie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Pacjenci1">
+          <Key>
+            <PropertyRef Name="PESEL" />
+          </Key>
+          <Property Name="PESEL" Type="Int64" Nullable="false" />
+          <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nr_ubezpieczenia" Type="Int32" Nullable="false" />
+          <Property Name="miejscowosc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="kod_pocztowy" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
+          <Property Name="ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="lekarz" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="ID_lekarz" Type="Int64" />
+          <Property Name="data_przyjecia" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="data_wypisania" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Personel1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Pacjenci1" ToRole="Personel1" />
+        </EntityType>
+        <EntityType Name="Personel1">
+          <Key>
+            <PropertyRef Name="ID_lekarz" />
+          </Key>
+          <Property Name="ID_lekarz" Type="Int64" Nullable="false" />
+          <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="stanowisko" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="specjalizacja" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="Pacjenci1" Relationship="RMModel.Lekarz2Pacjent" FromRole="Personel1" ToRole="Pacjenci1" />
+        </EntityType>
+        <EntityType Name="Wypadek">
+          <Key>
+            <PropertyRef Name="ID_wypadku" />
+          </Key>
+          <Property Name="ID_wypadku" Type="Int32" Nullable="false" />
+          <Property Name="miejsce_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="liczba_rannych" Type="Int32" Nullable="false" />
+          <Property Name="typ_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="data_godz_zgl" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="ID_skladu" Type="Int32" Nullable="false" />
+          <Property Name="numer_zgl" Type="Int32" />
+          <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <Association Name="Lekarz2Pacjent">
+          <End Role="Personel1" Type="RMModel.Personel1" Multiplicity="0..1" />
+          <End Role="Pacjenci1" Type="RMModel.Pacjenci1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Personel1">
+              <PropertyRef Name="ID_lekarz" />
+            </Principal>
+            <Dependent Role="Pacjenci1">
+              <PropertyRef Name="ID_lekarz" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RMModelStoreContainer" CdmEntityContainer="RMEntities">
+          <EntitySetMapping Name="Karetkas">
+            <EntityTypeMapping TypeName="RMModel.Karetka">
+              <MappingFragment StoreEntitySet="Karetka">
+                <ScalarProperty Name="ID_karetki" ColumnName="ID_karetki" />
+                <ScalarProperty Name="typ_numer" ColumnName="typ_numer" />
+                <ScalarProperty Name="ID_skladu" ColumnName="ID_skladu" />
+                <ScalarProperty Name="wyposazenie" ColumnName="wyposazenie" />
+                <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacjenci1">
+            <EntityTypeMapping TypeName="RMModel.Pacjenci1">
+              <MappingFragment StoreEntitySet="Pacjenci1">
+                <ScalarProperty Name="PESEL" ColumnName="PESEL" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="nr_ubezpieczenia" ColumnName="nr_ubezpieczenia" />
+                <ScalarProperty Name="miejscowosc" ColumnName="miejscowosc" />
+                <ScalarProperty Name="kod_pocztowy" ColumnName="kod_pocztowy" />
+                <ScalarProperty Name="ulica" ColumnName="ulica" />
+                <ScalarProperty Name="opis" ColumnName="opis" />
+                <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+                <ScalarProperty Name="lekarz" ColumnName="lekarz" />
+                <ScalarProperty Name="ID_lekarz" ColumnName="ID_lekarz" />
+                <ScalarProperty Name="data_przyjecia" ColumnName="data_przyjecia" />
+                <ScalarProperty Name="data_wypisania" ColumnName="data_wypisania" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Personel1">
+            <EntityTypeMapping TypeName="RMModel.Personel1">
+              <MappingFragment StoreEntitySet="Personel1">
+                <ScalarProperty Name="ID_lekarz" ColumnName="ID_lekarz" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="stanowisko" ColumnName="stanowisko" />
+                <ScalarProperty Name="specjalizacja" ColumnName="specjalizacja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Wypadeks">
+            <EntityTypeMapping TypeName="RMModel.Wypadek">
+              <MappingFragment StoreEntitySet="Wypadek">
+                <ScalarProperty Name="ID_wypadku" ColumnName="ID_wypadku" />
+                <ScalarProperty Name="miejsce_wypadku" ColumnName="miejsce_wypadku" />
+                <ScalarProperty Name="liczba_rannych" ColumnName="liczba_rannych" />
+                <ScalarProperty Name="typ_wypadku" ColumnName="typ_wypadku" />
+                <ScalarProperty Name="data_godz_zgl" ColumnName="data_godz_zgl" />
+                <ScalarProperty Name="ID_skladu" ColumnName="ID_skladu" />
+                <ScalarProperty Name="numer_zgl" ColumnName="numer_zgl" />
+                <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

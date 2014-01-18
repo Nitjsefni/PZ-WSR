@@ -19,10 +19,16 @@ namespace RM
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'rMDataSet.Wypadek' table. You can move, or remove it, as needed.
+            this.wypadekTableAdapter.Fill(this.rMDataSet.Wypadek);
+            // TODO: This line of code loads data into the 'rMDataSet.Personel1' table. You can move, or remove it, as needed.
+            this.personel1TableAdapter.Fill(this.rMDataSet.Personel1);
             // TODO: This line of code loads data into the 'rMDataSet.Pacjenci1' table. You can move, or remove it, as needed.
             this.pacjenci1TableAdapter.Fill(this.rMDataSet.Pacjenci1);
 
         }
+
+
 
 
 
