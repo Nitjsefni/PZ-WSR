@@ -25,7 +25,7 @@ namespace RM
                 //Create new Emp object
                 DateTime date = data_przyj_pick.Value;
                 Pacjenci1 d = new Pacjenci1() {
-                    PESEL =  Convert.ToInt32(pesel_box.Text),
+                    PESEL =  Convert.ToInt64(pesel_box.Text), 
                     imie = imie_box.Text, 
                     nazwisko = nazwisko_box.Text, 
                     data_przyjecia = date, 

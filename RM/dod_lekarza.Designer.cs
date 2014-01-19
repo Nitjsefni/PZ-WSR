@@ -28,77 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.nazw_box = new System.Windows.Forms.TextBox();
+            this.imie_box = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dod_pacjenta_okno = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.dod_lekarza_okno = new System.Windows.Forms.Button();
+            this.stanowisko_box = new System.Windows.Forms.TextBox();
+            this.specj_box = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ID_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // comboBox2
+            // nazw_box
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Wypadek komunikacyjny",
-            "Wypadek przemysłowy",
-            "Wypadek mechaniczny",
-            "Dziecko",
-            "Zatrucie",
-            "Nagłe zatrzymanie krążenia",
-            "Omdlenie",
-            "Atak epilesji",
-            "Reakcja alergiczna",
-            "Zawał"});
-            this.comboBox2.Location = new System.Drawing.Point(165, 111);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 21);
-            this.comboBox2.TabIndex = 57;
+            this.nazw_box.Location = new System.Drawing.Point(165, 96);
+            this.nazw_box.Name = "nazw_box";
+            this.nazw_box.Size = new System.Drawing.Size(228, 20);
+            this.nazw_box.TabIndex = 56;
             // 
-            // textBox2
+            // imie_box
             // 
-            this.textBox2.Location = new System.Drawing.Point(165, 70);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 56;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(165, 33);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 55;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(164, 233);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 96);
-            this.richTextBox1.TabIndex = 54;
-            this.richTextBox1.Text = "";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(107, 233);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(51, 16);
-            this.label10.TabIndex = 52;
-            this.label10.Text = "Uwagi";
-            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.imie_box.Location = new System.Drawing.Point(165, 55);
+            this.imie_box.Name = "imie_box";
+            this.imie_box.Size = new System.Drawing.Size(228, 20);
+            this.imie_box.TabIndex = 55;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label9.Location = new System.Drawing.Point(73, 71);
+            this.label9.Location = new System.Drawing.Point(73, 97);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(74, 16);
             this.label9.TabIndex = 50;
@@ -108,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(60, 112);
+            this.label3.Location = new System.Drawing.Point(60, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 16);
             this.label3.TabIndex = 49;
@@ -119,7 +80,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label2.Location = new System.Drawing.Point(45, 166);
+            this.label2.Location = new System.Drawing.Point(45, 183);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 16);
             this.label2.TabIndex = 48;
@@ -130,44 +91,69 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(110, 34);
+            this.label1.Location = new System.Drawing.Point(107, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 16);
             this.label1.TabIndex = 47;
             this.label1.Text = "Imię";
             // 
-            // dod_pacjenta_okno
+            // dod_lekarza_okno
             // 
-            this.dod_pacjenta_okno.Location = new System.Drawing.Point(76, 377);
-            this.dod_pacjenta_okno.Name = "dod_pacjenta_okno";
-            this.dod_pacjenta_okno.Size = new System.Drawing.Size(332, 41);
-            this.dod_pacjenta_okno.TabIndex = 46;
-            this.dod_pacjenta_okno.Text = "Dodaj wypadek";
-            this.dod_pacjenta_okno.UseVisualStyleBackColor = true;
+            this.dod_lekarza_okno.Location = new System.Drawing.Point(63, 243);
+            this.dod_lekarza_okno.Name = "dod_lekarza_okno";
+            this.dod_lekarza_okno.Size = new System.Drawing.Size(332, 41);
+            this.dod_lekarza_okno.TabIndex = 46;
+            this.dod_lekarza_okno.Text = "Dodaj lekarza";
+            this.dod_lekarza_okno.UseVisualStyleBackColor = true;
+            this.dod_lekarza_okno.Click += new System.EventHandler(this.dod_lekarza_okno_Click);
             // 
-            // textBox3
+            // stanowisko_box
             // 
-            this.textBox3.Location = new System.Drawing.Point(165, 165);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(228, 20);
-            this.textBox3.TabIndex = 59;
+            this.stanowisko_box.Location = new System.Drawing.Point(165, 137);
+            this.stanowisko_box.Name = "stanowisko_box";
+            this.stanowisko_box.Size = new System.Drawing.Size(228, 20);
+            this.stanowisko_box.TabIndex = 59;
+            // 
+            // specj_box
+            // 
+            this.specj_box.Location = new System.Drawing.Point(164, 179);
+            this.specj_box.Name = "specj_box";
+            this.specj_box.Size = new System.Drawing.Size(228, 20);
+            this.specj_box.TabIndex = 60;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(121, 18);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(23, 16);
+            this.label4.TabIndex = 61;
+            this.label4.Text = "ID";
+            // 
+            // ID_box
+            // 
+            this.ID_box.Location = new System.Drawing.Point(164, 18);
+            this.ID_box.Name = "ID_box";
+            this.ID_box.Size = new System.Drawing.Size(228, 20);
+            this.ID_box.TabIndex = 62;
             // 
             // dod_lekarza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(463, 462);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.label10);
+            this.ClientSize = new System.Drawing.Size(463, 317);
+            this.Controls.Add(this.ID_box);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.specj_box);
+            this.Controls.Add(this.stanowisko_box);
+            this.Controls.Add(this.nazw_box);
+            this.Controls.Add(this.imie_box);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dod_pacjenta_okno);
+            this.Controls.Add(this.dod_lekarza_okno);
             this.Name = "dod_lekarza";
             this.Text = "Dodaj lekarza";
             this.ResumeLayout(false);
@@ -177,16 +163,16 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox nazw_box;
+        private System.Windows.Forms.TextBox imie_box;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button dod_pacjenta_okno;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button dod_lekarza_okno;
+        private System.Windows.Forms.TextBox stanowisko_box;
+        private System.Windows.Forms.TextBox specj_box;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox ID_box;
     }
 }

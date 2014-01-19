@@ -13,12 +13,15 @@ namespace RM
     public partial class Form1 : Form
     {
         dod_pacjentow form2 = new dod_pacjentow();
+        dod_lekarza form3 = new dod_lekarza();
         public Form1()
         {
             InitializeComponent();
             DisplayPatients();
-            
+            DisplayDoctors();
         }
+
+
 
 
 
@@ -47,8 +50,26 @@ namespace RM
 
                 dataGridView4.DataSource = patients.ToList();
             }
+        }
 
+            private void DisplayDoctors()
+            {
+            using (var dc = new RMEntities())
+            {
+                var doctors = from c in dc.Personel1
+                               select new
+                               {
+                                   ID_lekarz = c.ID_lekarz,
+                                   imie_lekarz = c.imie,
+                                   nazwisko_lekarz = c.nazwisko,
+                                   stanowisko_lekarz = c.stanowisko,
+                                   specjalizacja_lekarz = c.specjalizacja
+                                   
 
+                               };
+
+                dataGridView5.DataSource = doctors.ToList();
+            }
 
 
         }
@@ -64,9 +85,42 @@ namespace RM
             DisplayPatients();
         }
 
+        private void edycja_pacjenta_btn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usun_pacjenta_btn_Click(object sender, DataGridViewRowEventArgs e)
+        {
+
+       /*     DataGridViewSelectedRowCollection rows = dataGridView4.Rows
+            int ID_pacjenta = Convert.ToInt64(dataGridView4.SelectedRows.
+       int customerID = Convert.ToInt32(dataGridView4.Rows[e.RowIndex].DataKeys[e.RowIndex].Value);
+       using (RMEntities context = new RMEntities())
+       {
+           Pacjenci1 obj = context.Pacjenci1.First(x=>x.CustomerID == customerID);
+           context.Pacjenci1.Remove(obj);
+           context.SaveChanges();
+           BindGrid();
+           lblMessage.Text = "Deleted successfully.";*/
+       }
+
+        private void dod_lekarza_Click(object sender, EventArgs e)
+        {
+            form3.Show();
+        }
+
+        private void odswiez_lekarz_btn_Click(object sender, EventArgs e)
+        {
+            DisplayDoctors();
+        }     
+
+        }
+
+
 
 
 
 
     }
-}
+
