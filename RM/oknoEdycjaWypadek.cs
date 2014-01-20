@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RM
 {
-    public partial class dod_wypadek : Form
+    public partial class oknoEdycjaWypadek : Form
     {
-        public dod_wypadek()
+        public oknoEdycjaWypadek()
         {
             InitializeComponent();
         }

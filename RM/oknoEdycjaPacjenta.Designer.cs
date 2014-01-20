@@ -1,6 +1,6 @@
 ﻿namespace RM
 {
-    partial class dod_pacjentow
+    partial class oknoEdycjaPacjenta
     {
         /// <summary>
         /// Required designer variable.
@@ -249,7 +249,7 @@
             this.lekarz_box.Size = new System.Drawing.Size(228, 20);
             this.lekarz_box.TabIndex = 27;
             // 
-            // dod_pacjentow
+            // oknoEdycjaPacjenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -275,7 +275,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dod_pacjenta_okno);
-            this.Name = "dod_pacjentow";
+            this.Name = "oknoEdycjaPacjenta";
             this.Text = "Dodaj pacjenta";
             this.ResumeLayout(false);
             this.PerformLayout();

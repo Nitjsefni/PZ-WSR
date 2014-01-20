@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace RM
 {
-    public partial class Form1 : Form
+    public partial class oknoGlowne : Form
     {
-        dod_pacjentow form2 = new dod_pacjentow();
-        dod_lekarza form3 = new dod_lekarza();
-        public Form1()
+        oknoEdycjaPacjenta form2 = new oknoEdycjaPacjenta();
+        oknoEdycjaLekarza form3 = new oknoEdycjaLekarza();
+        public oknoGlowne()
         {
             InitializeComponent();
             DisplayPatients();

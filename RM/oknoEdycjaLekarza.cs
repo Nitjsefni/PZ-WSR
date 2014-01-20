@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RM
 {
-    public partial class dod_lekarza : Form
+    public partial class oknoEdycjaLekarza : Form
     {
-        public dod_lekarza()
+        public oknoEdycjaLekarza()
         {
             InitializeComponent();
         }
@@ -50,7 +50,7 @@ namespace RM
 
                 ctx.SaveChanges();
 
-                dod_lekarza.ActiveForm.Close();
+                oknoEdycjaLekarza.ActiveForm.Close();
             }
         }
     }

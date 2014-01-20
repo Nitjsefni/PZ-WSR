@@ -1,6 +1,6 @@
 ﻿namespace RM
 {
-    partial class dod_lekarza
+    partial class oknoEdycjaLekarza
     {
         /// <summary>
         /// Required designer variable.

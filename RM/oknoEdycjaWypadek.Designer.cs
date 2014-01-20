@@ -1,6 +1,6 @@
 ﻿namespace RM
 {
-    partial class dod_wypadek
+    partial class oknoEdycjaWypadek
     {
         /// <summary>
         /// Required designer variable.
@@ -176,7 +176,7 @@
             this.dod_pacjenta_okno.Text = "Dodaj wypadek";
             this.dod_pacjenta_okno.UseVisualStyleBackColor = true;
             // 
-            // dod_wypadek
+            // oknoDodajWypadek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -194,7 +194,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dod_pacjenta_okno);
-            this.Name = "dod_wypadek";
+            this.Name = "oknoDodajWypadek";
             this.Text = "Dodaj wypadek";
             this.ResumeLayout(false);
             this.PerformLayout();

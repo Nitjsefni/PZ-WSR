@@ -1,6 +1,6 @@
 ﻿namespace RM
 {
-    partial class Form1
+    partial class oknoGlowne
     {
         /// <summary>
         /// Required designer variable.
