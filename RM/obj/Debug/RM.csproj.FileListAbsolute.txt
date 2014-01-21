@@ -31,3 +31,4 @@ C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.okn
 C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.Properties.Resources.resources
 C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.csproj.GenerateResource.Cache
 C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaKaretki.resources
+C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\NEWWSR\RM\obj\Debug\RM.oknoEdycjaKaretki.resources

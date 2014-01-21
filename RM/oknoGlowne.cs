@@ -77,11 +77,11 @@ namespace RM
                 var ambulance = from c in dc.Karetkas
                               select new
                               {
-                                  ID_karetka = c.ID_karetki,
-                                  typ_karetka = c.typ_numer,
-                                  ID_skladu_karetka = c.ID_skladu,
-                                  wyposazenie_karetka = c.wyposazenie,
-                                  uwagi_karetka = c.uwagi
+                                  ID_karetki = c.ID_karetki,
+                                  typ_numer = c.typ_numer,
+                                  //ID_skladu_karetka = c.ID_skladu,
+                                  wyposazenie_karetki = c.wyposazenie,
+                                  uwagi  = c.uwagi
 
                               };
 
@@ -181,6 +181,17 @@ namespace RM
             DisplayAmbulance();
         }
 
+
+        private void karetki_dataGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
+            {
+               karetki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
+                long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+
+                oknoEdycjaKaretki oEdycjaKaretki= new oknoEdycjaKaretki(ID_karetki);
+            }
+        }
     }
 }
 

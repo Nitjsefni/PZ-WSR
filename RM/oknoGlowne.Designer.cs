@@ -40,6 +40,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.karetki_dataGrid = new System.Windows.Forms.DataGridView();
+            this.ID_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typ_numer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sklad = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.wyposazenie_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uwagi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -111,11 +116,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ID_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typ_numer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sklad = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.wyposazenie_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uwagi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -230,6 +230,7 @@
             // 
             // karetki_dataGrid
             // 
+            this.karetki_dataGrid.AllowUserToOrderColumns = true;
             this.karetki_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.karetki_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_karetki,
@@ -241,6 +242,38 @@
             this.karetki_dataGrid.Name = "karetki_dataGrid";
             this.karetki_dataGrid.Size = new System.Drawing.Size(545, 371);
             this.karetki_dataGrid.TabIndex = 3;
+            this.karetki_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.karetki_dataGrid_CellMouseDown);
+            this.karetki_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
+            // 
+            // ID_karetki
+            // 
+            this.ID_karetki.DataPropertyName = "ID_karetki";
+            this.ID_karetki.HeaderText = "ID karetki";
+            this.ID_karetki.Name = "ID_karetki";
+            // 
+            // typ_numer
+            // 
+            this.typ_numer.DataPropertyName = "typ_numer";
+            this.typ_numer.HeaderText = "Typ i numer";
+            this.typ_numer.Name = "typ_numer";
+            // 
+            // sklad
+            // 
+            this.sklad.DataPropertyName = "sklad";
+            this.sklad.HeaderText = "Skład";
+            this.sklad.Name = "sklad";
+            // 
+            // wyposazenie_karetki
+            // 
+            this.wyposazenie_karetki.DataPropertyName = "wyposazenie_karetki";
+            this.wyposazenie_karetki.HeaderText = "Wyposażenie";
+            this.wyposazenie_karetki.Name = "wyposazenie_karetki";
+            // 
+            // uwagi
+            // 
+            this.uwagi.DataPropertyName = "uwagi";
+            this.uwagi.HeaderText = "Uwagi";
+            this.uwagi.Name = "uwagi";
             // 
             // label3
             // 
@@ -838,36 +871,6 @@
             // rMEntitiesBindingSource
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
-            // 
-            // ID_karetki
-            // 
-            this.ID_karetki.DataPropertyName = "ID_karetki";
-            this.ID_karetki.HeaderText = "ID karetki";
-            this.ID_karetki.Name = "ID_karetki";
-            // 
-            // typ_numer
-            // 
-            this.typ_numer.DataPropertyName = "typ_numer";
-            this.typ_numer.HeaderText = "Typ i numer";
-            this.typ_numer.Name = "typ_numer";
-            // 
-            // sklad
-            // 
-            this.sklad.DataPropertyName = "sklad";
-            this.sklad.HeaderText = "Skład";
-            this.sklad.Name = "sklad";
-            // 
-            // wyposazenie_karetki
-            // 
-            this.wyposazenie_karetki.DataPropertyName = "wyposazenie_karetki";
-            this.wyposazenie_karetki.HeaderText = "Wyposażenie";
-            this.wyposazenie_karetki.Name = "wyposazenie_karetki";
-            // 
-            // uwagi
-            // 
-            this.uwagi.DataPropertyName = "uwagi";
-            this.uwagi.HeaderText = "Uwagi";
-            this.uwagi.Name = "uwagi";
             // 
             // oknoGlowne
             // 
