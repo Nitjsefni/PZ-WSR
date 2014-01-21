@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
+            this.refresh_karetka = new System.Windows.Forms.Button();
             this.dod_karetke = new System.Windows.Forms.Button();
             this.dod_rat = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -39,11 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.karetki_dataGrid = new System.Windows.Forms.DataGridView();
-            this.ID_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typ_numer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sklad = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.wyposazenie_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uwagi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.shapeContainer2 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
@@ -80,6 +76,19 @@
             this.odswiezanie = new System.Windows.Forms.Button();
             this.dod_pacj = new System.Windows.Forms.Button();
             this.pacjenci_dataGrid = new System.Windows.Forms.DataGridView();
+            this.pesel_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.imie_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazwisko_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numer_ubezpieczenia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data_przyjecia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.miejscowosc_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kod_pocz_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ulica_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.opis_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uwagi_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lekarz_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.wypisz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label10 = new System.Windows.Forms.Label();
             this.lekarze = new System.Windows.Forms.TabPage();
             this.odswiez_lekarz_btn = new System.Windows.Forms.Button();
@@ -102,19 +111,11 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pesel_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.imie_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazwisko_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numer_ubezpieczenia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data_przyjecia_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.miejscowosc_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kod_pocz_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ulica_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.opis_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.uwagi_pacj = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lekarz_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.wypisz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ID_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typ_numer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sklad = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.wyposazenie_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uwagi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -145,6 +146,7 @@
             // 
             // karetki
             // 
+            this.karetki.Controls.Add(this.refresh_karetka);
             this.karetki.Controls.Add(this.dod_karetke);
             this.karetki.Controls.Add(this.dod_rat);
             this.karetki.Controls.Add(this.label4);
@@ -163,14 +165,25 @@
             this.karetki.Text = "Karetki";
             this.karetki.UseVisualStyleBackColor = true;
             // 
+            // refresh_karetka
+            // 
+            this.refresh_karetka.Location = new System.Drawing.Point(366, 411);
+            this.refresh_karetka.Name = "refresh_karetka";
+            this.refresh_karetka.Size = new System.Drawing.Size(122, 22);
+            this.refresh_karetka.TabIndex = 11;
+            this.refresh_karetka.Text = "Odśwież";
+            this.refresh_karetka.UseVisualStyleBackColor = true;
+            this.refresh_karetka.Click += new System.EventHandler(this.refresh_karetka_Click);
+            // 
             // dod_karetke
             // 
-            this.dod_karetke.Location = new System.Drawing.Point(156, 410);
+            this.dod_karetke.Location = new System.Drawing.Point(93, 411);
             this.dod_karetke.Name = "dod_karetke";
             this.dod_karetke.Size = new System.Drawing.Size(230, 23);
             this.dod_karetke.TabIndex = 10;
             this.dod_karetke.Text = "Dodaj karetkę";
             this.dod_karetke.UseVisualStyleBackColor = true;
+            this.dod_karetke.Click += new System.EventHandler(this.dod_karetke_Click);
             // 
             // dod_rat
             // 
@@ -228,31 +241,6 @@
             this.karetki_dataGrid.Name = "karetki_dataGrid";
             this.karetki_dataGrid.Size = new System.Drawing.Size(545, 371);
             this.karetki_dataGrid.TabIndex = 3;
-            // 
-            // ID_karetki
-            // 
-            this.ID_karetki.HeaderText = "ID karetki";
-            this.ID_karetki.Name = "ID_karetki";
-            // 
-            // typ_numer
-            // 
-            this.typ_numer.HeaderText = "Typ i numer";
-            this.typ_numer.Name = "typ_numer";
-            // 
-            // sklad
-            // 
-            this.sklad.HeaderText = "Skład";
-            this.sklad.Name = "sklad";
-            // 
-            // wyposazenie_karetki
-            // 
-            this.wyposazenie_karetki.HeaderText = "Wyposażenie";
-            this.wyposazenie_karetki.Name = "wyposazenie_karetki";
-            // 
-            // uwagi
-            // 
-            this.uwagi.HeaderText = "Uwagi";
-            this.uwagi.Name = "uwagi";
             // 
             // label3
             // 
@@ -595,6 +583,86 @@
             this.pacjenci_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.pacjenci_dataGrid_CellMouseDown);
             this.pacjenci_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
             // 
+            // pesel_pacjenta
+            // 
+            this.pesel_pacjenta.DataPropertyName = "pesel_pacjenta";
+            this.pesel_pacjenta.HeaderText = "Pesel";
+            this.pesel_pacjenta.Name = "pesel_pacjenta";
+            // 
+            // imie_pacjenta
+            // 
+            this.imie_pacjenta.DataPropertyName = "imie_pacjenta";
+            this.imie_pacjenta.HeaderText = "Imię";
+            this.imie_pacjenta.Name = "imie_pacjenta";
+            // 
+            // nazwisko_pacjenta
+            // 
+            this.nazwisko_pacjenta.DataPropertyName = "nazwisko_pacjenta";
+            this.nazwisko_pacjenta.HeaderText = "Nazwisko";
+            this.nazwisko_pacjenta.Name = "nazwisko_pacjenta";
+            // 
+            // numer_ubezpieczenia_pacj
+            // 
+            this.numer_ubezpieczenia_pacj.DataPropertyName = "numer_ubezpieczenia_pacj";
+            this.numer_ubezpieczenia_pacj.HeaderText = "Numer ubezpieczenia";
+            this.numer_ubezpieczenia_pacj.Name = "numer_ubezpieczenia_pacj";
+            // 
+            // data_przyjecia_pacj
+            // 
+            this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
+            this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
+            this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
+            this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_przyjecia_pacj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // miejscowosc_pacj
+            // 
+            this.miejscowosc_pacj.DataPropertyName = "miejscowosc_pacj";
+            this.miejscowosc_pacj.HeaderText = "Miejscowość";
+            this.miejscowosc_pacj.Name = "miejscowosc_pacj";
+            // 
+            // kod_pocz_pacj
+            // 
+            this.kod_pocz_pacj.DataPropertyName = "kod_pocz_pacj";
+            this.kod_pocz_pacj.HeaderText = "Kod pocztowy";
+            this.kod_pocz_pacj.Name = "kod_pocz_pacj";
+            // 
+            // ulica_pacj
+            // 
+            this.ulica_pacj.DataPropertyName = "ulica_pacj";
+            this.ulica_pacj.HeaderText = "Ulica";
+            this.ulica_pacj.Name = "ulica_pacj";
+            // 
+            // opis_pacj
+            // 
+            this.opis_pacj.DataPropertyName = "opis_pacj";
+            this.opis_pacj.HeaderText = "Opis";
+            this.opis_pacj.Name = "opis_pacj";
+            // 
+            // uwagi_pacj
+            // 
+            this.uwagi_pacj.DataPropertyName = "uwagi_pacj";
+            this.uwagi_pacj.HeaderText = "Uwagi";
+            this.uwagi_pacj.Name = "uwagi_pacj";
+            this.uwagi_pacj.Visible = false;
+            // 
+            // lekarz_pacjenta
+            // 
+            this.lekarz_pacjenta.DataPropertyName = "lekarz_pacjenta";
+            this.lekarz_pacjenta.HeaderText = "Lekarz prowadzący";
+            this.lekarz_pacjenta.Name = "lekarz_pacjenta";
+            // 
+            // przypisz_lekarz_pacj
+            // 
+            this.przypisz_lekarz_pacj.HeaderText = "Przypisz lekarza";
+            this.przypisz_lekarz_pacj.Name = "przypisz_lekarz_pacj";
+            this.przypisz_lekarz_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // wypisz_pacj
+            // 
+            this.wypisz_pacj.HeaderText = "Wypisać?";
+            this.wypisz_pacj.Name = "wypisz_pacj";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -771,85 +839,35 @@
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
             // 
-            // pesel_pacjenta
+            // ID_karetki
             // 
-            this.pesel_pacjenta.DataPropertyName = "pesel_pacjenta";
-            this.pesel_pacjenta.HeaderText = "Pesel";
-            this.pesel_pacjenta.Name = "pesel_pacjenta";
+            this.ID_karetki.DataPropertyName = "ID_karetki";
+            this.ID_karetki.HeaderText = "ID karetki";
+            this.ID_karetki.Name = "ID_karetki";
             // 
-            // imie_pacjenta
+            // typ_numer
             // 
-            this.imie_pacjenta.DataPropertyName = "imie_pacjenta";
-            this.imie_pacjenta.HeaderText = "Imię";
-            this.imie_pacjenta.Name = "imie_pacjenta";
+            this.typ_numer.DataPropertyName = "typ_numer";
+            this.typ_numer.HeaderText = "Typ i numer";
+            this.typ_numer.Name = "typ_numer";
             // 
-            // nazwisko_pacjenta
+            // sklad
             // 
-            this.nazwisko_pacjenta.DataPropertyName = "nazwisko_pacjenta";
-            this.nazwisko_pacjenta.HeaderText = "Nazwisko";
-            this.nazwisko_pacjenta.Name = "nazwisko_pacjenta";
+            this.sklad.DataPropertyName = "sklad";
+            this.sklad.HeaderText = "Skład";
+            this.sklad.Name = "sklad";
             // 
-            // numer_ubezpieczenia_pacj
+            // wyposazenie_karetki
             // 
-            this.numer_ubezpieczenia_pacj.DataPropertyName = "numer_ubezpieczenia_pacj";
-            this.numer_ubezpieczenia_pacj.HeaderText = "Numer ubezpieczenia";
-            this.numer_ubezpieczenia_pacj.Name = "numer_ubezpieczenia_pacj";
+            this.wyposazenie_karetki.DataPropertyName = "wyposazenie_karetki";
+            this.wyposazenie_karetki.HeaderText = "Wyposażenie";
+            this.wyposazenie_karetki.Name = "wyposazenie_karetki";
             // 
-            // data_przyjecia_pacj
+            // uwagi
             // 
-            this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
-            this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
-            this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
-            this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_przyjecia_pacj.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // miejscowosc_pacj
-            // 
-            this.miejscowosc_pacj.DataPropertyName = "miejscowosc_pacj";
-            this.miejscowosc_pacj.HeaderText = "Miejscowość";
-            this.miejscowosc_pacj.Name = "miejscowosc_pacj";
-            // 
-            // kod_pocz_pacj
-            // 
-            this.kod_pocz_pacj.DataPropertyName = "kod_pocz_pacj";
-            this.kod_pocz_pacj.HeaderText = "Kod pocztowy";
-            this.kod_pocz_pacj.Name = "kod_pocz_pacj";
-            // 
-            // ulica_pacj
-            // 
-            this.ulica_pacj.DataPropertyName = "ulica_pacj";
-            this.ulica_pacj.HeaderText = "Ulica";
-            this.ulica_pacj.Name = "ulica_pacj";
-            // 
-            // opis_pacj
-            // 
-            this.opis_pacj.DataPropertyName = "opis_pacj";
-            this.opis_pacj.HeaderText = "Opis";
-            this.opis_pacj.Name = "opis_pacj";
-            // 
-            // uwagi_pacj
-            // 
-            this.uwagi_pacj.DataPropertyName = "uwagi_pacj";
-            this.uwagi_pacj.HeaderText = "Uwagi";
-            this.uwagi_pacj.Name = "uwagi_pacj";
-            this.uwagi_pacj.Visible = false;
-            // 
-            // lekarz_pacjenta
-            // 
-            this.lekarz_pacjenta.DataPropertyName = "lekarz_pacjenta";
-            this.lekarz_pacjenta.HeaderText = "Lekarz prowadzący";
-            this.lekarz_pacjenta.Name = "lekarz_pacjenta";
-            // 
-            // przypisz_lekarz_pacj
-            // 
-            this.przypisz_lekarz_pacj.HeaderText = "Przypisz lekarza";
-            this.przypisz_lekarz_pacj.Name = "przypisz_lekarz_pacj";
-            this.przypisz_lekarz_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // wypisz_pacj
-            // 
-            this.wypisz_pacj.HeaderText = "Wypisać?";
-            this.wypisz_pacj.Name = "wypisz_pacj";
+            this.uwagi.DataPropertyName = "uwagi";
+            this.uwagi.HeaderText = "Uwagi";
+            this.uwagi.Name = "uwagi";
             // 
             // oknoGlowne
             // 
@@ -895,11 +913,6 @@
         private System.Windows.Forms.TabPage pacjenci;
         private System.Windows.Forms.TabPage lekarze;
         private System.Windows.Forms.Button dod_rat;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_karetki;
-        private System.Windows.Forms.DataGridViewTextBoxColumn typ_numer;
-        private System.Windows.Forms.DataGridViewComboBoxColumn sklad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn wyposazenie_karetki;
-        private System.Windows.Forms.DataGridViewTextBoxColumn uwagi;
         private System.Windows.Forms.Button dod_wyp;
         private System.Windows.Forms.DataGridView wypadki_dataGrid;
         private System.Windows.Forms.Label label9;
@@ -966,6 +979,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lekarz_pacjenta;
         private System.Windows.Forms.DataGridViewButtonColumn przypisz_lekarz_pacj;
         private System.Windows.Forms.DataGridViewButtonColumn wypisz_pacj;
+        private System.Windows.Forms.Button refresh_karetka;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_karetki;
+        private System.Windows.Forms.DataGridViewTextBoxColumn typ_numer;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sklad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wyposazenie_karetki;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uwagi;
     }
 }
 

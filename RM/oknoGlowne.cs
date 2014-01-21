@@ -14,12 +14,14 @@ namespace RM
     {
         oknoEdycjaPacjenta form2 = new oknoEdycjaPacjenta();
         oknoEdycjaLekarza form3 = new oknoEdycjaLekarza();
+        oknoEdycjaKaretki form_karetka = new oknoEdycjaKaretki();
 
         public oknoGlowne()
         {
             InitializeComponent();
             DisplayPatients();
             DisplayDoctors();
+            DisplayAmbulance();
         }
 
         public void DisplayPatients()
@@ -66,8 +68,25 @@ namespace RM
 
                 lekarze_dataGrid.DataSource = doctors.ToList();
             }
+        }
 
+       private void DisplayAmbulance()
+        {
+            using (var dc = new RMEntities())
+            {
+                var ambulance = from c in dc.Karetkas
+                              select new
+                              {
+                                  ID_karetka = c.ID_karetki,
+                                  typ_karetka = c.typ_numer,
+                                  ID_skladu_karetka = c.ID_skladu,
+                                  wyposazenie_karetka = c.wyposazenie,
+                                  uwagi_karetka = c.uwagi
 
+                              };
+
+                karetki_dataGrid.DataSource = ambulance.ToList();
+            }
         }
 
         private void dod_pacj_Click(object sender, EventArgs e)
@@ -151,6 +170,17 @@ namespace RM
                 oknoEdycjaLekarza oEdycjaPacjenta = new oknoEdycjaLekarza(ID_lekarza);
             }
         }
+
+        private void dod_karetke_Click(object sender, EventArgs e)
+        {
+            form_karetka.Show();
+        }
+
+        private void refresh_karetka_Click(object sender, EventArgs e)
+        {
+            DisplayAmbulance();
+        }
+
     }
 }
 

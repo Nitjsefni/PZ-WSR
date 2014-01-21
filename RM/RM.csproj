@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="oknoEdycjaKaretki.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="oknoEdycjaKaretki.Designer.cs">
+      <DependentUpon>oknoEdycjaKaretki.cs</DependentUpon>
+    </Compile>
     <Compile Include="oknoEdycjaLekarza.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,6 +127,9 @@
     <Compile Include="Wypadek.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="oknoEdycjaKaretki.resx">
+      <DependentUpon>oknoEdycjaKaretki.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="oknoEdycjaLekarza.resx">
       <DependentUpon>oknoEdycjaLekarza.cs</DependentUpon>
     </EmbeddedResource>
