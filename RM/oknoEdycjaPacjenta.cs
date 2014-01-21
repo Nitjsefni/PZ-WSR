@@ -34,8 +34,8 @@ namespace RM
 
                 this.dod_pacjentaBtn.Text = "Edytuj";
 
-                this.dod_pacjentaBtn.Click -= new System.EventHandler( this.dodajPacjenta );
-                this.dod_pacjentaBtn.Click += new System.EventHandler( this.edytujPacjenta );
+                this.dod_pacjentaBtn.Click -= new System.EventHandler( this.dodajPacjenta_Click );
+                this.dod_pacjentaBtn.Click += new System.EventHandler( this.edytujPacjenta_Click );
             }
         }
 
@@ -75,7 +75,7 @@ namespace RM
             opis_box.Text           = edytowanyPacjent.opis;
         }
 
-        private void edytujPacjenta(object sender, EventArgs e)
+        private void edytujPacjenta_Click(object sender, EventArgs e)
         {
             zaladujWartosciZBoxow();
 
@@ -89,7 +89,7 @@ namespace RM
             oknoEdycjaPacjenta.ActiveForm.Close();
         }
 
-        private void dodajPacjenta(object sender, EventArgs e)
+        private void dodajPacjenta_Click(object sender, EventArgs e)
         {
             zaladujWartosciZBoxow();
 

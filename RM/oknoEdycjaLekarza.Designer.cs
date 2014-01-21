@@ -105,7 +105,7 @@
             this.dod_lekarza_okno.TabIndex = 46;
             this.dod_lekarza_okno.Text = "Dodaj lekarza";
             this.dod_lekarza_okno.UseVisualStyleBackColor = true;
-            this.dod_lekarza_okno.Click += new System.EventHandler(this.dod_lekarza_okno_Click);
+            this.dod_lekarza_okno.Click += new System.EventHandler(this.dodajLekarza_Click);
             // 
             // stanowisko_box
             // 
@@ -138,7 +138,7 @@
             this.ID_box.Size = new System.Drawing.Size(228, 20);
             this.ID_box.TabIndex = 62;
             // 
-            // dod_lekarza
+            // oknoEdycjaLekarza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -154,7 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dod_lekarza_okno);
-            this.Name = "dod_lekarza";
+            this.Name = "oknoEdycjaLekarza";
             this.Text = "Dodaj lekarza";
             this.ResumeLayout(false);
             this.PerformLayout();
