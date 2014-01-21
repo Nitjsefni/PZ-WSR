@@ -12,43 +12,92 @@ namespace RM
 {
     public partial class oknoEdycjaPacjenta : Form
     {
+        private Pacjenci1 edytowanyPacjent;
+
         public oknoEdycjaPacjenta()
         {
             InitializeComponent();
+
+            edytowanyPacjent = new Pacjenci1();
+        }
+        
+        public oknoEdycjaPacjenta(long PESEL)
+        {
+            InitializeComponent();
+            this.Show();
+
+            using(var ctx = new RMEntities())
+            {
+                edytowanyPacjent = ctx.Pacjenci1.SingleOrDefault(c => c.PESEL == PESEL);
+                
+                zaladujWartosciDoBoxow();
+
+                this.dod_pacjentaBtn.Text = "Edytuj";
+
+                this.dod_pacjentaBtn.Click -= new System.EventHandler( this.dodajPacjenta );
+                this.dod_pacjentaBtn.Click += new System.EventHandler( this.edytujPacjenta );
+            }
         }
 
-        private void dod_pacjenta_okno_Click_1(object sender, EventArgs e)
+        public oknoGlowne zwrocOknoGlowne()
         {
+            oknoGlowne og = this.Owner as oknoGlowne;
+            return og;
+        }
+
+        public void zaladujWartosciZBoxow()
+        {
+            DateTime date = data_przyj_pick.Value;
+
+            edytowanyPacjent.PESEL              = Convert.ToInt64(pesel_box.Text); 
+            edytowanyPacjent.imie               = imie_box.Text;
+            edytowanyPacjent.nazwisko           = nazwisko_box.Text;
+            edytowanyPacjent.data_przyjecia     = date;
+            edytowanyPacjent.miejscowosc        = miejscowosc_box.Text;
+            edytowanyPacjent.kod_pocztowy       = kod_pocz_box.Text;
+            edytowanyPacjent.lekarz             = lekarz_box.Text;
+            edytowanyPacjent.nr_ubezpieczenia   = Convert.ToInt32(nr_ubez_box.Text); 
+            edytowanyPacjent.ulica              = ulica_box.Text;
+            edytowanyPacjent.opis               = opis_box.Text;
+        }
+
+        public void zaladujWartosciDoBoxow()
+        {
+            pesel_box.Text          = edytowanyPacjent.PESEL.ToString();
+            imie_box.Text           = edytowanyPacjent.imie;
+            nazwisko_box.Text       = edytowanyPacjent.nazwisko;
+            miejscowosc_box.Text    = edytowanyPacjent.miejscowosc;
+            nr_ubez_box.Text        = edytowanyPacjent.nr_ubezpieczenia.ToString();
+            kod_pocz_box.Text       = edytowanyPacjent.kod_pocztowy;
+            data_przyj_pick.Text    = edytowanyPacjent.data_przyjecia.ToString();
+            opis_box.Text           = edytowanyPacjent.opis;
+            ulica_box.Text          = edytowanyPacjent.ulica;
+            opis_box.Text           = edytowanyPacjent.opis;
+        }
+
+        private void edytujPacjenta(object sender, EventArgs e)
+        {
+            zaladujWartosciZBoxow();
+
             using (RMEntities ctx = new RMEntities())
             {
-
-                //Create new Emp object
-                DateTime date = data_przyj_pick.Value;
-                Pacjenci1 d = new Pacjenci1() {
-                    PESEL =  Convert.ToInt64(pesel_box.Text), 
-                    imie = imie_box.Text, 
-                    nazwisko = nazwisko_box.Text, 
-                    data_przyjecia = date, 
-                    miejscowosc = miejscowosc_box.Text, 
-                    kod_pocztowy = kod_pocz_box.Text, 
-                    lekarz = lekarz_box.Text, 
-                    nr_ubezpieczenia = Convert.ToInt32(nr_ubez_box.Text), 
-                    ulica = ulica_box.Text
-                     };
-
-                
-
-                //Add to memory
-
-
-
-                ctx.Pacjenci1.Add(d);
-
-
-                //Save to database
-
+                ctx.Pacjenci1.Attach(edytowanyPacjent);
+                ctx.Entry(edytowanyPacjent).State = EntityState.Modified;
                 ctx.SaveChanges();
-                
+            }
+
+            oknoEdycjaPacjenta.ActiveForm.Close();
+        }
+
+        private void dodajPacjenta(object sender, EventArgs e)
+        {
+            zaladujWartosciZBoxow();
+
+            using (RMEntities ctx = new RMEntities())
+            {
+                ctx.Pacjenci1.Add(edytowanyPacjent);
+                ctx.SaveChanges();
+
                 oknoEdycjaPacjenta.ActiveForm.Close();
             }
         }

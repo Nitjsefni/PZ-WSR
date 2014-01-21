@@ -14,6 +14,7 @@ namespace RM
     {
         oknoEdycjaPacjenta form2 = new oknoEdycjaPacjenta();
         oknoEdycjaLekarza form3 = new oknoEdycjaLekarza();
+
         public oknoGlowne()
         {
             InitializeComponent();
@@ -21,12 +22,7 @@ namespace RM
             DisplayDoctors();
         }
 
-
-
-
-
-
-        private void DisplayPatients()
+        public void DisplayPatients()
         {
             using (var dc = new RMEntities())
             {
@@ -48,11 +44,11 @@ namespace RM
 
                                };
 
-                dataGridView4.DataSource = patients.ToList();
+                pacjenci_dataGrid.DataSource = patients.ToList();
             }
         }
 
-            private void DisplayDoctors()
+        private void DisplayDoctors()
             {
             using (var dc = new RMEntities())
             {
@@ -68,7 +64,7 @@ namespace RM
 
                                };
 
-                dataGridView5.DataSource = doctors.ToList();
+                lekarze_dataGrid.DataSource = doctors.ToList();
             }
 
 
@@ -113,6 +109,33 @@ namespace RM
         private void odswiez_lekarz_btn_Click(object sender, EventArgs e)
         {
             DisplayDoctors();
+        }
+
+        private void DastaGrid_RightClick(object sender, MouseEventArgs e)
+        {
+
+
+        }
+
+        private void pacjenci_dataGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if(e.ColumnIndex >= 0  && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
+            {
+                pacjenci_dataGrid.Rows[ Convert.ToInt32(e.RowIndex.ToString()) ].Selected = true;
+                long pesel = Convert.ToInt64( pacjenci_dataGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString() );
+
+                oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta(pesel);
+            }
+        }
+
+        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void dod_rat_Click(object sender, EventArgs e)
+        {
+
         }     
 
         }

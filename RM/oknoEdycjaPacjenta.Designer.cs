@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dod_pacjenta_okno = new System.Windows.Forms.Button();
+            this.dod_pacjentaBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,15 +51,15 @@
             this.lekarz_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // dod_pacjenta_okno
+            // dod_pacjentaBtn
             // 
-            this.dod_pacjenta_okno.Location = new System.Drawing.Point(80, 557);
-            this.dod_pacjenta_okno.Name = "dod_pacjenta_okno";
-            this.dod_pacjenta_okno.Size = new System.Drawing.Size(332, 41);
-            this.dod_pacjenta_okno.TabIndex = 0;
-            this.dod_pacjenta_okno.Text = "Dodaj pacjenta";
-            this.dod_pacjenta_okno.UseVisualStyleBackColor = true;
-            this.dod_pacjenta_okno.Click += new System.EventHandler(this.dod_pacjenta_okno_Click_1);
+            this.dod_pacjentaBtn.Location = new System.Drawing.Point(80, 557);
+            this.dod_pacjentaBtn.Name = "dod_pacjentaBtn";
+            this.dod_pacjentaBtn.Size = new System.Drawing.Size(332, 41);
+            this.dod_pacjentaBtn.TabIndex = 0;
+            this.dod_pacjentaBtn.Text = "Dodaj pacjenta";
+            this.dod_pacjentaBtn.UseVisualStyleBackColor = true;
+            this.dod_pacjentaBtn.Click += new System.EventHandler(this.dodajPacjenta);
             // 
             // label1
             // 
@@ -274,7 +274,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dod_pacjenta_okno);
+            this.Controls.Add(this.dod_pacjentaBtn);
             this.Name = "oknoEdycjaPacjenta";
             this.Text = "Dodaj pacjenta";
             this.ResumeLayout(false);
@@ -284,7 +284,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button dod_pacjenta_okno;
+        private System.Windows.Forms.Button dod_pacjentaBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

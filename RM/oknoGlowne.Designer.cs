@@ -38,7 +38,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.karetki_dataGrid = new System.Windows.Forms.DataGridView();
             this.ID_karetki = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typ_numer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sklad = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -61,7 +61,7 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dod_wyp = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.wypadki_dataGrid = new System.Windows.Forms.DataGridView();
             this.id_wypadku = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.miejsce_wyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.liczba_rannych = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,11 +77,9 @@
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.pacjenci = new System.Windows.Forms.TabPage();
-            this.usun_pacjenta_btn = new System.Windows.Forms.Button();
-            this.edycja_pacjenta_btn = new System.Windows.Forms.Button();
             this.odswiezanie = new System.Windows.Forms.Button();
             this.dod_pacj = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.pacjenci_dataGrid = new System.Windows.Forms.DataGridView();
             this.pesel_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imie_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwisko_pacjenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -96,11 +94,9 @@
             this.przypisz_lekarz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.wypisz_pacj = new System.Windows.Forms.DataGridViewButtonColumn();
             this.edycja_pacjenta = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.updateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label10 = new System.Windows.Forms.Label();
             this.lekarze = new System.Windows.Forms.TabPage();
+            this.odswiez_lekarz_btn = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.ID_lekarza_dost = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -110,29 +106,27 @@
             this.specjalizacja_lekarz_dost = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wezwanie_lekarz_dost = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dod_lekarza = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.lekarze_dataGrid = new System.Windows.Forms.DataGridView();
             this.ID_lekarza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.imie_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwisko_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stanowisko_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specjalizacja_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pacjenci_lekarza = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.odswiez_lekarz_btn = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
             this.wypadki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypadki_dataGrid)).BeginInit();
             this.pacjenci.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pacjenci_dataGrid)).BeginInit();
             this.lekarze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -158,7 +152,7 @@
             this.karetki.Controls.Add(this.textBox1);
             this.karetki.Controls.Add(this.label2);
             this.karetki.Controls.Add(this.comboBox1);
-            this.karetki.Controls.Add(this.dataGridView1);
+            this.karetki.Controls.Add(this.karetki_dataGrid);
             this.karetki.Controls.Add(this.label3);
             this.karetki.Controls.Add(this.label1);
             this.karetki.Controls.Add(this.shapeContainer2);
@@ -187,6 +181,7 @@
             this.dod_rat.TabIndex = 8;
             this.dod_rat.Text = "Dodaj Ratownika";
             this.dod_rat.UseVisualStyleBackColor = true;
+            this.dod_rat.Click += new System.EventHandler(this.dod_rat_Click);
             // 
             // label4
             // 
@@ -221,19 +216,19 @@
             this.comboBox1.Size = new System.Drawing.Size(200, 21);
             this.comboBox1.TabIndex = 4;
             // 
-            // dataGridView1
+            // karetki_dataGrid
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.karetki_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.karetki_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_karetki,
             this.typ_numer,
             this.sklad,
             this.wyposazenie_karetki,
             this.uwagi});
-            this.dataGridView1.Location = new System.Drawing.Point(10, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(545, 371);
-            this.dataGridView1.TabIndex = 3;
+            this.karetki_dataGrid.Location = new System.Drawing.Point(10, 24);
+            this.karetki_dataGrid.Name = "karetki_dataGrid";
+            this.karetki_dataGrid.Size = new System.Drawing.Size(545, 371);
+            this.karetki_dataGrid.TabIndex = 3;
             // 
             // ID_karetki
             // 
@@ -306,7 +301,7 @@
             this.wypadki.Controls.Add(this.comboBox2);
             this.wypadki.Controls.Add(this.label6);
             this.wypadki.Controls.Add(this.dod_wyp);
-            this.wypadki.Controls.Add(this.dataGridView2);
+            this.wypadki.Controls.Add(this.wypadki_dataGrid);
             this.wypadki.Controls.Add(this.label5);
             this.wypadki.Controls.Add(this.shapeContainer1);
             this.wypadki.Location = new System.Drawing.Point(4, 22);
@@ -414,10 +409,10 @@
             this.dod_wyp.Text = "Dodaj wypadek";
             this.dod_wyp.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // wypadki_dataGrid
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.wypadki_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.wypadki_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_wypadku,
             this.miejsce_wyp,
             this.liczba_rannych,
@@ -428,10 +423,10 @@
             this.czy_obsluzony,
             this.raport_wyp,
             this.dataGridViewTextBoxColumn1});
-            this.dataGridView2.Location = new System.Drawing.Point(6, 29);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(846, 368);
-            this.dataGridView2.TabIndex = 1;
+            this.wypadki_dataGrid.Location = new System.Drawing.Point(6, 29);
+            this.wypadki_dataGrid.Name = "wypadki_dataGrid";
+            this.wypadki_dataGrid.Size = new System.Drawing.Size(846, 368);
+            this.wypadki_dataGrid.TabIndex = 1;
             // 
             // id_wypadku
             // 
@@ -532,11 +527,9 @@
             // 
             // pacjenci
             // 
-            this.pacjenci.Controls.Add(this.usun_pacjenta_btn);
-            this.pacjenci.Controls.Add(this.edycja_pacjenta_btn);
             this.pacjenci.Controls.Add(this.odswiezanie);
             this.pacjenci.Controls.Add(this.dod_pacj);
-            this.pacjenci.Controls.Add(this.dataGridView4);
+            this.pacjenci.Controls.Add(this.pacjenci_dataGrid);
             this.pacjenci.Controls.Add(this.label10);
             this.pacjenci.Location = new System.Drawing.Point(4, 22);
             this.pacjenci.Name = "pacjenci";
@@ -545,25 +538,6 @@
             this.pacjenci.TabIndex = 1;
             this.pacjenci.Text = "Pacjenci";
             this.pacjenci.UseVisualStyleBackColor = true;
-            // 
-            // usun_pacjenta_btn
-            // 
-            this.usun_pacjenta_btn.Location = new System.Drawing.Point(831, 496);
-            this.usun_pacjenta_btn.Name = "usun_pacjenta_btn";
-            this.usun_pacjenta_btn.Size = new System.Drawing.Size(98, 23);
-            this.usun_pacjenta_btn.TabIndex = 5;
-            this.usun_pacjenta_btn.Text = "Usuń pacjenta";
-            this.usun_pacjenta_btn.UseVisualStyleBackColor = true;
-            // 
-            // edycja_pacjenta_btn
-            // 
-            this.edycja_pacjenta_btn.Location = new System.Drawing.Point(714, 496);
-            this.edycja_pacjenta_btn.Name = "edycja_pacjenta_btn";
-            this.edycja_pacjenta_btn.Size = new System.Drawing.Size(96, 23);
-            this.edycja_pacjenta_btn.TabIndex = 4;
-            this.edycja_pacjenta_btn.Text = "Edytuj pacjenta";
-            this.edycja_pacjenta_btn.UseVisualStyleBackColor = true;
-            this.edycja_pacjenta_btn.Click += new System.EventHandler(this.edycja_pacjenta_btn_Click);
             // 
             // odswiezanie
             // 
@@ -585,9 +559,9 @@
             this.dod_pacj.UseVisualStyleBackColor = true;
             this.dod_pacj.Click += new System.EventHandler(this.dod_pacj_Click);
             // 
-            // dataGridView4
+            // pacjenci_dataGrid
             // 
-            this.dataGridView4.AllowUserToOrderColumns = true;
+            this.pacjenci_dataGrid.AllowUserToOrderColumns = true;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -596,9 +570,9 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView4.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.pacjenci_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.pacjenci_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
             this.imie_pacjenta,
             this.nazwisko_pacjenta,
@@ -613,15 +587,15 @@
             this.przypisz_lekarz_pacj,
             this.wypisz_pacj,
             this.edycja_pacjenta});
-            this.dataGridView4.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView4.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView4.Location = new System.Drawing.Point(2, 19);
-            this.dataGridView4.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowHeadersWidth = 15;
-            this.dataGridView4.RowTemplate.ContextMenuStrip = this.contextMenuStrip1;
-            this.dataGridView4.Size = new System.Drawing.Size(1327, 472);
-            this.dataGridView4.TabIndex = 1;
+            this.pacjenci_dataGrid.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.pacjenci_dataGrid.Location = new System.Drawing.Point(2, 19);
+            this.pacjenci_dataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.pacjenci_dataGrid.Name = "pacjenci_dataGrid";
+            this.pacjenci_dataGrid.RowHeadersWidth = 15;
+            this.pacjenci_dataGrid.Size = new System.Drawing.Size(1327, 472);
+            this.pacjenci_dataGrid.TabIndex = 1;
+            this.pacjenci_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.pacjenci_dataGrid_CellMouseDown);
+            this.pacjenci_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
             // 
             // pesel_pacjenta
             // 
@@ -710,26 +684,6 @@
             this.edycja_pacjenta.Name = "edycja_pacjenta";
             this.edycja_pacjenta.Text = "Edycja";
             // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteToolStripMenuItem,
-            this.updateToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(113, 48);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.deleteToolStripMenuItem.Text = "Delete";
-            // 
-            // updateToolStripMenuItem
-            // 
-            this.updateToolStripMenuItem.Name = "updateToolStripMenuItem";
-            this.updateToolStripMenuItem.Size = new System.Drawing.Size(112, 22);
-            this.updateToolStripMenuItem.Text = "Update";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -745,7 +699,7 @@
             this.lekarze.Controls.Add(this.label15);
             this.lekarze.Controls.Add(this.dataGridView6);
             this.lekarze.Controls.Add(this.dod_lekarza);
-            this.lekarze.Controls.Add(this.dataGridView5);
+            this.lekarze.Controls.Add(this.lekarze_dataGrid);
             this.lekarze.Controls.Add(this.label11);
             this.lekarze.Location = new System.Drawing.Point(4, 22);
             this.lekarze.Name = "lekarze";
@@ -754,6 +708,16 @@
             this.lekarze.TabIndex = 2;
             this.lekarze.Text = "Lekarze";
             this.lekarze.UseVisualStyleBackColor = true;
+            // 
+            // odswiez_lekarz_btn
+            // 
+            this.odswiez_lekarz_btn.Location = new System.Drawing.Point(503, 439);
+            this.odswiez_lekarz_btn.Name = "odswiez_lekarz_btn";
+            this.odswiez_lekarz_btn.Size = new System.Drawing.Size(75, 23);
+            this.odswiez_lekarz_btn.TabIndex = 5;
+            this.odswiez_lekarz_btn.Text = "Odśwież";
+            this.odswiez_lekarz_btn.UseVisualStyleBackColor = true;
+            this.odswiez_lekarz_btn.Click += new System.EventHandler(this.odswiez_lekarz_btn_Click);
             // 
             // label15
             // 
@@ -820,39 +784,20 @@
             this.dod_lekarza.UseVisualStyleBackColor = true;
             this.dod_lekarza.Click += new System.EventHandler(this.dod_lekarza_Click);
             // 
-            // dataGridView5
+            // lekarze_dataGrid
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lekarze_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.lekarze_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID_lekarza,
             this.imie_lekarz,
             this.nazwisko_lekarz,
             this.stanowisko_lekarz,
             this.specjalizacja_lekarz,
             this.pacjenci_lekarza});
-            this.dataGridView5.Location = new System.Drawing.Point(23, 37);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(647, 382);
-            this.dataGridView5.TabIndex = 1;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(307, 12);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(65, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Lista lekarzy";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1336, 562);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Wyszukiwanie";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.lekarze_dataGrid.Location = new System.Drawing.Point(23, 37);
+            this.lekarze_dataGrid.Name = "lekarze_dataGrid";
+            this.lekarze_dataGrid.Size = new System.Drawing.Size(647, 382);
+            this.lekarze_dataGrid.TabIndex = 1;
             // 
             // ID_lekarza
             // 
@@ -889,44 +834,52 @@
             this.pacjenci_lekarza.HeaderText = "Pacjenci";
             this.pacjenci_lekarza.Name = "pacjenci_lekarza";
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(307, 12);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(65, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Lista lekarzy";
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1336, 562);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Wyszukiwanie";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
             // rMEntitiesBindingSource
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
             // 
-            // odswiez_lekarz_btn
-            // 
-            this.odswiez_lekarz_btn.Location = new System.Drawing.Point(503, 439);
-            this.odswiez_lekarz_btn.Name = "odswiez_lekarz_btn";
-            this.odswiez_lekarz_btn.Size = new System.Drawing.Size(75, 23);
-            this.odswiez_lekarz_btn.TabIndex = 5;
-            this.odswiez_lekarz_btn.Text = "Odśwież";
-            this.odswiez_lekarz_btn.UseVisualStyleBackColor = true;
-            this.odswiez_lekarz_btn.Click += new System.EventHandler(this.odswiez_lekarz_btn_Click);
-            // 
-            // Form1
+            // oknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 591);
             this.Controls.Add(this.tabcontrol);
-            this.Name = "Form1";
+            this.Name = "oknoGlowne";
             this.Text = "System wspomagania Ratownictwa Medycznego";
             this.tabcontrol.ResumeLayout(false);
             this.karetki.ResumeLayout(false);
             this.karetki.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).EndInit();
             this.wypadki.ResumeLayout(false);
             this.wypadki.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wypadki_dataGrid)).EndInit();
             this.pacjenci.ResumeLayout(false);
             this.pacjenci.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pacjenci_dataGrid)).EndInit();
             this.lekarze.ResumeLayout(false);
             this.lekarze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -940,7 +893,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView karetki_dataGrid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage wypadki;
@@ -954,7 +907,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wyposazenie_karetki;
         private System.Windows.Forms.DataGridViewTextBoxColumn uwagi;
         private System.Windows.Forms.Button dod_wyp;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView wypadki_dataGrid;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn miejsce_wyp_akcja;
@@ -967,9 +920,9 @@
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button dod_pacj;
-        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.DataGridView pacjenci_dataGrid;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.DataGridView lekarze_dataGrid;
         private System.Windows.Forms.Label label11;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape3;
@@ -999,8 +952,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button odswiezanie;
         private System.Windows.Forms.BindingSource rMEntitiesBindingSource;
-        private System.Windows.Forms.Button usun_pacjenta_btn;
-        private System.Windows.Forms.Button edycja_pacjenta_btn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pesel_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn imie_pacjenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_pacjenta;
@@ -1015,9 +966,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn przypisz_lekarz_pacj;
         private System.Windows.Forms.DataGridViewButtonColumn wypisz_pacj;
         private System.Windows.Forms.DataGridViewButtonColumn edycja_pacjenta;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem updateToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID_lekarza;
         private System.Windows.Forms.DataGridViewTextBoxColumn imie_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_lekarz;
