@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.telefon_zgl_box = new System.Windows.Forms.TextBox();
+            this.typ_comboBox = new System.Windows.Forms.ComboBox();
+            this.liczba_rannych_box = new System.Windows.Forms.TextBox();
+            this.miejsce_box = new System.Windows.Forms.TextBox();
+            this.opis_box = new System.Windows.Forms.RichTextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label10 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -40,20 +40,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dod_pacjenta_okno = new System.Windows.Forms.Button();
+            this.dodaj_wypadek_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox5
+            // telefon_zgl_box
             // 
-            this.textBox5.Location = new System.Drawing.Point(222, 199);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(228, 20);
-            this.textBox5.TabIndex = 45;
+            this.telefon_zgl_box.Location = new System.Drawing.Point(222, 199);
+            this.telefon_zgl_box.Name = "telefon_zgl_box";
+            this.telefon_zgl_box.Size = new System.Drawing.Size(228, 20);
+            this.telefon_zgl_box.TabIndex = 45;
             // 
-            // comboBox2
+            // typ_comboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.typ_comboBox.FormattingEnabled = true;
+            this.typ_comboBox.Items.AddRange(new object[] {
             "Wypadek komunikacyjny",
             "Wypadek przemysłowy",
             "Wypadek mechaniczny",
@@ -64,32 +64,32 @@
             "Atak epilesji",
             "Reakcja alergiczna",
             "Zawał"});
-            this.comboBox2.Location = new System.Drawing.Point(222, 86);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(228, 21);
-            this.comboBox2.TabIndex = 44;
+            this.typ_comboBox.Location = new System.Drawing.Point(222, 86);
+            this.typ_comboBox.Name = "typ_comboBox";
+            this.typ_comboBox.Size = new System.Drawing.Size(228, 21);
+            this.typ_comboBox.TabIndex = 44;
             // 
-            // textBox2
+            // liczba_rannych_box
             // 
-            this.textBox2.Location = new System.Drawing.Point(222, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(228, 20);
-            this.textBox2.TabIndex = 41;
+            this.liczba_rannych_box.Location = new System.Drawing.Point(222, 45);
+            this.liczba_rannych_box.Name = "liczba_rannych_box";
+            this.liczba_rannych_box.Size = new System.Drawing.Size(228, 20);
+            this.liczba_rannych_box.TabIndex = 41;
             // 
-            // textBox1
+            // miejsce_box
             // 
-            this.textBox1.Location = new System.Drawing.Point(222, 8);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(228, 20);
-            this.textBox1.TabIndex = 40;
+            this.miejsce_box.Location = new System.Drawing.Point(222, 8);
+            this.miejsce_box.Name = "miejsce_box";
+            this.miejsce_box.Size = new System.Drawing.Size(228, 20);
+            this.miejsce_box.TabIndex = 40;
             // 
-            // richTextBox1
+            // opis_box
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(222, 267);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(228, 96);
-            this.richTextBox1.TabIndex = 39;
-            this.richTextBox1.Text = "";
+            this.opis_box.Location = new System.Drawing.Point(222, 267);
+            this.opis_box.Name = "opis_box";
+            this.opis_box.Size = new System.Drawing.Size(228, 96);
+            this.opis_box.TabIndex = 39;
+            this.opis_box.Text = "";
             // 
             // dateTimePicker1
             // 
@@ -167,25 +167,26 @@
             this.label1.TabIndex = 27;
             this.label1.Text = "Miejsce wypadku";
             // 
-            // dod_pacjenta_okno
+            // dodaj_wypadek_button
             // 
-            this.dod_pacjenta_okno.Location = new System.Drawing.Point(129, 393);
-            this.dod_pacjenta_okno.Name = "dod_pacjenta_okno";
-            this.dod_pacjenta_okno.Size = new System.Drawing.Size(332, 41);
-            this.dod_pacjenta_okno.TabIndex = 26;
-            this.dod_pacjenta_okno.Text = "Dodaj wypadek";
-            this.dod_pacjenta_okno.UseVisualStyleBackColor = true;
+            this.dodaj_wypadek_button.Location = new System.Drawing.Point(129, 393);
+            this.dodaj_wypadek_button.Name = "dodaj_wypadek_button";
+            this.dodaj_wypadek_button.Size = new System.Drawing.Size(321, 41);
+            this.dodaj_wypadek_button.TabIndex = 26;
+            this.dodaj_wypadek_button.Text = "Dodaj wypadek";
+            this.dodaj_wypadek_button.UseVisualStyleBackColor = true;
+            this.dodaj_wypadek_button.Click += new System.EventHandler(this.dodaj_wypadek_button_Click);
             // 
-            // oknoDodajWypadek
+            // oknoEdycjaWypadek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 449);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.telefon_zgl_box);
+            this.Controls.Add(this.typ_comboBox);
+            this.Controls.Add(this.liczba_rannych_box);
+            this.Controls.Add(this.miejsce_box);
+            this.Controls.Add(this.opis_box);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label4);
@@ -193,8 +194,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dod_pacjenta_okno);
-            this.Name = "oknoDodajWypadek";
+            this.Controls.Add(this.dodaj_wypadek_button);
+            this.Name = "oknoEdycjaWypadek";
             this.Text = "Dodaj wypadek";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -203,11 +204,11 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.TextBox telefon_zgl_box;
+        private System.Windows.Forms.ComboBox typ_comboBox;
+        private System.Windows.Forms.TextBox liczba_rannych_box;
+        private System.Windows.Forms.TextBox miejsce_box;
+        private System.Windows.Forms.RichTextBox opis_box;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label4;
@@ -215,6 +216,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button dod_pacjenta_okno;
+        private System.Windows.Forms.Button dodaj_wypadek_button;
     }
 }

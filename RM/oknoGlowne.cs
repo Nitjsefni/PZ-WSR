@@ -15,6 +15,7 @@ namespace RM
         oknoEdycjaPacjenta form2 = new oknoEdycjaPacjenta();
         oknoEdycjaLekarza form3 = new oknoEdycjaLekarza();
         oknoEdycjaKaretki form_karetka = new oknoEdycjaKaretki();
+        oknoEdycjaWypadek form_wypadek = new oknoEdycjaWypadek();
 
         public oknoGlowne()
         {
@@ -22,6 +23,7 @@ namespace RM
             DisplayPatients();
             DisplayDoctors();
             DisplayAmbulance();
+            DisplayAccident();
         }
 
         public void DisplayPatients()
@@ -88,6 +90,26 @@ namespace RM
                 karetki_dataGrid.DataSource = ambulance.ToList();
             }
         }
+
+       private void DisplayAccident()
+       {
+           using (var dc = new RMEntities())
+           {
+               var accident = from c in dc.Wypadeks
+                               select new
+                               {
+                                   id_wypadku = c.ID_wypadku,
+                                   miejsce_wyp = c.miejsce_wypadku,
+                                   liczba_rannych = c.liczba_rannych,
+                                   data_zgloszenia = c.data_godz_zgl,
+                                   //id_skladu
+                                   numer_zglaszajacego = c.numer_zgl,
+                                   uwagi = c.uwagi
+                               };
+
+               wypadki_dataGrid.DataSource = accident.ToList();
+           }
+       }
 
         private void dod_pacj_Click(object sender, EventArgs e)
         {
@@ -157,9 +179,6 @@ namespace RM
 
         }
 
-
-
-
         private void lekarze_dataGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
         {
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
@@ -192,6 +211,27 @@ namespace RM
                 oknoEdycjaKaretki oEdycjaKaretki= new oknoEdycjaKaretki(ID_karetki);
             }
         }
+
+        private void dod_wyp_Click(object sender, EventArgs e)
+        {
+            form_wypadek.Show();
+        }
+
+        private void wyp_refresh_Click(object sender, EventArgs e)
+        {
+            DisplayAccident();
+        }
+        private void wypadki_dataGrid_CellMouseDown(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
+            {
+                wypadki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
+                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+
+                oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
+            }
+        }
+
     }
 }
 
