@@ -65,12 +65,12 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
-            //ID_wypadku_box.Text = edytowanyWypadek.ID_wypadku.ToString();
+            ID_wypadku_box.Text = edytowanyWypadek.ID_wypadku.ToString();
             miejsce_box.Text = edytowanyWypadek.miejsce_wypadku;
             liczba_rannych_box.Text = edytowanyWypadek.liczba_rannych.ToString();
             typ_comboBox.Text = edytowanyWypadek.typ_wypadku;
-            //dateTimePicker1 = edytowanyWypadek.data_godz_zgl.ToString();  //coś mi się typy nie zgadzajo O.o
-            //edytowanyWypadek.ID_skladu = ;
+            dateTimePicker1.Text = edytowanyWypadek.data_godz_zgl.ToString();
+            edytowanyWypadek.ID_skladu = edytowanyWypadek.ID_skladu;
             telefon_zgl_box.Text = edytowanyWypadek.numer_zgl.ToString();
             opis_box.Text = edytowanyWypadek.uwagi;
 

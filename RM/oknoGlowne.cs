@@ -113,6 +113,8 @@ namespace RM
 
         private void dod_pacj_Click(object sender, EventArgs e)
         {
+            oknoEdycjaPacjenta form2 = new oknoEdycjaPacjenta();
+            
             form2.Show();
 
         }
@@ -144,6 +146,8 @@ namespace RM
 
         private void dod_lekarza_Click(object sender, EventArgs e)
         {
+            oknoEdycjaLekarza form3 = new oknoEdycjaLekarza();
+            
             form3.Show();
         }
 
@@ -192,6 +196,8 @@ namespace RM
 
         private void dod_karetke_Click(object sender, EventArgs e)
         {
+            oknoEdycjaKaretki form_karetka = new oknoEdycjaKaretki();
+            
             form_karetka.Show();
         }
 
@@ -207,13 +213,14 @@ namespace RM
             {
                karetki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
                 long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
-
+                
                 oknoEdycjaKaretki oEdycjaKaretki= new oknoEdycjaKaretki(ID_karetki);
             }
         }
 
         private void dod_wyp_Click(object sender, EventArgs e)
         {
+            oknoEdycjaWypadek form_wypadek = new oknoEdycjaWypadek();
             form_wypadek.Show();
         }
 
@@ -226,7 +233,7 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 wypadki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString());
 
                 oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
             }

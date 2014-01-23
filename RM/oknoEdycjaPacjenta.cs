@@ -69,7 +69,8 @@ namespace RM
             miejscowosc_box.Text    = edytowanyPacjent.miejscowosc;
             nr_ubez_box.Text        = edytowanyPacjent.nr_ubezpieczenia.ToString();
             kod_pocz_box.Text       = edytowanyPacjent.kod_pocztowy;
-            data_przyj_pick.Text    = edytowanyPacjent.data_przyjecia.ToString();
+            DateTime date           = edytowanyPacjent.data_przyjecia;
+            data_przyj_pick.Value   = date;
             opis_box.Text           = edytowanyPacjent.opis;
             ulica_box.Text          = edytowanyPacjent.ulica;
             opis_box.Text           = edytowanyPacjent.opis;
