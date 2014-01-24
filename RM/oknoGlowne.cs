@@ -167,7 +167,8 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 pacjenci_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                long pesel = Convert.ToInt64(pacjenci_dataGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString());
+                string lol = pacjenci_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                long pesel = Convert.ToInt64(pacjenci_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString());
 
                 oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta(pesel);
             }

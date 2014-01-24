@@ -63,13 +63,15 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
+            DateTime date = new DateTime();
+            
             pesel_box.Text          = edytowanyPacjent.PESEL.ToString();
             imie_box.Text           = edytowanyPacjent.imie;
             nazwisko_box.Text       = edytowanyPacjent.nazwisko;
             miejscowosc_box.Text    = edytowanyPacjent.miejscowosc;
             nr_ubez_box.Text        = edytowanyPacjent.nr_ubezpieczenia.ToString();
             kod_pocz_box.Text       = edytowanyPacjent.kod_pocztowy;
-            DateTime date           = edytowanyPacjent.data_przyjecia;
+            date                    = edytowanyPacjent.data_przyjecia;
             data_przyj_pick.Value   = date;
             opis_box.Text           = edytowanyPacjent.opis;
             ulica_box.Text          = edytowanyPacjent.ulica;
