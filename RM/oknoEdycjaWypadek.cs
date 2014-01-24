@@ -50,10 +50,10 @@ namespace RM
             DateTime date = dateTimePicker1.Value;
 
             //jak już będzie AutoIncrement wywalić tego Randa!
-            Random random = new Random();
-            int randomNumber = random.Next(0, 1000);
+            //Random random = new Random();
+            //int randomNumber = random.Next(0, 1000);
 
-            edytowanyWypadek.ID_wypadku = randomNumber; //Convert.ToInt32(ID_wypadku_box.Text);
+            //edytowanyWypadek.ID_wypadku = randomNumber; //Convert.ToInt32(ID_wypadku_box.Text);
             edytowanyWypadek.miejsce_wypadku = miejsce_box.Text;
             edytowanyWypadek.liczba_rannych =  Convert.ToInt32(liczba_rannych_box.Text);
             edytowanyWypadek.typ_wypadku = typ_comboBox.Text;
@@ -65,7 +65,7 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
-            ID_wypadku_box.Text = edytowanyWypadek.ID_wypadku.ToString();
+            //ID_wypadku_box.Text = edytowanyWypadek.ID_wypadku.ToString();
             miejsce_box.Text = edytowanyWypadek.miejsce_wypadku;
             liczba_rannych_box.Text = edytowanyWypadek.liczba_rannych.ToString();
             typ_comboBox.Text = edytowanyWypadek.typ_wypadku;
@@ -93,9 +93,10 @@ namespace RM
         private void dodaj_wypadek_button_Click(object sender, EventArgs e)
         {
             zaladujWartosciZBoxow();
-
+            
             using (RMEntities ctx = new RMEntities())
             {
+                
                 ctx.Wypadeks.Add(edytowanyWypadek);
                 ctx.SaveChanges();
             }

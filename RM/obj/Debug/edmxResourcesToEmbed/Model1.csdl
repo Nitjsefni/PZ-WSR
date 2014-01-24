@@ -54,7 +54,7 @@
     <Key>
       <PropertyRef Name="ID_wypadku" />
     </Key>
-    <Property Name="ID_wypadku" Type="Int32" Nullable="false" />
+    <Property Name="ID_wypadku" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="miejsce_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="liczba_rannych" Type="Int32" Nullable="false" />
     <Property Name="typ_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />

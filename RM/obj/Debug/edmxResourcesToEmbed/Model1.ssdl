@@ -52,7 +52,7 @@
     <Key>
       <PropertyRef Name="ID_wypadku" />
     </Key>
-    <Property Name="ID_wypadku" Type="int" Nullable="false" />
+    <Property Name="ID_wypadku" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="miejsce_wypadku" Type="text" Nullable="false" />
     <Property Name="liczba_rannych" Type="int" Nullable="false" />
     <Property Name="typ_wypadku" Type="text" Nullable="false" />
