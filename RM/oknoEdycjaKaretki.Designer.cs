@@ -34,8 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.uwagi_box = new System.Windows.Forms.RichTextBox();
             this.dodaj_karetke_button = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ID_karetki_box = new System.Windows.Forms.TextBox();
             this.ID_skladu_box = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.wyposazenie_box = new System.Windows.Forms.TextBox();
@@ -96,23 +94,6 @@
             this.dodaj_karetke_button.UseVisualStyleBackColor = true;
             this.dodaj_karetke_button.Click += new System.EventHandler(this.dodaj_karetke_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(89, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 16);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "ID Karetki";
-            // 
-            // ID_karetki_box
-            // 
-            this.ID_karetki_box.Location = new System.Drawing.Point(208, 21);
-            this.ID_karetki_box.Name = "ID_karetki_box";
-            this.ID_karetki_box.Size = new System.Drawing.Size(228, 20);
-            this.ID_karetki_box.TabIndex = 8;
-            // 
             // ID_skladu_box
             // 
             this.ID_skladu_box.Location = new System.Drawing.Point(208, 98);
@@ -145,8 +126,6 @@
             this.Controls.Add(this.wyposazenie_box);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ID_skladu_box);
-            this.Controls.Add(this.ID_karetki_box);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.dodaj_karetke_button);
             this.Controls.Add(this.uwagi_box);
             this.Controls.Add(this.label3);
@@ -168,8 +147,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RichTextBox uwagi_box;
         private System.Windows.Forms.Button dodaj_karetke_button;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ID_karetki_box;
         private System.Windows.Forms.TextBox ID_skladu_box;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox wyposazenie_box;

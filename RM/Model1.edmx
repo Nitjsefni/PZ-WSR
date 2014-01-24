@@ -4,11 +4,12 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="RMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="RMModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="RMModelStoreContainer">
           <EntitySet Name="Karetka" EntityType="RMModel.Store.Karetka" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Pacjenci1" EntityType="RMModel.Store.Pacjenci1" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Personel1" EntityType="RMModel.Store.Personel1" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Sklad" EntityType="RMModel.Store.Sklad" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Wypadek" EntityType="RMModel.Store.Wypadek" store:Type="Tables" Schema="dbo" />
           <AssociationSet Name="Lekarz2Pacjent" Association="RMModel.Store.Lekarz2Pacjent">
             <End Role="Personel1" EntitySet="Personel1" />
@@ -19,7 +20,7 @@
           <Key>
             <PropertyRef Name="ID_karetki" />
           </Key>
-          <Property Name="ID_karetki" Type="int" Nullable="false" />
+          <Property Name="ID_karetki" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="typ_numer" Type="text" Nullable="false" />
           <Property Name="ID_skladu" Type="int" Nullable="false" />
           <Property Name="wyposazenie" Type="text" Nullable="false" />
@@ -47,11 +48,17 @@
           <Key>
             <PropertyRef Name="ID_lekarz" />
           </Key>
-          <Property Name="ID_lekarz" Type="bigint" Nullable="false" />
+          <Property Name="ID_lekarz" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="imie" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="nazwisko" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="stanowisko" Type="text" Nullable="false" />
           <Property Name="specjalizacja" Type="text" />
+        </EntityType>
+        <EntityType Name="Sklad">
+          <Key>
+            <PropertyRef Name="ID_Skladu" />
+          </Key>
+          <Property Name="ID_Skladu" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Wypadek">
           <Key>
@@ -78,8 +85,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="RMModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -92,12 +98,13 @@
             <End Role="Personel1" EntitySet="Personel1" />
             <End Role="Pacjenci1" EntitySet="Pacjenci1" />
           </AssociationSet>
+          <EntitySet Name="Sklad" EntityType="RMModel.Sklad" />
         </EntityContainer>
         <EntityType Name="Karetka">
           <Key>
             <PropertyRef Name="ID_karetki" />
           </Key>
-          <Property Name="ID_karetki" Type="Int32" Nullable="false" />
+          <Property Name="ID_karetki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="typ_numer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="ID_skladu" Type="Int32" Nullable="false" />
           <Property Name="wyposazenie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -126,7 +133,7 @@
           <Key>
             <PropertyRef Name="ID_lekarz" />
           </Key>
-          <Property Name="ID_lekarz" Type="Int64" Nullable="false" />
+          <Property Name="ID_lekarz" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="stanowisko" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -158,6 +165,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="Sklad">
+          <Key>
+            <PropertyRef Name="ID_Skladu" />
+          </Key>
+          <Property Type="Int32" Name="ID_Skladu" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -216,6 +229,13 @@
                 <ScalarProperty Name="ID_skladu" ColumnName="ID_skladu" />
                 <ScalarProperty Name="numer_zgl" ColumnName="numer_zgl" />
                 <ScalarProperty Name="uwagi" ColumnName="uwagi" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sklad">
+            <EntityTypeMapping TypeName="RMModel.Sklad">
+              <MappingFragment StoreEntitySet="Sklad">
+                <ScalarProperty Name="ID_Skladu" ColumnName="ID_Skladu" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

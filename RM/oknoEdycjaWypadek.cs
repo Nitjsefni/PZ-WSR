@@ -65,11 +65,13 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
+            DateTime date = new DateTime();
             //ID_wypadku_box.Text = edytowanyWypadek.ID_wypadku.ToString();
             miejsce_box.Text = edytowanyWypadek.miejsce_wypadku;
             liczba_rannych_box.Text = edytowanyWypadek.liczba_rannych.ToString();
             typ_comboBox.Text = edytowanyWypadek.typ_wypadku;
-            dateTimePicker1.Text = edytowanyWypadek.data_godz_zgl.ToString();
+            date = edytowanyWypadek.data_godz_zgl;
+            dateTimePicker1.Value = date;
             edytowanyWypadek.ID_skladu = edytowanyWypadek.ID_skladu;
             telefon_zgl_box.Text = edytowanyWypadek.numer_zgl.ToString();
             opis_box.Text = edytowanyWypadek.uwagi;

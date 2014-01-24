@@ -49,7 +49,7 @@ namespace RM
         {
             
 
-            edytowanyLekarz.ID_lekarz = Convert.ToInt64(ID_box.Text);
+            //edytowanyLekarz.ID_lekarz = Convert.ToInt64(ID_box.Text);
             edytowanyLekarz.imie = imie_box.Text;
             edytowanyLekarz.nazwisko = nazw_box.Text;
             edytowanyLekarz.stanowisko = stanowisko_box.Text;
@@ -59,7 +59,7 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
-            ID_box.Text = edytowanyLekarz.ID_lekarz.ToString();
+            //ID_box.Text = edytowanyLekarz.ID_lekarz.ToString();
             imie_box.Text = edytowanyLekarz.imie;
             nazw_box.Text = edytowanyLekarz.nazwisko;
             stanowisko_box.Text = edytowanyLekarz.stanowisko;

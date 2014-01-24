@@ -9,12 +9,13 @@
       <End Role="Personel1" EntitySet="Personel1" />
       <End Role="Pacjenci1" EntitySet="Pacjenci1" />
     </AssociationSet>
+    <EntitySet Name="Sklad" EntityType="RMModel.Sklad" />
   </EntityContainer>
   <EntityType Name="Karetka">
     <Key>
       <PropertyRef Name="ID_karetki" />
     </Key>
-    <Property Name="ID_karetki" Type="Int32" Nullable="false" />
+    <Property Name="ID_karetki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="typ_numer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="ID_skladu" Type="Int32" Nullable="false" />
     <Property Name="wyposazenie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -43,7 +44,7 @@
     <Key>
       <PropertyRef Name="ID_lekarz" />
     </Key>
-    <Property Name="ID_lekarz" Type="Int64" Nullable="false" />
+    <Property Name="ID_lekarz" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
     <Property Name="stanowisko" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -75,4 +76,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Sklad">
+    <Key>
+      <PropertyRef Name="ID_Skladu" />
+    </Key>
+    <Property Type="Int32" Name="ID_Skladu" Nullable="false" />
+  </EntityType>
 </Schema>

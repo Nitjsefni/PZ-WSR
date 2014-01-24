@@ -47,7 +47,7 @@ namespace RM
 
         public void zaladujWartosciZBoxow()
         {
-            edytowanaKaretka.ID_karetki = Convert.ToInt32(ID_karetki_box.Text);
+           // edytowanaKaretka.ID_karetki = Convert.ToInt32(ID_karetki_box.Text);
             edytowanaKaretka.typ_numer = typ_box.Text;
             edytowanaKaretka.ID_skladu = Convert.ToInt32(ID_skladu_box.Text);
             edytowanaKaretka.wyposazenie = wyposazenie_box.Text;
@@ -56,7 +56,7 @@ namespace RM
 
         public void zaladujWartosciDoBoxow()
         {
-            ID_karetki_box.Text = edytowanaKaretka.ID_karetki.ToString();
+            //ID_karetki_box.Text = edytowanaKaretka.ID_karetki.ToString();
             typ_box.Text = edytowanaKaretka.typ_numer;
             ID_skladu_box.Text = edytowanaKaretka.ID_skladu.ToString();
             wyposazenie_box.Text = edytowanaKaretka.wyposazenie;

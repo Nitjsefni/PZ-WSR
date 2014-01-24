@@ -29,5 +29,6 @@ namespace RM
         public DbSet<Pacjenci1> Pacjenci1 { get; set; }
         public DbSet<Personel1> Personel1 { get; set; }
         public DbSet<Wypadek> Wypadeks { get; set; }
+        public DbSet<Sklad> Sklad { get; set; }
     }
 }

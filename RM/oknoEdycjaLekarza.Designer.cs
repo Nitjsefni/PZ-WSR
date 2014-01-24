@@ -37,8 +37,6 @@
             this.dod_lekarza_okno = new System.Windows.Forms.Button();
             this.stanowisko_box = new System.Windows.Forms.TextBox();
             this.specj_box = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ID_box = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // nazw_box
@@ -121,30 +119,11 @@
             this.specj_box.Size = new System.Drawing.Size(228, 20);
             this.specj_box.TabIndex = 60;
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(121, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(23, 16);
-            this.label4.TabIndex = 61;
-            this.label4.Text = "ID";
-            // 
-            // ID_box
-            // 
-            this.ID_box.Location = new System.Drawing.Point(164, 18);
-            this.ID_box.Name = "ID_box";
-            this.ID_box.Size = new System.Drawing.Size(228, 20);
-            this.ID_box.TabIndex = 62;
-            // 
             // oknoEdycjaLekarza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 317);
-            this.Controls.Add(this.ID_box);
-            this.Controls.Add(this.label4);
             this.Controls.Add(this.specj_box);
             this.Controls.Add(this.stanowisko_box);
             this.Controls.Add(this.nazw_box);
@@ -172,7 +151,5 @@
         private System.Windows.Forms.Button dod_lekarza_okno;
         private System.Windows.Forms.TextBox stanowisko_box;
         private System.Windows.Forms.TextBox specj_box;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox ID_box;
     }
 }
