@@ -167,7 +167,7 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 pacjenci_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                string lol = pacjenci_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString();
+                
                 long pesel = Convert.ToInt64(pacjenci_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString());
 
                 oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta(pesel);
@@ -234,7 +234,8 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 wypadki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[3].FormattedValue.ToString());
+                
+                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString());
 
                 oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
             }

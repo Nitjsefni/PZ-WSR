@@ -41,8 +41,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dodaj_wypadek_button = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.ID_wypadku_box = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // telefon_zgl_box
@@ -179,6 +179,13 @@
             this.dodaj_wypadek_button.UseVisualStyleBackColor = true;
             this.dodaj_wypadek_button.Click += new System.EventHandler(this.dodaj_wypadek_button_Click);
             // 
+            // ID_wypadku_box
+            // 
+            this.ID_wypadku_box.Location = new System.Drawing.Point(222, 9);
+            this.ID_wypadku_box.Name = "ID_wypadku_box";
+            this.ID_wypadku_box.Size = new System.Drawing.Size(228, 20);
+            this.ID_wypadku_box.TabIndex = 47;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -188,13 +195,6 @@
             this.label5.Size = new System.Drawing.Size(92, 16);
             this.label5.TabIndex = 46;
             this.label5.Text = "ID Wypadku";
-            // 
-            // ID_wypadku_box
-            // 
-            this.ID_wypadku_box.Location = new System.Drawing.Point(222, 9);
-            this.ID_wypadku_box.Name = "ID_wypadku_box";
-            this.ID_wypadku_box.Size = new System.Drawing.Size(228, 20);
-            this.ID_wypadku_box.TabIndex = 47;
             // 
             // oknoEdycjaWypadek
             // 
@@ -238,7 +238,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button dodaj_wypadek_button;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox ID_wypadku_box;
+        private System.Windows.Forms.Label label5;
     }
 }
