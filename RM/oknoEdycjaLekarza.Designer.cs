@@ -37,6 +37,7 @@
             this.dod_lekarza_okno = new System.Windows.Forms.Button();
             this.stanowisko_box = new System.Windows.Forms.TextBox();
             this.specj_box = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // nazw_box
@@ -59,9 +60,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(73, 97);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 16);
+            this.label9.Size = new System.Drawing.Size(80, 16);
             this.label9.TabIndex = 50;
-            this.label9.Text = "Nazwisko";
+            this.label9.Text = "Nazwisko*";
             // 
             // label3
             // 
@@ -69,9 +70,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(60, 138);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 16);
+            this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 49;
-            this.label3.Text = "Stanowisko";
+            this.label3.Text = "Stanowisko*";
             // 
             // label2
             // 
@@ -91,9 +92,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(107, 56);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 16);
+            this.label1.Size = new System.Drawing.Size(43, 16);
             this.label1.TabIndex = 47;
-            this.label1.Text = "Imię";
+            this.label1.Text = "Imię*";
             // 
             // dod_lekarza_okno
             // 
@@ -119,11 +120,21 @@
             this.specj_box.Size = new System.Drawing.Size(228, 20);
             this.specj_box.TabIndex = 60;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(177, 295);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(94, 13);
+            this.label5.TabIndex = 61;
+            this.label5.Text = "* - pola wymagane";
+            // 
             // oknoEdycjaLekarza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(463, 317);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.specj_box);
             this.Controls.Add(this.stanowisko_box);
             this.Controls.Add(this.nazw_box);
@@ -151,5 +162,6 @@
         private System.Windows.Forms.Button dod_lekarza_okno;
         private System.Windows.Forms.TextBox stanowisko_box;
         private System.Windows.Forms.TextBox specj_box;
+        private System.Windows.Forms.Label label5;
     }
 }

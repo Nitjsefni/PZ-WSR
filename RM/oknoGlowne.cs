@@ -54,8 +54,17 @@ namespace RM
 
         private void szukaj_pacjenta_btn_Click(object sender, EventArgs e)
         {
-            long  pesel = Convert.ToInt64(szukaj_pesel_box.Text);
-            szukaj_pacjenta(pesel);
+            string Str = szukaj_pesel_box.Text.Trim();
+            double Num;
+            bool isNum = double.TryParse(Str, out Num);
+            if (isNum)
+                 {
+                long pesel = Convert.ToInt64(szukaj_pesel_box.Text);
+                szukaj_pacjenta(pesel);
+                 }
+            else
+                MessageBox.Show("Pesel musi zawierać liczby");
+            
         }
          private Pacjenci1 szukanyPacjent;
 
@@ -224,7 +233,7 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                 lekarze_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                long ID_lekarza = Convert.ToInt64(lekarze_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                long ID_lekarza = Convert.ToInt64(lekarze_dataGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
 
                 oknoEdycjaLekarza oEdycjaPacjenta = new oknoEdycjaLekarza(ID_lekarza);
             }
@@ -270,7 +279,7 @@ namespace RM
             {
                 wypadki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
                 
-                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString());
+                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
 
                 oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
             }
