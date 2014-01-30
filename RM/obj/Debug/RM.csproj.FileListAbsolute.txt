@@ -32,3 +32,20 @@ C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.Pro
 C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.csproj.GenerateResource.Cache
 C:\Users\Marcin\Documents\Visual Studio 2012\Projects\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaKaretki.resources
 C:\Users\Cirdan\Documents\Visual Studio 2012\Projects\NEWWSR\RM\obj\Debug\RM.oknoEdycjaKaretki.resources
+H:\PZ-WSR\RM\bin\Debug\RM.exe.config
+H:\PZ-WSR\RM\obj\Debug\RM.exe
+H:\PZ-WSR\RM\obj\Debug\RM.pdb
+H:\PZ-WSR\RM\bin\Debug\RM.mdf
+H:\PZ-WSR\RM\bin\Debug\RM_log.ldf
+H:\PZ-WSR\RM\bin\Debug\RM.exe
+H:\PZ-WSR\RM\bin\Debug\RM.pdb
+H:\PZ-WSR\RM\bin\Debug\EntityFramework.dll
+H:\PZ-WSR\RM\bin\Debug\EntityFramework.xml
+H:\PZ-WSR\RM\obj\Debug\RM.csprojResolveAssemblyReference.cache
+H:\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaKaretki.resources
+H:\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaLekarza.resources
+H:\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaPacjenta.resources
+H:\PZ-WSR\RM\obj\Debug\RM.oknoEdycjaWypadek.resources
+H:\PZ-WSR\RM\obj\Debug\RM.oknoGlowne.resources
+H:\PZ-WSR\RM\obj\Debug\RM.Properties.Resources.resources
+H:\PZ-WSR\RM\obj\Debug\RM.csproj.GenerateResource.Cache

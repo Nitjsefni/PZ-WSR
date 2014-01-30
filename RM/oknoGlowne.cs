@@ -241,9 +241,31 @@ namespace RM
             }
         }
 
+        private void pacjenci_dataGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (pacjenci_dataGrid.HitTest(e.X, e.Y).RowIndex >= 0)
+            {
+                pacjenci_dataGrid.Rows[pacjenci_dataGrid.HitTest(e.X, e.Y).RowIndex].Selected = true;
+            }
+
+            if (e.Button == MouseButtons.Right && pacjenci_dataGrid.HitTest(e.X,e.Y).RowIndex >= 0)
+            {
+                rClickPacjenciDG.Show( pacjenci_dataGrid, new Point(e.X, e.Y) );
+                
+               // long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+
+                //oknoEdycjaKaretki oEdycjaKaretki = new oknoEdycjaKaretki(ID_karetki);
+
+            }
+        }
+
+        private void menuPacjenci_edytujBtn_Click(object sender, EventArgs e)
+        {
+            String cellValue = pacjenci_dataGrid.SelectedRows[0].Cells[2].FormattedValue.ToString();
+            
+            long ID_pacjenta = Convert.ToInt64(cellValue);
+            oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta(ID_pacjenta);
+        }
+
     }
 }
-
-
-
-
