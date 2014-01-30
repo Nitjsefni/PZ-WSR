@@ -251,20 +251,38 @@ namespace RM
             if (e.Button == MouseButtons.Right && pacjenci_dataGrid.HitTest(e.X,e.Y).RowIndex >= 0)
             {
                 rClickPacjenciDG.Show( pacjenci_dataGrid, new Point(e.X, e.Y) );
-                
-               // long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
-
-                //oknoEdycjaKaretki oEdycjaKaretki = new oknoEdycjaKaretki(ID_karetki);
-
             }
+        }
+
+        private long zwrocPESELWybranegoPacjenta()
+        {
+            String cellValue = pacjenci_dataGrid.SelectedRows[0].Cells[2].FormattedValue.ToString();
+
+            return Convert.ToInt64(cellValue);
         }
 
         private void menuPacjenci_edytujBtn_Click(object sender, EventArgs e)
         {
-            String cellValue = pacjenci_dataGrid.SelectedRows[0].Cells[2].FormattedValue.ToString();
+            oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta( zwrocPESELWybranegoPacjenta() );
+        }
+
+        private void menuPacjenci_usunBtn_Click(object sender, EventArgs e)
+        {
             
-            long ID_pacjenta = Convert.ToInt64(cellValue);
-            oknoEdycjaPacjenta oEdycjaPacjenta = new oknoEdycjaPacjenta(ID_pacjenta);
+            DialogResult wynik = MessageBox.Show("Na pewno usunąć pacjenta o numerze PESEL: " + zwrocPESELWybranegoPacjenta() + "?", "Usuwanie pacjenta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (wynik == DialogResult.Yes)
+            {
+                using (RMEntities context = new RMEntities())
+                {
+                    long pesel = zwrocPESELWybranegoPacjenta();
+                    Pacjenci1 pacjent = context.Pacjenci1.First(p => p.PESEL == pesel );
+                    context.Pacjenci1.Remove(pacjent);
+                    context.SaveChanges();
+                    DisplayPatients();
+                    
+                }
+            }
         }
 
     }

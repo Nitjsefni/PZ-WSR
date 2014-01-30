@@ -876,20 +876,21 @@
             this.menuPacjenci_edytujBtn,
             this.menuPacjenci_usunBtn});
             this.rClickPacjenciDG.Name = "rClickPacjenciDG";
-            this.rClickPacjenciDG.Size = new System.Drawing.Size(108, 48);
+            this.rClickPacjenciDG.Size = new System.Drawing.Size(153, 70);
             // 
             // menuPacjenci_edytujBtn
             // 
             this.menuPacjenci_edytujBtn.Name = "menuPacjenci_edytujBtn";
-            this.menuPacjenci_edytujBtn.Size = new System.Drawing.Size(107, 22);
+            this.menuPacjenci_edytujBtn.Size = new System.Drawing.Size(152, 22);
             this.menuPacjenci_edytujBtn.Text = "Edytuj";
             this.menuPacjenci_edytujBtn.Click += new System.EventHandler(this.menuPacjenci_edytujBtn_Click);
             // 
             // menuPacjenci_usunBtn
             // 
             this.menuPacjenci_usunBtn.Name = "menuPacjenci_usunBtn";
-            this.menuPacjenci_usunBtn.Size = new System.Drawing.Size(107, 22);
+            this.menuPacjenci_usunBtn.Size = new System.Drawing.Size(152, 22);
             this.menuPacjenci_usunBtn.Text = "Usuń";
+            this.menuPacjenci_usunBtn.Click += new System.EventHandler(this.menuPacjenci_usunBtn_Click);
             // 
             // rMEntitiesBindingSource
             // 
