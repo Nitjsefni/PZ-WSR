@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
             this.refresh_karetka = new System.Windows.Forms.Button();
@@ -118,6 +118,9 @@
             this.rClickPacjenciDG = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPacjenci_edytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPacjenci_usunBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.rClickLekarzeDG = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.MenuLekarze_EdytujBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuLekarze_UsunBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
@@ -131,6 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).BeginInit();
             this.rClickPacjenciDG.SuspendLayout();
+            this.rClickLekarzeDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -491,9 +495,9 @@
             // data_zgloszenia
             // 
             this.data_zgloszenia.DataPropertyName = "data_zgloszenia";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "d";
+            dataGridViewCellStyle4.NullValue = null;
+            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle4;
             this.data_zgloszenia.HeaderText = "Data i godzina zgłoszenia";
             this.data_zgloszenia.Name = "data_zgloszenia";
             this.data_zgloszenia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -581,15 +585,15 @@
             // pacjenci_dataGrid
             // 
             this.pacjenci_dataGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.pacjenci_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pacjenci_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
@@ -642,9 +646,9 @@
             // data_przyjecia_pacj
             // 
             this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle6;
             this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
             this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
             this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -810,11 +814,11 @@
             this.specjalizacja_lekarz,
             this.pacjenci_lekarza});
             this.lekarze_dataGrid.Location = new System.Drawing.Point(23, 37);
+            this.lekarze_dataGrid.MultiSelect = false;
             this.lekarze_dataGrid.Name = "lekarze_dataGrid";
             this.lekarze_dataGrid.Size = new System.Drawing.Size(647, 382);
             this.lekarze_dataGrid.TabIndex = 1;
-            this.lekarze_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.lekarze_dataGrid_CellMouseDown);
-            this.lekarze_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
+            this.lekarze_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lekarze_dataGrid_MouseClick);
             // 
             // ID_lekarza
             // 
@@ -876,21 +880,43 @@
             this.menuPacjenci_edytujBtn,
             this.menuPacjenci_usunBtn});
             this.rClickPacjenciDG.Name = "rClickPacjenciDG";
-            this.rClickPacjenciDG.Size = new System.Drawing.Size(153, 70);
+            this.rClickPacjenciDG.Size = new System.Drawing.Size(108, 48);
             // 
             // menuPacjenci_edytujBtn
             // 
             this.menuPacjenci_edytujBtn.Name = "menuPacjenci_edytujBtn";
-            this.menuPacjenci_edytujBtn.Size = new System.Drawing.Size(152, 22);
+            this.menuPacjenci_edytujBtn.Size = new System.Drawing.Size(107, 22);
             this.menuPacjenci_edytujBtn.Text = "Edytuj";
             this.menuPacjenci_edytujBtn.Click += new System.EventHandler(this.menuPacjenci_edytujBtn_Click);
             // 
             // menuPacjenci_usunBtn
             // 
             this.menuPacjenci_usunBtn.Name = "menuPacjenci_usunBtn";
-            this.menuPacjenci_usunBtn.Size = new System.Drawing.Size(152, 22);
+            this.menuPacjenci_usunBtn.Size = new System.Drawing.Size(107, 22);
             this.menuPacjenci_usunBtn.Text = "Usuń";
             this.menuPacjenci_usunBtn.Click += new System.EventHandler(this.menuPacjenci_usunBtn_Click);
+            // 
+            // rClickLekarzeDG
+            // 
+            this.rClickLekarzeDG.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuLekarze_EdytujBtn,
+            this.MenuLekarze_UsunBtn});
+            this.rClickLekarzeDG.Name = "rClickPacjenciDG";
+            this.rClickLekarzeDG.Size = new System.Drawing.Size(153, 70);
+            // 
+            // MenuLekarze_EdytujBtn
+            // 
+            this.MenuLekarze_EdytujBtn.Name = "MenuLekarze_EdytujBtn";
+            this.MenuLekarze_EdytujBtn.Size = new System.Drawing.Size(152, 22);
+            this.MenuLekarze_EdytujBtn.Text = "Edytuj";
+            this.MenuLekarze_EdytujBtn.Click += new System.EventHandler(this.MenuLekarze_EdytujBtn_Click);
+            // 
+            // MenuLekarze_UsunBtn
+            // 
+            this.MenuLekarze_UsunBtn.Name = "MenuLekarze_UsunBtn";
+            this.MenuLekarze_UsunBtn.Size = new System.Drawing.Size(152, 22);
+            this.MenuLekarze_UsunBtn.Text = "Usuń";
+            this.MenuLekarze_UsunBtn.Click += new System.EventHandler(this.MenuLekarze_UsunBtn_Click);
             // 
             // rMEntitiesBindingSource
             // 
@@ -920,6 +946,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).EndInit();
             this.rClickPacjenciDG.ResumeLayout(false);
+            this.rClickLekarzeDG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -1014,6 +1041,9 @@
         private System.Windows.Forms.ContextMenuStrip rClickPacjenciDG;
         private System.Windows.Forms.ToolStripMenuItem menuPacjenci_edytujBtn;
         private System.Windows.Forms.ToolStripMenuItem menuPacjenci_usunBtn;
+        private System.Windows.Forms.ContextMenuStrip rClickLekarzeDG;
+        private System.Windows.Forms.ToolStripMenuItem MenuLekarze_EdytujBtn;
+        private System.Windows.Forms.ToolStripMenuItem MenuLekarze_UsunBtn;
     }
 }
 

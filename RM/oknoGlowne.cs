@@ -240,7 +240,7 @@ namespace RM
                 oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
             }
         }
-
+        // PACJENCI
         private void pacjenci_dataGrid_MouseClick(object sender, MouseEventArgs e)
         {
             if (pacjenci_dataGrid.HitTest(e.X, e.Y).RowIndex >= 0)
@@ -284,6 +284,55 @@ namespace RM
                 }
             }
         }
+
+
+        // LEKARZE
+        private void lekarze_dataGrid_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (lekarze_dataGrid.HitTest(e.X, e.Y).RowIndex >= 0)
+            {
+                lekarze_dataGrid.Rows[lekarze_dataGrid.HitTest(e.X, e.Y).RowIndex].Selected = true;
+            }
+
+            if (e.Button == MouseButtons.Right && lekarze_dataGrid.HitTest(e.X, e.Y).RowIndex >= 0)
+            {
+                rClickLekarzeDG.Show(lekarze_dataGrid, new Point(e.X, e.Y));
+            }
+        }
+
+        private long zwrocIDWybranegoLekarza()
+        {
+            String cellValue = lekarze_dataGrid.SelectedRows[0].Cells[1].FormattedValue.ToString();
+
+            return Convert.ToInt64(cellValue);
+        }
+
+        private void MenuLekarze_EdytujBtn_Click(object sender, EventArgs e)
+        {
+            oknoEdycjaLekarza oEdycjaLekarza = new oknoEdycjaLekarza(zwrocIDWybranegoLekarza());
+        }
+
+        private void MenuLekarze_UsunBtn_Click(object sender, EventArgs e)
+        {
+            using (RMEntities context = new RMEntities())
+            {
+                long ID_lekarza = zwrocIDWybranegoLekarza();
+                Personel1 lekarz = context.Personel1.First(p => p.ID_lekarz == ID_lekarza);
+
+                DialogResult wynik = MessageBox.Show("Na pewno usunąć lekarza: " + lekarz.imie + " " + lekarz.nazwisko + "?", "Usuwanie lekarza", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                if (wynik == DialogResult.Yes)
+                {   
+                    context.Personel1.Remove( lekarz );
+
+                    // tu powinno być usuwanie z Pacjentów IDlekarza o lekarz.ID_lekarz
+                    context.SaveChanges();
+                    DisplayDoctors();
+                }
+            }
+        }
+
+
 
     }
 }
