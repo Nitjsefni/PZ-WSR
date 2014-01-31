@@ -52,22 +52,6 @@ namespace RM
             }
         }
 
-        private void szukaj_pacjenta_btn_Click(object sender, EventArgs e)
-        {
-            string Str = szukaj_pesel_box.Text.Trim();
-            double Num;
-            bool isNum = double.TryParse(Str, out Num);
-            if (isNum)
-                 {
-                long pesel = Convert.ToInt64(szukaj_pesel_box.Text);
-                szukaj_pacjenta(pesel);
-                 }
-            else
-                MessageBox.Show("Pesel musi zawierać liczby");
-            
-        }
-         private Pacjenci1 szukanyPacjent;
-
         private void szukaj_pacjenta(long pesel)
         {
             using (var dc = new RMEntities())
