@@ -37,6 +37,7 @@
             this.ID_skladu_box = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.wyposazenie_box = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // typ_box
@@ -52,9 +53,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(28, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 16);
+            this.label1.Size = new System.Drawing.Size(142, 16);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Typ/Numer karetki";
+            this.label1.Text = "Typ/Numer karetki*";
             // 
             // label2
             // 
@@ -62,9 +63,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.Location = new System.Drawing.Point(62, 135);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 16);
+            this.label2.Size = new System.Drawing.Size(108, 16);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Wyposażenie";
+            this.label2.Text = "Wyposażenie*";
             // 
             // label3
             // 
@@ -107,9 +108,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label5.Location = new System.Drawing.Point(88, 102);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 16);
+            this.label5.Size = new System.Drawing.Size(82, 16);
             this.label5.TabIndex = 10;
-            this.label5.Text = "ID składu";
+            this.label5.Text = "ID składu*";
             // 
             // wyposazenie_box
             // 
@@ -118,11 +119,21 @@
             this.wyposazenie_box.Size = new System.Drawing.Size(228, 20);
             this.wyposazenie_box.TabIndex = 11;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(171, 327);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 13);
+            this.label4.TabIndex = 47;
+            this.label4.Text = "* - pola wymagane";
+            // 
             // oknoEdycjaKaretki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(455, 349);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.wyposazenie_box);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.ID_skladu_box);
@@ -150,5 +161,6 @@
         private System.Windows.Forms.TextBox ID_skladu_box;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox wyposazenie_box;
+        private System.Windows.Forms.Label label4;
     }
 }

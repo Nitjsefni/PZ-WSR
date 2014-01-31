@@ -5,10 +5,10 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="f64b14d3483e407fa27474989512a4fa" Name="Diagram1">
-        <EntityTypeShape EntityType="RMModel.Karetka" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMModel.Karetka" Width="1.5" PointX="0.75" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="RMModel.Pacjenci1" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="RMModel.Personel1" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="RMModel.Wypadek" Width="1.5" PointX="7.875" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMModel.Personel1" Width="1.5" PointX="0.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="RMModel.Wypadek" Width="1.5" PointX="5" PointY="1.5" IsExpanded="true" />
         <AssociationConnector Association="RMModel.Lekarz2Pacjent" ManuallyRouted="false" />
         <EntityTypeShape EntityType="RMModel.Sklad" Width="1.5" PointX="4.680325327757898" PointY="19.463985064748666" />
       </Diagram>

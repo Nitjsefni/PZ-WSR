@@ -49,11 +49,12 @@
             this.ulica_box = new System.Windows.Forms.TextBox();
             this.miejscowosc_box = new System.Windows.Forms.TextBox();
             this.lekarz_box = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // dod_pacjentaBtn
             // 
-            this.dod_pacjentaBtn.Location = new System.Drawing.Point(80, 557);
+            this.dod_pacjentaBtn.Location = new System.Drawing.Point(64, 539);
             this.dod_pacjentaBtn.Name = "dod_pacjentaBtn";
             this.dod_pacjentaBtn.Size = new System.Drawing.Size(332, 41);
             this.dod_pacjentaBtn.TabIndex = 0;
@@ -67,9 +68,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.Location = new System.Drawing.Point(91, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 20);
+            this.label1.Size = new System.Drawing.Size(60, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Pesel";
+            this.label1.Text = "Pesel*";
             // 
             // label2
             // 
@@ -78,9 +79,9 @@
             this.label2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label2.Location = new System.Drawing.Point(20, 144);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 40);
+            this.label2.Size = new System.Drawing.Size(131, 40);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Numer\r\nubezpieczenia";
+            this.label2.Text = "Numer\r\nubezpieczenia*";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label3
@@ -89,9 +90,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.Location = new System.Drawing.Point(60, 101);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(84, 20);
+            this.label3.Size = new System.Drawing.Size(91, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Nazwisko";
+            this.label3.Text = "Nazwisko*";
             // 
             // label9
             // 
@@ -99,9 +100,9 @@
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label9.Location = new System.Drawing.Point(101, 63);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 20);
+            this.label9.Size = new System.Drawing.Size(50, 20);
             this.label9.TabIndex = 9;
-            this.label9.Text = "Imię";
+            this.label9.Text = "Imię*";
             // 
             // label4
             // 
@@ -110,9 +111,9 @@
             this.label4.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label4.Location = new System.Drawing.Point(21, 209);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(123, 20);
+            this.label4.Size = new System.Drawing.Size(130, 20);
             this.label4.TabIndex = 10;
-            this.label4.Text = "Data przyjęcia";
+            this.label4.Text = "Data przyjęcia*";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label5
@@ -122,9 +123,9 @@
             this.label5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label5.Location = new System.Drawing.Point(35, 258);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(109, 20);
+            this.label5.Size = new System.Drawing.Size(116, 20);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Miejscowość";
+            this.label5.Text = "Miejscowość*";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label6
@@ -134,9 +135,9 @@
             this.label6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label6.Location = new System.Drawing.Point(95, 347);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 20);
+            this.label6.Size = new System.Drawing.Size(56, 20);
             this.label6.TabIndex = 12;
-            this.label6.Text = "Ulica";
+            this.label6.Text = "Ulica*";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label7
@@ -146,9 +147,9 @@
             this.label7.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.label7.Location = new System.Drawing.Point(25, 304);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 20);
+            this.label7.Size = new System.Drawing.Size(126, 20);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Kod pocztowy";
+            this.label7.Text = "Kod pocztowy*";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // label8
@@ -168,7 +169,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label10.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label10.Location = new System.Drawing.Point(91, 446);
+            this.label10.Location = new System.Drawing.Point(91, 437);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(45, 20);
             this.label10.TabIndex = 15;
@@ -178,7 +179,7 @@
             // data_przyj_pick
             // 
             this.data_przyj_pick.Location = new System.Drawing.Point(161, 209);
-            this.data_przyj_pick.MaxDate = System.DateTime.Now;
+            this.data_przyj_pick.MaxDate = new System.DateTime(2014, 1, 30, 23, 18, 41, 486);
             this.data_przyj_pick.MinDate = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             this.data_przyj_pick.Name = "data_przyj_pick";
             this.data_przyj_pick.Size = new System.Drawing.Size(228, 20);
@@ -187,7 +188,7 @@
             // 
             // opis_box
             // 
-            this.opis_box.Location = new System.Drawing.Point(161, 448);
+            this.opis_box.Location = new System.Drawing.Point(161, 437);
             this.opis_box.Name = "opis_box";
             this.opis_box.Size = new System.Drawing.Size(228, 96);
             this.opis_box.TabIndex = 18;
@@ -249,11 +250,21 @@
             this.lekarz_box.Size = new System.Drawing.Size(228, 20);
             this.lekarz_box.TabIndex = 27;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(176, 588);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(94, 13);
+            this.label11.TabIndex = 47;
+            this.label11.Text = "* - pola wymagane";
+            // 
             // oknoEdycjaPacjenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 610);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.lekarz_box);
             this.Controls.Add(this.miejscowosc_box);
             this.Controls.Add(this.ulica_box);
@@ -305,5 +316,6 @@
         private System.Windows.Forms.TextBox ulica_box;
         private System.Windows.Forms.TextBox miejscowosc_box;
         private System.Windows.Forms.TextBox lekarz_box;
+        private System.Windows.Forms.Label label11;
     }
 }
