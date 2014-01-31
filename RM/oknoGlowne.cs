@@ -30,21 +30,22 @@ namespace RM
         {
             using (var dc = new RMEntities())
             {
-                var patients = from c in dc.Pacjenci1
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
                                select new
                                {
 
-                                   pesel_pacjenta = c.PESEL,
-                                   imie_pacjenta = c.imie,
-                                   nazwisko_pacjenta = c.nazwisko,
-                                   numer_ubezpieczenia_pacj = c.nr_ubezpieczenia,
-                                   data_przyjecia_pacj = c.data_przyjecia,
-                                   miejscowosc_pacj = c.miejscowosc,
-                                   kod_pocz_pacj = c.kod_pocztowy,
-                                   ulica_pacj = c.ulica,
-                                   opis_pacj = c.opis,
-                                   uwagi_pacj = c.uwagi,
-                                   lekarz_pacjenta = c.lekarz
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
 
                                };
 
@@ -57,22 +58,23 @@ namespace RM
             using (var dc = new RMEntities())
             {
 
-                var patients = from c in dc.Pacjenci1
-                               where c.PESEL == pesel
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
+                               where p.PESEL == pesel
                                select new
                                {
 
-                                   pesel_pacjenta = c.PESEL,
-                                   imie_pacjenta = c.imie,
-                                   nazwisko_pacjenta = c.nazwisko,
-                                   numer_ubezpieczenia_pacj = c.nr_ubezpieczenia,
-                                   data_przyjecia_pacj = c.data_przyjecia,
-                                   miejscowosc_pacj = c.miejscowosc,
-                                   kod_pocz_pacj = c.kod_pocztowy,
-                                   ulica_pacj = c.ulica,
-                                   opis_pacj = c.opis,
-                                   uwagi_pacj = c.uwagi,
-                                   lekarz_pacjenta = c.lekarz
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
 
                                };
 

@@ -48,8 +48,8 @@
             this.kod_pocz_box = new System.Windows.Forms.TextBox();
             this.ulica_box = new System.Windows.Forms.TextBox();
             this.miejscowosc_box = new System.Windows.Forms.TextBox();
-            this.lekarz_box = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.lekarz_cbox = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // dod_pacjentaBtn
@@ -243,13 +243,6 @@
             this.miejscowosc_box.Size = new System.Drawing.Size(228, 20);
             this.miejscowosc_box.TabIndex = 26;
             // 
-            // lekarz_box
-            // 
-            this.lekarz_box.Location = new System.Drawing.Point(161, 396);
-            this.lekarz_box.Name = "lekarz_box";
-            this.lekarz_box.Size = new System.Drawing.Size(228, 20);
-            this.lekarz_box.TabIndex = 27;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -259,13 +252,21 @@
             this.label11.TabIndex = 47;
             this.label11.Text = "* - pola wymagane";
             // 
+            // lekarz_cbox
+            // 
+            this.lekarz_cbox.FormattingEnabled = true;
+            this.lekarz_cbox.Location = new System.Drawing.Point(161, 395);
+            this.lekarz_cbox.Name = "lekarz_cbox";
+            this.lekarz_cbox.Size = new System.Drawing.Size(228, 21);
+            this.lekarz_cbox.TabIndex = 48;
+            // 
             // oknoEdycjaPacjenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(456, 610);
+            this.Controls.Add(this.lekarz_cbox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.lekarz_box);
             this.Controls.Add(this.miejscowosc_box);
             this.Controls.Add(this.ulica_box);
             this.Controls.Add(this.kod_pocz_box);
@@ -315,7 +316,7 @@
         private System.Windows.Forms.TextBox kod_pocz_box;
         private System.Windows.Forms.TextBox ulica_box;
         private System.Windows.Forms.TextBox miejscowosc_box;
-        private System.Windows.Forms.TextBox lekarz_box;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox lekarz_cbox;
     }
 }

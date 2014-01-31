@@ -17,6 +17,7 @@ namespace RM
         public oknoEdycjaPacjenta()
         {
             InitializeComponent();
+            inicjalizujLekarzy();
 
             edytowanyPacjent = new Pacjenci1();
         }
@@ -24,6 +25,7 @@ namespace RM
         public oknoEdycjaPacjenta(long PESEL)
         {
             InitializeComponent();
+            inicjalizujLekarzy();
             this.Show();
 
             using(var ctx = new RMEntities())
@@ -36,6 +38,16 @@ namespace RM
 
                 this.dod_pacjentaBtn.Click -= new System.EventHandler( this.dodajPacjenta_Click );
                 this.dod_pacjentaBtn.Click += new System.EventHandler( this.edytujPacjenta_Click );
+            }
+        }
+
+        public void inicjalizujLekarzy()
+        {
+            using (var ctx = new RMEntities())
+            {
+                lekarz_cbox.DataSource = ctx.Personel1.ToList();
+                lekarz_cbox.ValueMember = "ID_lekarz";
+                lekarz_cbox.DisplayMember = "nazwisko";
             }
         }
 
@@ -55,10 +67,18 @@ namespace RM
             edytowanyPacjent.data_przyjecia     = date;
             edytowanyPacjent.miejscowosc        = miejscowosc_box.Text;
             edytowanyPacjent.kod_pocztowy       = kod_pocz_box.Text;
-            edytowanyPacjent.lekarz             = lekarz_box.Text;
             edytowanyPacjent.nr_ubezpieczenia   = Convert.ToInt32(nr_ubez_box.Text); 
             edytowanyPacjent.ulica              = ulica_box.Text;
             edytowanyPacjent.opis               = opis_box.Text;
+
+            if(lekarz_cbox.SelectedIndex >= 0)
+            {
+                edytowanyPacjent.ID_lekarz= Convert.ToInt64(lekarz_cbox.SelectedValue);
+            }
+            else
+            {
+                edytowanyPacjent.ID_lekarz = null;
+            }
         }
 
         public void zaladujWartosciDoBoxow()
@@ -76,6 +96,7 @@ namespace RM
             opis_box.Text           = edytowanyPacjent.opis;
             ulica_box.Text          = edytowanyPacjent.ulica;
             opis_box.Text           = edytowanyPacjent.opis;
+            if (edytowanyPacjent.ID_lekarz > 0) lekarz_cbox.SelectedValue = edytowanyPacjent.ID_lekarz;
         }
 
         private void edytujPacjenta_Click(object sender, EventArgs e)
@@ -89,6 +110,7 @@ namespace RM
                 ctx.SaveChanges();
             }
 
+            
             oknoEdycjaPacjenta.ActiveForm.Close();
         }
 
