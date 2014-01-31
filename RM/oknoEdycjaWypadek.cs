@@ -58,7 +58,7 @@ namespace RM
             edytowanyWypadek.liczba_rannych =  Convert.ToInt32(liczba_rannych_box.Text);
             edytowanyWypadek.typ_wypadku = typ_comboBox.Text;
             edytowanyWypadek.data_godz_zgl = date;
-            edytowanyWypadek.ID_skladu = 1;
+            //edytowanyWypadek.ID_skladu = Convert.ToInt32(ID_skladu_box.Text);
             edytowanyWypadek.numer_zgl =  Convert.ToInt32(telefon_zgl_box.Text);
             edytowanyWypadek.uwagi = opis_box.Text;
         }
@@ -72,7 +72,7 @@ namespace RM
             typ_comboBox.Text = edytowanyWypadek.typ_wypadku;
             date = edytowanyWypadek.data_godz_zgl;
             dateTimePicker1.Value = date;
-            edytowanyWypadek.ID_skladu = edytowanyWypadek.ID_skladu;
+            //ID_skladu_box.Text = edytowanyWypadek.ID_skladu.ToString();
             telefon_zgl_box.Text = edytowanyWypadek.numer_zgl.ToString();
             opis_box.Text = edytowanyWypadek.uwagi;
 

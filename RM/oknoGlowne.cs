@@ -52,7 +52,24 @@ namespace RM
                 pacjenci_dataGrid.DataSource = patients.ToList();
             }
         }
+        private void wyszukaj_pacjenta_btn_Click(object sender, EventArgs e)
+        {
+            string Str = wyszukaj_pacjenta_box.Text.Trim();
+            double Num;
+            bool isNum = double.TryParse(Str, out Num);
+            if (isNum)
+            {
+                long pesel = Convert.ToInt64(wyszukaj_pacjenta_box.Text);
+                szukaj_pacjenta(pesel);
+            }
+            else
+                MessageBox.Show("Pesel powinien być numerem");
+            
+        }
+        
 
+        
+        
         private void szukaj_pacjenta(long pesel)
         {
             using (var dc = new RMEntities())
@@ -111,7 +128,7 @@ namespace RM
                               {
                                   ID_karetki = c.ID_karetki,
                                   typ_numer = c.typ_numer,
-                                  //ID_skladu_karetka = c.ID_skladu,
+                                  ID_skladu_karetka = c.ID_skladu,
                                   wyposazenie_karetki = c.wyposazenie,
                                   uwagi  = c.uwagi
 
@@ -132,7 +149,7 @@ namespace RM
                                    miejsce_wyp = c.miejsce_wypadku,
                                    liczba_rannych = c.liczba_rannych,
                                    data_zgloszenia = c.data_godz_zgl,
-                                   //id_skladu
+                                   typ_wypadku = c.typ_wypadku,
                                    numer_zglaszajacego = c.numer_zgl,
                                    uwagi_wypadek = c.uwagi
                                };
@@ -265,7 +282,7 @@ namespace RM
             {
                 wypadki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
                 
-                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                long ID_wypadku = Convert.ToInt64(wypadki_dataGrid.Rows[e.RowIndex].Cells[0].FormattedValue.ToString());
 
                 oknoEdycjaWypadek oEdycjaWypadek = new oknoEdycjaWypadek(ID_wypadku);
             }
@@ -286,7 +303,7 @@ namespace RM
 
         private long zwrocPESELWybranegoPacjenta()
         {
-            String cellValue = pacjenci_dataGrid.SelectedRows[0].Cells[2].FormattedValue.ToString();
+            String cellValue = pacjenci_dataGrid.SelectedRows[0].Cells[0].FormattedValue.ToString();
 
             return Convert.ToInt64(cellValue);
         }
@@ -332,7 +349,7 @@ namespace RM
 
         private long zwrocIDWybranegoLekarza()
         {
-            String cellValue = lekarze_dataGrid.SelectedRows[0].Cells[1].FormattedValue.ToString();
+            String cellValue = lekarze_dataGrid.SelectedRows[0].Cells[0].FormattedValue.ToString();
 
             return Convert.ToInt64(cellValue);
         }
@@ -361,6 +378,7 @@ namespace RM
                 }
             }
         }
+
 
 
 
