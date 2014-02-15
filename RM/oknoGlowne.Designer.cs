@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
             this.refresh_karetka = new System.Windows.Forms.Button();
@@ -96,9 +96,9 @@
             this.MenuLekarze_EdytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLekarze_UsunBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.wyszukaj_data_btn = new System.Windows.Forms.Button();
-            this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label7 = new System.Windows.Forms.Label();
             this.wyszukaj_pacjenta_miejsc_box = new System.Windows.Forms.TextBox();
+            this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -300,9 +300,9 @@
             // data_zgloszenia
             // 
             this.data_zgloszenia.DataPropertyName = "data_zgloszenia";
-            dataGridViewCellStyle6.Format = "d";
-            dataGridViewCellStyle6.NullValue = null;
-            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle1;
             this.data_zgloszenia.HeaderText = "Data i godzina zgłoszenia";
             this.data_zgloszenia.Name = "data_zgloszenia";
             this.data_zgloszenia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -366,9 +366,12 @@
             // wyszukaj_pacjenta_date
             // 
             this.wyszukaj_pacjenta_date.Location = new System.Drawing.Point(1104, 345);
+            this.wyszukaj_pacjenta_date.MaxDate = new System.DateTime(2014, 3, 30, 0, 0, 0, 0);
+            this.wyszukaj_pacjenta_date.MinDate = new System.DateTime(2013, 1, 10, 0, 0, 0, 0);
             this.wyszukaj_pacjenta_date.Name = "wyszukaj_pacjenta_date";
             this.wyszukaj_pacjenta_date.Size = new System.Drawing.Size(200, 20);
             this.wyszukaj_pacjenta_date.TabIndex = 10;
+            this.wyszukaj_pacjenta_date.Value = new System.DateTime(2014, 2, 15, 12, 19, 7, 0);
             // 
             // wyszukaj_pacjenta_naz_box
             // 
@@ -444,15 +447,15 @@
             // pacjenci_dataGrid
             // 
             this.pacjenci_dataGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.pacjenci_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pacjenci_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
@@ -503,9 +506,9 @@
             // data_przyjecia_pacj
             // 
             this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
-            dataGridViewCellStyle5.Format = "d";
-            dataGridViewCellStyle5.NullValue = null;
-            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Format = "d";
+            dataGridViewCellStyle3.NullValue = null;
+            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
             this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
             this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -699,10 +702,7 @@
             this.wyszukaj_data_btn.TabIndex = 14;
             this.wyszukaj_data_btn.Text = "Wyszukaj według daty przyjęcia";
             this.wyszukaj_data_btn.UseVisualStyleBackColor = true;
-            // 
-            // rMEntitiesBindingSource
-            // 
-            this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
+            this.wyszukaj_data_btn.Click += new System.EventHandler(this.wyszukaj_data_btn_Click);
             // 
             // label7
             // 
@@ -719,6 +719,10 @@
             this.wyszukaj_pacjenta_miejsc_box.Name = "wyszukaj_pacjenta_miejsc_box";
             this.wyszukaj_pacjenta_miejsc_box.Size = new System.Drawing.Size(141, 20);
             this.wyszukaj_pacjenta_miejsc_box.TabIndex = 13;
+            // 
+            // rMEntitiesBindingSource
+            // 
+            this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
             // 
             // oknoGlowne
             // 

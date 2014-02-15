@@ -179,12 +179,12 @@
             // data_przyj_pick
             // 
             this.data_przyj_pick.Location = new System.Drawing.Point(161, 209);
-            this.data_przyj_pick.MaxDate = new System.DateTime(2014, 1, 30, 23, 18, 41, 486);
+            this.data_przyj_pick.MaxDate = new System.DateTime(2014, 3, 30, 0, 0, 0, 0);
             this.data_przyj_pick.MinDate = new System.DateTime(2013, 1, 1, 0, 0, 0, 0);
             this.data_przyj_pick.Name = "data_przyj_pick";
             this.data_przyj_pick.Size = new System.Drawing.Size(228, 20);
             this.data_przyj_pick.TabIndex = 17;
-            this.data_przyj_pick.Value = new System.DateTime(2014, 1, 16, 0, 0, 0, 0);
+            this.data_przyj_pick.Value = new System.DateTime(2014, 2, 15, 0, 0, 0, 0);
             // 
             // opis_box
             // 

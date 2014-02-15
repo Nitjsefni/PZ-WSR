@@ -52,6 +52,46 @@ namespace RM
                 pacjenci_dataGrid.DataSource = patients.ToList();
             }
         }
+
+
+
+        private void wyszukaj_data_btn_Click(object sender, EventArgs e)
+        {
+            DateTime data = wyszukaj_pacjenta_date.Value;
+
+            szukaj_pacjenta_data(data);
+        }
+        private void szukaj_pacjenta_data(DateTime data)
+        {
+            using (var dc = new RMEntities())
+            {
+
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
+                               where p.data_przyjecia.Year == data.Year
+                                 && p.data_przyjecia.Month == data.Month
+                                 && p.data_przyjecia.Day == data.Day
+                               select new
+                               {
+
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
+
+                               };
+
+                pacjenci_dataGrid.DataSource = patients.ToList();
+            }
+        }
+
         private void wyszukaj_pacjenta_btn_Click(object sender, EventArgs e)
         {
             string Pesel = wyszukaj_pacjenta_box.Text.Trim();
@@ -92,9 +132,6 @@ namespace RM
                 MessageBox.Show("Pesel powinien być numerem");
             
         }
-        
-
-        
         
         private void szukaj_pacjenta(long pesel)
         {
@@ -487,6 +524,8 @@ namespace RM
                 }
             }
         }
+
+
 
 
 
