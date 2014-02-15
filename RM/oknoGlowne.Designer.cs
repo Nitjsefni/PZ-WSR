@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabcontrol = new System.Windows.Forms.TabControl();
             this.karetki = new System.Windows.Forms.TabPage();
             this.refresh_karetka = new System.Windows.Forms.Button();
@@ -56,6 +56,10 @@
             this.uwagi_wypadek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.pacjenci = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.wyszukaj_pacjenta_date = new System.Windows.Forms.DateTimePicker();
+            this.wyszukaj_pacjenta_naz_box = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.wyszukaj_pacjenta_box = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -91,7 +95,10 @@
             this.rClickLekarzeDG = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuLekarze_EdytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLekarze_UsunBtn = new System.Windows.Forms.ToolStripMenuItem();
+            this.wyszukaj_data_btn = new System.Windows.Forms.Button();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label7 = new System.Windows.Forms.Label();
+            this.wyszukaj_pacjenta_miejsc_box = new System.Windows.Forms.TextBox();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -165,7 +172,7 @@
             this.uwagi});
             this.karetki_dataGrid.Location = new System.Drawing.Point(10, 24);
             this.karetki_dataGrid.Name = "karetki_dataGrid";
-            this.karetki_dataGrid.Size = new System.Drawing.Size(545, 371);
+            this.karetki_dataGrid.Size = new System.Drawing.Size(744, 371);
             this.karetki_dataGrid.TabIndex = 3;
             this.karetki_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.karetki_dataGrid_CellMouseDown);
             this.karetki_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
@@ -259,7 +266,7 @@
             this.uwagi_wypadek});
             this.wypadki_dataGrid.Location = new System.Drawing.Point(6, 29);
             this.wypadki_dataGrid.Name = "wypadki_dataGrid";
-            this.wypadki_dataGrid.Size = new System.Drawing.Size(846, 368);
+            this.wypadki_dataGrid.Size = new System.Drawing.Size(921, 368);
             this.wypadki_dataGrid.TabIndex = 1;
             this.wypadki_dataGrid.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.wypadki_dataGrid_CellMouseDown);
             this.wypadki_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DastaGrid_RightClick);
@@ -293,9 +300,9 @@
             // data_zgloszenia
             // 
             this.data_zgloszenia.DataPropertyName = "data_zgloszenia";
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Format = "d";
+            dataGridViewCellStyle6.NullValue = null;
+            this.data_zgloszenia.DefaultCellStyle = dataGridViewCellStyle6;
             this.data_zgloszenia.HeaderText = "Data i godzina zgłoszenia";
             this.data_zgloszenia.Name = "data_zgloszenia";
             this.data_zgloszenia.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -324,6 +331,13 @@
             // 
             // pacjenci
             // 
+            this.pacjenci.Controls.Add(this.wyszukaj_data_btn);
+            this.pacjenci.Controls.Add(this.wyszukaj_pacjenta_miejsc_box);
+            this.pacjenci.Controls.Add(this.label7);
+            this.pacjenci.Controls.Add(this.label6);
+            this.pacjenci.Controls.Add(this.wyszukaj_pacjenta_date);
+            this.pacjenci.Controls.Add(this.wyszukaj_pacjenta_naz_box);
+            this.pacjenci.Controls.Add(this.label4);
             this.pacjenci.Controls.Add(this.wyszukaj_pacjenta_box);
             this.pacjenci.Controls.Add(this.label3);
             this.pacjenci.Controls.Add(this.label2);
@@ -340,9 +354,41 @@
             this.pacjenci.Text = "Pacjenci";
             this.pacjenci.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1166, 329);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(77, 13);
+            this.label6.TabIndex = 11;
+            this.label6.Text = "Data przyjęcia:";
+            // 
+            // wyszukaj_pacjenta_date
+            // 
+            this.wyszukaj_pacjenta_date.Location = new System.Drawing.Point(1104, 345);
+            this.wyszukaj_pacjenta_date.Name = "wyszukaj_pacjenta_date";
+            this.wyszukaj_pacjenta_date.Size = new System.Drawing.Size(200, 20);
+            this.wyszukaj_pacjenta_date.TabIndex = 10;
+            // 
+            // wyszukaj_pacjenta_naz_box
+            // 
+            this.wyszukaj_pacjenta_naz_box.Location = new System.Drawing.Point(1156, 149);
+            this.wyszukaj_pacjenta_naz_box.Name = "wyszukaj_pacjenta_naz_box";
+            this.wyszukaj_pacjenta_naz_box.Size = new System.Drawing.Size(141, 20);
+            this.wyszukaj_pacjenta_naz_box.TabIndex = 9;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(1077, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Nazwisko:";
+            // 
             // wyszukaj_pacjenta_box
             // 
-            this.wyszukaj_pacjenta_box.Location = new System.Drawing.Point(1104, 95);
+            this.wyszukaj_pacjenta_box.Location = new System.Drawing.Point(1156, 98);
             this.wyszukaj_pacjenta_box.Name = "wyszukaj_pacjenta_box";
             this.wyszukaj_pacjenta_box.Size = new System.Drawing.Size(141, 20);
             this.wyszukaj_pacjenta_box.TabIndex = 7;
@@ -350,7 +396,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(1054, 98);
+            this.label3.Location = new System.Drawing.Point(1097, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(36, 13);
             this.label3.TabIndex = 6;
@@ -367,7 +413,7 @@
             // 
             // wyszukaj_pacjenta_btn
             // 
-            this.wyszukaj_pacjenta_btn.Location = new System.Drawing.Point(1124, 157);
+            this.wyszukaj_pacjenta_btn.Location = new System.Drawing.Point(1156, 240);
             this.wyszukaj_pacjenta_btn.Name = "wyszukaj_pacjenta_btn";
             this.wyszukaj_pacjenta_btn.Size = new System.Drawing.Size(75, 23);
             this.wyszukaj_pacjenta_btn.TabIndex = 4;
@@ -398,15 +444,15 @@
             // pacjenci_dataGrid
             // 
             this.pacjenci_dataGrid.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.pacjenci_dataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.pacjenci_dataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.pacjenci_dataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pesel_pacjenta,
@@ -426,7 +472,7 @@
             this.pacjenci_dataGrid.MultiSelect = false;
             this.pacjenci_dataGrid.Name = "pacjenci_dataGrid";
             this.pacjenci_dataGrid.RowHeadersWidth = 15;
-            this.pacjenci_dataGrid.Size = new System.Drawing.Size(1020, 472);
+            this.pacjenci_dataGrid.Size = new System.Drawing.Size(1042, 472);
             this.pacjenci_dataGrid.TabIndex = 1;
             this.pacjenci_dataGrid.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pacjenci_dataGrid_MouseClick);
             // 
@@ -457,9 +503,9 @@
             // data_przyjecia_pacj
             // 
             this.data_przyjecia_pacj.DataPropertyName = "data_przyjecia_pacj";
-            dataGridViewCellStyle3.Format = "d";
-            dataGridViewCellStyle3.NullValue = null;
-            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Format = "d";
+            dataGridViewCellStyle5.NullValue = null;
+            this.data_przyjecia_pacj.DefaultCellStyle = dataGridViewCellStyle5;
             this.data_przyjecia_pacj.HeaderText = "Data przyjęcia";
             this.data_przyjecia_pacj.Name = "data_przyjecia_pacj";
             this.data_przyjecia_pacj.Resizable = System.Windows.Forms.DataGridViewTriState.True;
@@ -645,15 +691,40 @@
             this.MenuLekarze_UsunBtn.Text = "Usuń";
             this.MenuLekarze_UsunBtn.Click += new System.EventHandler(this.MenuLekarze_UsunBtn_Click);
             // 
+            // wyszukaj_data_btn
+            // 
+            this.wyszukaj_data_btn.Location = new System.Drawing.Point(1104, 387);
+            this.wyszukaj_data_btn.Name = "wyszukaj_data_btn";
+            this.wyszukaj_data_btn.Size = new System.Drawing.Size(174, 23);
+            this.wyszukaj_data_btn.TabIndex = 14;
+            this.wyszukaj_data_btn.Text = "Wyszukaj według daty przyjęcia";
+            this.wyszukaj_data_btn.UseVisualStyleBackColor = true;
+            // 
             // rMEntitiesBindingSource
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1062, 201);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Miejscowość:";
+            // 
+            // wyszukaj_pacjenta_miejsc_box
+            // 
+            this.wyszukaj_pacjenta_miejsc_box.Location = new System.Drawing.Point(1156, 198);
+            this.wyszukaj_pacjenta_miejsc_box.Name = "wyszukaj_pacjenta_miejsc_box";
+            this.wyszukaj_pacjenta_miejsc_box.Size = new System.Drawing.Size(141, 20);
+            this.wyszukaj_pacjenta_miejsc_box.TabIndex = 13;
             // 
             // oknoGlowne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1344, 591);
+            this.ClientSize = new System.Drawing.Size(1350, 591);
             this.Controls.Add(this.tabcontrol);
             this.Name = "oknoGlowne";
             this.Text = "System wspomagania Ratownictwa Medycznego";
@@ -739,6 +810,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn stanowisko_lekarz;
         private System.Windows.Forms.DataGridViewTextBoxColumn specjalizacja_lekarz;
+        private System.Windows.Forms.TextBox wyszukaj_pacjenta_naz_box;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker wyszukaj_pacjenta_date;
+        private System.Windows.Forms.Button wyszukaj_data_btn;
+        private System.Windows.Forms.TextBox wyszukaj_pacjenta_miejsc_box;
+        private System.Windows.Forms.Label label7;
     }
 }
 

@@ -54,13 +54,39 @@ namespace RM
         }
         private void wyszukaj_pacjenta_btn_Click(object sender, EventArgs e)
         {
-            string Str = wyszukaj_pacjenta_box.Text.Trim();
+            string Pesel = wyszukaj_pacjenta_box.Text.Trim();
+            string Naz = wyszukaj_pacjenta_naz_box.Text.Trim();
+            
+            string miejscowosc = wyszukaj_pacjenta_miejsc_box.Text.Trim();
+            
+
             double Num;
-            bool isNum = double.TryParse(Str, out Num);
+            bool isNum = double.TryParse(Pesel, out Num);
+
             if (isNum)
             {
-                long pesel = Convert.ToInt64(wyszukaj_pacjenta_box.Text);
-                szukaj_pacjenta(pesel);
+                if (Pesel != null)
+                {
+                    long pesel = Convert.ToInt64(wyszukaj_pacjenta_box.Text);
+                    szukaj_pacjenta(pesel);
+                }
+
+            }
+            else if(Naz != null || miejscowosc != null)
+            {
+                
+                if (Naz == "")
+                {
+                    szukaj_pacjenta_extended_or_miejsc(miejscowosc);
+                }
+                else if (miejscowosc == "")
+                {
+                    szukaj_pacjenta_extended_or_naz(Naz);
+                }
+                else
+                {
+                    szukaj_pacjenta_extended(Naz, miejscowosc);
+                }
             }
             else
                 MessageBox.Show("Pesel powinien być numerem");
@@ -98,7 +124,90 @@ namespace RM
                 pacjenci_dataGrid.DataSource = patients.ToList();
             }
         }
+        private void szukaj_pacjenta_extended (string nazwisko, string miejsc)
+        {
+            using (var dc = new RMEntities())
+            {
 
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
+                               where p.nazwisko == nazwisko && p.miejscowosc == miejsc
+                               select new
+                               {
+
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
+
+                               };
+
+                pacjenci_dataGrid.DataSource = patients.ToList();
+            }
+        }
+        private void szukaj_pacjenta_extended_or_miejsc(string miejsc)
+        {
+            using (var dc = new RMEntities())
+            {
+
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
+                               where p.miejscowosc == miejsc
+                               select new
+                               {
+
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
+
+                               };
+
+                pacjenci_dataGrid.DataSource = patients.ToList();
+            }
+        }
+        private void szukaj_pacjenta_extended_or_naz(string nazwisko)
+        {
+            using (var dc = new RMEntities())
+            {
+
+                var patients = from p in dc.Pacjenci1
+                               join l in dc.Personel1 on p.ID_lekarz equals l.ID_lekarz
+                               where p.nazwisko == nazwisko
+                               select new
+                               {
+
+                                   pesel_pacjenta = p.PESEL,
+                                   imie_pacjenta = p.imie,
+                                   nazwisko_pacjenta = p.nazwisko,
+                                   numer_ubezpieczenia_pacj = p.nr_ubezpieczenia,
+                                   data_przyjecia_pacj = p.data_przyjecia,
+                                   miejscowosc_pacj = p.miejscowosc,
+                                   kod_pocz_pacj = p.kod_pocztowy,
+                                   ulica_pacj = p.ulica,
+                                   opis_pacj = p.opis,
+                                   uwagi_pacj = p.uwagi,
+                                   lekarz_pacjenta = l.imie + " " + l.nazwisko
+
+                               };
+
+                pacjenci_dataGrid.DataSource = patients.ToList();
+            }
+        }
         private void DisplayDoctors()
         {
             using (var dc = new RMEntities())
@@ -128,7 +237,7 @@ namespace RM
                               {
                                   ID_karetki = c.ID_karetki,
                                   typ_numer = c.typ_numer,
-                                  ID_skladu_karetka = c.ID_skladu,
+                                  sklad = c.ID_skladu,
                                   wyposazenie_karetki = c.wyposazenie,
                                   uwagi  = c.uwagi
 
@@ -260,7 +369,7 @@ namespace RM
             if (e.ColumnIndex >= 0 && e.RowIndex >= 0 && e.Button == MouseButtons.Right)
             {
                karetki_dataGrid.Rows[Convert.ToInt32(e.RowIndex.ToString())].Selected = true;
-                long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[1].FormattedValue.ToString());
+                long ID_karetki = Convert.ToInt64(karetki_dataGrid.Rows[e.RowIndex].Cells[2].FormattedValue.ToString());
                 
                 oknoEdycjaKaretki oEdycjaKaretki= new oknoEdycjaKaretki(ID_karetki);
             }
@@ -378,6 +487,7 @@ namespace RM
                 }
             }
         }
+
 
 
 
