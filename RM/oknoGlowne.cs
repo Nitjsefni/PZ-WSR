@@ -8,8 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
-using System.Linq;
 
+using System.Xml.Linq;
 namespace RM
 {
     public partial class oknoGlowne : Form
@@ -27,8 +27,7 @@ namespace RM
         SqlConnection polaczenie = new SqlConnection(connectionString);
 
 
-
-
+        
         public oknoGlowne()
         {
             InitializeComponent();
@@ -37,6 +36,8 @@ namespace RM
             DisplayAmbulance();
             DisplayAccident();
             inicjalizujLekarzy();
+
+
         }
 
         public void DisplayPatients()
@@ -577,6 +578,65 @@ namespace RM
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var dc = new RMEntities())
+            {
+                
+                var query = dc.Pacjenci1.AsEnumerable();
+                // create xml document
+                XDocument doc = new XDocument(
+                    new XDeclaration("1.0", "utf-8", "yes"),
+                    new XElement("DanePacjentow",
+                    // linq query to build the child element.
+                      from a in query
+                      select new XElement("Pacjent",
+                        
+                                              new XElement("Pesel", a.PESEL),
+                                              new XElement("Imie", a.imie),
+                                              new XElement("Nazwisko", a.nazwisko),
+                                              new XElement("NumerUbezpieczenia", a.nr_ubezpieczenia),
+                                              new XElement("DataPrzyjecia", a.data_przyjecia),
+                                              new XElement("Miejscowosc", a.miejscowosc),
+                                              new XElement("KodPocztowy", a.kod_pocztowy),
+                                              new XElement("Ulica", a.ulica),
+                                              new XElement("Opis", a.opis),
+                                              new XElement("LekarzPacjenta", a.lekarz)
+                          )
+                      )
+                    
+                );
+                doc.Save(@"c:\Users\Cirdan\Documents\Visual Studio 2012\Projects\NEWWSR\RM\danePacjentow.xml");
+
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            XDocument doc = new XDocument();
+            doc = XDocument.Load("danePacjentow.xml");
+            
+            var wczytywanie = from k in doc.Descendants("Pacjent")
+                select
+                new{
+                    pesel_pacjenta = Convert.ToInt64(k.Element("Pesel").Value),
+                    imie_pacjenta = (string)k.Element("Imie").Value,
+                    nazwisko_pacjenta = (string)k.Element("Nazwisko").Value,
+                    numer_ubezpieczenia_pacj = Convert.ToInt32(k.Element("NumerUbezpieczenia").Value),
+                    data_przyjecia_pacj = (string)k.Element("DataPrzyjecia").Value.Substring(0,10),
+                    miejscowosc_pacj = (string)k.Element("Miejscowosc").Value,
+                    kod_pocz_pacj = (string)k.Element("KodPocztowy").Value,
+                    ulica_pacj = (string)k.Element("Ulica").Value,
+                    opis_pacj = (string)k.Element("Opis").Value,
+                    lekarz_pacjenta = (string)k.Element("LekarzPacjenta").Value
+                };
+                dataGridView1.DataSource = wczytywanie.ToList();
+
+          
+
         }
 
 

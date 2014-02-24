@@ -93,19 +93,22 @@
             this.stanowisko_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specjalizacja_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lekarz_cbox2 = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.wyszukaj_wg_lek_btn = new System.Windows.Forms.Button();
             this.rClickPacjenciDG = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuPacjenci_edytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.menuPacjenci_usunBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.rClickLekarzeDG = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuLekarze_EdytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLekarze_UsunBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.wyszukaj_wg_lek_btn = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lekarz_cbox2 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -115,10 +118,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pacjenci_dataGrid)).BeginInit();
             this.lekarze.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).BeginInit();
-            this.rClickPacjenciDG.SuspendLayout();
-            this.rClickLekarzeDG.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.rClickPacjenciDG.SuspendLayout();
+            this.rClickLekarzeDG.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -341,6 +344,7 @@
             // 
             // pacjenci
             // 
+            this.pacjenci.Controls.Add(this.button1);
             this.pacjenci.Controls.Add(this.wyszukaj_data_btn);
             this.pacjenci.Controls.Add(this.wyszukaj_pacjenta_miejsc_box);
             this.pacjenci.Controls.Add(this.label7);
@@ -686,6 +690,81 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Lista lekarzy";
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.button2);
+            this.tabPage1.Controls.Add(this.label12);
+            this.tabPage1.Controls.Add(this.label9);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.lekarz_cbox2);
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.wyszukaj_wg_lek_btn);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1336, 562);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Wyszukiwania";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(1031, 47);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(201, 13);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Wyszukiwanie pacjentów danych lekarzy";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1087, 88);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(85, 13);
+            this.label8.TabIndex = 4;
+            this.label8.Text = "Wybierz lekarza:";
+            // 
+            // lekarz_cbox2
+            // 
+            this.lekarz_cbox2.FormattingEnabled = true;
+            this.lekarz_cbox2.Location = new System.Drawing.Point(1054, 122);
+            this.lekarz_cbox2.Name = "lekarz_cbox2";
+            this.lekarz_cbox2.Size = new System.Drawing.Size(148, 21);
+            this.lekarz_cbox2.TabIndex = 3;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.Location = new System.Drawing.Point(20, 16);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.MultiSelect = false;
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 15;
+            this.dataGridView1.Size = new System.Drawing.Size(930, 472);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // wyszukaj_wg_lek_btn
+            // 
+            this.wyszukaj_wg_lek_btn.Location = new System.Drawing.Point(1090, 173);
+            this.wyszukaj_wg_lek_btn.Name = "wyszukaj_wg_lek_btn";
+            this.wyszukaj_wg_lek_btn.Size = new System.Drawing.Size(75, 23);
+            this.wyszukaj_wg_lek_btn.TabIndex = 0;
+            this.wyszukaj_wg_lek_btn.Text = "Wyszukaj";
+            this.wyszukaj_wg_lek_btn.UseVisualStyleBackColor = true;
+            this.wyszukaj_wg_lek_btn.Click += new System.EventHandler(this.wyszukaj_wg_lek_btn_Click);
+            // 
             // rClickPacjenciDG
             // 
             this.rClickPacjenciDG.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -730,82 +809,38 @@
             this.MenuLekarze_UsunBtn.Text = "Usuń";
             this.MenuLekarze_UsunBtn.Click += new System.EventHandler(this.MenuLekarze_UsunBtn_Click);
             // 
-            // tabPage1
+            // button1
             // 
-            this.tabPage1.Controls.Add(this.label9);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.lekarz_cbox2);
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Controls.Add(this.wyszukaj_wg_lek_btn);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1336, 562);
-            this.tabPage1.TabIndex = 4;
-            this.tabPage1.Text = "Wyszukiwania";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // wyszukaj_wg_lek_btn
-            // 
-            this.wyszukaj_wg_lek_btn.Location = new System.Drawing.Point(1090, 173);
-            this.wyszukaj_wg_lek_btn.Name = "wyszukaj_wg_lek_btn";
-            this.wyszukaj_wg_lek_btn.Size = new System.Drawing.Size(75, 23);
-            this.wyszukaj_wg_lek_btn.TabIndex = 0;
-            this.wyszukaj_wg_lek_btn.Text = "Wyszukaj";
-            this.wyszukaj_wg_lek_btn.UseVisualStyleBackColor = true;
-            this.wyszukaj_wg_lek_btn.Click += new System.EventHandler(this.wyszukaj_wg_lek_btn_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(20, 16);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 15;
-            this.dataGridView1.Size = new System.Drawing.Size(930, 472);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // lekarz_cbox2
-            // 
-            this.lekarz_cbox2.FormattingEnabled = true;
-            this.lekarz_cbox2.Location = new System.Drawing.Point(1054, 122);
-            this.lekarz_cbox2.Name = "lekarz_cbox2";
-            this.lekarz_cbox2.Size = new System.Drawing.Size(148, 21);
-            this.lekarz_cbox2.TabIndex = 3;
+            this.button1.Location = new System.Drawing.Point(701, 531);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Eksport do XML";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // rMEntitiesBindingSource
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
             // 
-            // label8
+            // label12
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(1087, 88);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 13);
-            this.label8.TabIndex = 4;
-            this.label8.Text = "Wybierz lekarza:";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1063, 259);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Import pacjentów z pliku xml";
             // 
-            // label9
+            // button2
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(1031, 47);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(201, 13);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Wyszukiwanie pacjentów danych lekarzy";
+            this.button2.Location = new System.Drawing.Point(1097, 291);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Importuj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // oknoGlowne
             // 
@@ -828,11 +863,11 @@
             this.lekarze.ResumeLayout(false);
             this.lekarze.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lekarze_dataGrid)).EndInit();
-            this.rClickPacjenciDG.ResumeLayout(false);
-            this.rClickLekarzeDG.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.rClickPacjenciDG.ResumeLayout(false);
+            this.rClickLekarzeDG.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.rMEntitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
@@ -913,6 +948,9 @@
         private System.Windows.Forms.ComboBox lekarz_cbox2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label12;
     }
 }
 

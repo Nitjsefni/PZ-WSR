@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<DanePacjentow>
+  <Pacjent>
+    <Pesel>9202938392</Pesel>
+    <Imie>Jan</Imie>
+    <Nazwisko>Niezbędny</Nazwisko>
+    <NumerUbezpieczenia>2983292</NumerUbezpieczenia>
+    <DataPrzyjecia>2014-01-16T00:00:00</DataPrzyjecia>
+    <Miejscowosc>Luboń</Miejscowosc>
+    <KodPocztowy>32-234</KodPocztowy>
+    <Ulica>Jasna 23</Ulica>
+    <Opis></Opis>
+    <LekarzPacjenta />
+  </Pacjent>
+  <Pacjent>
+    <Pesel>82839291022</Pesel>
+    <Imie>Szymon</Imie>
+    <Nazwisko>Tomaszewski</Nazwisko>
+    <NumerUbezpieczenia>234345</NumerUbezpieczenia>
+    <DataPrzyjecia>2014-01-15T00:00:00</DataPrzyjecia>
+    <Miejscowosc>Poznań</Miejscowosc>
+    <KodPocztowy>60-233</KodPocztowy>
+    <Ulica>Opolska 12</Ulica>
+    <Opis />
+    <LekarzPacjenta>Wąsik</LekarzPacjenta>
+  </Pacjent>
+  <Pacjent>
+    <Pesel>82839291031</Pesel>
+    <Imie>Szymon</Imie>
+    <Nazwisko>Tomaszewski</Nazwisko>
+    <NumerUbezpieczenia>234345</NumerUbezpieczenia>
+    <DataPrzyjecia>2014-01-15T00:00:00</DataPrzyjecia>
+    <Miejscowosc>Poznań</Miejscowosc>
+    <KodPocztowy>60-233</KodPocztowy>
+    <Ulica>Opolska 12</Ulica>
+    <Opis />
+    <LekarzPacjenta>Wąsik</LekarzPacjenta>
+  </Pacjent>
+  <Pacjent>
+    <Pesel>92080821827</Pesel>
+    <Imie>Barbara</Imie>
+    <Nazwisko>Stępień</Nazwisko>
+    <NumerUbezpieczenia>2482349</NumerUbezpieczenia>
+    <DataPrzyjecia>2014-01-24T00:00:00</DataPrzyjecia>
+    <Miejscowosc>Poznań</Miejscowosc>
+    <KodPocztowy>60-234</KodPocztowy>
+    <Ulica>ul. Leśna 22</Ulica>
+    <Opis></Opis>
+    <LekarzPacjenta />
+  </Pacjent>
+  <Pacjent>
+    <Pesel>92081211697</Pesel>
+    <Imie>Jakub</Imie>
+    <Nazwisko>Sobieski</Nazwisko>
+    <NumerUbezpieczenia>283748</NumerUbezpieczenia>
+    <DataPrzyjecia>2014-01-15T00:00:00</DataPrzyjecia>
+    <Miejscowosc>Poznań</Miejscowosc>
+    <KodPocztowy>60-113</KodPocztowy>
+    <Ulica>Rawicka 66</Ulica>
+    <Opis />
+    <LekarzPacjenta>Wąsik</LekarzPacjenta>
+  </Pacjent>
+</DanePacjentow>
