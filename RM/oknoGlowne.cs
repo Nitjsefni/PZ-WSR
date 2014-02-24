@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace RM
 {
@@ -17,6 +19,16 @@ namespace RM
         oknoEdycjaKaretki form_karetka = new oknoEdycjaKaretki();
         oknoEdycjaWypadek form_wypadek = new oknoEdycjaWypadek();
 
+        static string connectionString = @"Data Source=.\SQLEXPRESS;
+                          AttachDbFilename=c:\Users\Cirdan\Documents\Visual Studio 2012\Projects\NEWWSR\RM\bin\Debug\RM - Kopia.mdf;
+                          Integrated Security=True;
+                          Connect Timeout=30;
+                          User Instance=True";
+        SqlConnection polaczenie = new SqlConnection(connectionString);
+
+
+
+
         public oknoGlowne()
         {
             InitializeComponent();
@@ -24,6 +36,7 @@ namespace RM
             DisplayDoctors();
             DisplayAmbulance();
             DisplayAccident();
+            inicjalizujLekarzy();
         }
 
         public void DisplayPatients()
@@ -522,6 +535,47 @@ namespace RM
                     context.SaveChanges();
                     DisplayDoctors();
                 }
+            }
+        }
+        public void inicjalizujLekarzy()
+        {
+            using (var ctx = new RMEntities())
+            {
+                lekarz_cbox2.DataSource = ctx.Personel1.ToList();
+                lekarz_cbox2.ValueMember = "ID_lekarz";
+                lekarz_cbox2.DisplayMember = "nazwisko";
+            }
+        }
+        private void wyszukaj_wg_lek_btn_Click(object sender, EventArgs e)
+        {
+            long lekarz;
+           
+                lekarz = Convert.ToInt64(lekarz_cbox2.SelectedValue);
+            
+           
+            try
+            {
+                string komenda = "SELECT PESEL, imie, nr_ubezpieczenia, miejscowosc, kod_pocztowy, ulica, opis, data_przyjecia FROM Pacjenci1 WHERE ID_lekarz = @Lekarz";
+                polaczenie.Open();
+                SqlCommand cmd = new SqlCommand(komenda, polaczenie);
+                SqlParameter param = new SqlParameter();
+                param.ParameterName = "@Lekarz";
+                param.Value = lekarz;
+
+               
+                cmd.Parameters.Add(param);
+
+                
+                SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("pacjent");
+                adapter.Fill(dt);
+                dataGridView1.DataSource = dt.DefaultView;
+                polaczenie.Close();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
