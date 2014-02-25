@@ -79,7 +79,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="ilePacjentow" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="miasto" Type="text" Mode="In" />
+    <Parameter Name="liczba" Type="int" Mode="InOut" />
+  </Function>
   <Function Name="LekarzePoSpecjalizacji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="parametr" Type="text" Mode="In" />
+  </Function>
+  <Function Name="pacjenciMiastoLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="listaPacjentow" Type="varchar(max)" Mode="InOut" />
+  </Function>
+  <Function Name="pacjenciMiastoLista2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parametr" Type="text" Mode="In" />
+    <Parameter Name="listaPacjentow" Type="varchar(max)" Mode="InOut" />
   </Function>
 </Schema>

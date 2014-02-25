@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Data.Objects;
 
 using System.Xml.Linq;
 namespace RM
@@ -37,7 +38,7 @@ namespace RM
             DisplayAccident();
             inicjalizujLekarzy();
             inicjalizujLekarzySpec();
-
+            inicjalizujPacjMiejsc();
         }
 
         public void DisplayPatients()
@@ -665,7 +666,37 @@ namespace RM
 
         }
 
+        public void inicjalizujPacjMiejsc()
+        {
+            using (var ctx = new RMEntities())
+            {
+                comboBox2.DataSource = ctx.Pacjenci1.Select(c => c.miejscowosc).Distinct().ToList();
 
+            }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string miejsc;
+
+            miejsc = comboBox2.SelectedValue.ToString();
+
+            int liczba = 0;
+            
+            using (RMEntities context = new RMEntities())
+            {
+                ObjectParameter total = new ObjectParameter("liczba", typeof(int));
+
+                context.ilePacjentow(miejsc, total);
+                liczba = Convert.ToInt32(total.Value);
+
+                textBox1.Text = liczba.ToString();
+            }
+            
+        }
+
+  
+
+        
 
 
 

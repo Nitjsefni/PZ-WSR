@@ -42,5 +42,28 @@ namespace RM
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LekarzePoSpecjalizacji_Result>("LekarzePoSpecjalizacji", parametrParameter);
         }
+    
+        public virtual int pacjenciMiastoLista(ObjectParameter listaPacjentow)
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("pacjenciMiastoLista", listaPacjentow);
+        }
+    
+        public virtual ObjectResult<string> pacjenciMiastoLista2(string parametr, ObjectParameter listaPacjentow)
+        {
+            var parametrParameter = parametr != null ?
+                new ObjectParameter("parametr", parametr) :
+                new ObjectParameter("parametr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<string>("pacjenciMiastoLista2", parametrParameter, listaPacjentow);
+        }
+    
+        public virtual int ilePacjentow(string miasto, ObjectParameter liczba)
+        {
+            var miastoParameter = miasto != null ?
+                new ObjectParameter("miasto", miasto) :
+                new ObjectParameter("miasto", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("ilePacjentow", miastoParameter, liczba);
+        }
     }
 }

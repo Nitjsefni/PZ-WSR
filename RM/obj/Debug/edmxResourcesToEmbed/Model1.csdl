@@ -13,6 +13,17 @@
     <FunctionImport Name="LekarzePoSpecjalizacji" ReturnType="Collection(RMModel.LekarzePoSpecjalizacji_Result)">
       <Parameter Name="parametr" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="pacjenciMiastoLista">
+      <Parameter Name="listaPacjentow" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="pacjenciMiastoLista2" ReturnType="Collection(String)">
+      <Parameter Name="parametr" Mode="In" Type="String" />
+      <Parameter Name="listaPacjentow" Mode="InOut" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="ilePacjentow">
+      <Parameter Name="miasto" Mode="In" Type="String" />
+      <Parameter Name="liczba" Mode="InOut" Type="Int32" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="Karetka">
     <Key>

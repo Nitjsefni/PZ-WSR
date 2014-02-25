@@ -72,5 +72,8 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="pacjenciMiastoLista" FunctionName="RMModel.Store.pacjenciMiastoLista" />
+    <FunctionImportMapping FunctionImportName="pacjenciMiastoLista2" FunctionName="RMModel.Store.pacjenciMiastoLista2" />
+    <FunctionImportMapping FunctionImportName="ilePacjentow" FunctionName="RMModel.Store.ilePacjentow" />
   </EntityContainerMapping>
 </Mapping>

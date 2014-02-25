@@ -84,8 +84,19 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="ilePacjentow" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="miasto" Type="text" Mode="In" />
+          <Parameter Name="liczba" Type="int" Mode="InOut" />
+        </Function>
         <Function Name="LekarzePoSpecjalizacji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="parametr" Type="text" Mode="In" />
+        </Function>
+        <Function Name="pacjenciMiastoLista" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="listaPacjentow" Type="varchar(max)" Mode="InOut" />
+        </Function>
+        <Function Name="pacjenciMiastoLista2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametr" Type="text" Mode="In" />
+          <Parameter Name="listaPacjentow" Type="varchar(max)" Mode="InOut" />
         </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -102,7 +113,18 @@
           </AssociationSet>
           <EntitySet Name="Sklad" EntityType="RMModel.Sklad" />
           <FunctionImport Name="LekarzePoSpecjalizacji" ReturnType="Collection(RMModel.LekarzePoSpecjalizacji_Result)">
+          <Parameter Name="parametr" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pacjenciMiastoLista">
+          <Parameter Name="listaPacjentow" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="pacjenciMiastoLista2" ReturnType="Collection(String)">
             <Parameter Name="parametr" Mode="In" Type="String" />
+            <Parameter Name="listaPacjentow" Mode="InOut" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="ilePacjentow">
+            <Parameter Name="miasto" Mode="In" Type="String" />
+            <Parameter Name="liczba" Mode="InOut" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <EntityType Name="Karetka">
@@ -258,6 +280,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="pacjenciMiastoLista" FunctionName="RMModel.Store.pacjenciMiastoLista" />
+          <FunctionImportMapping FunctionImportName="pacjenciMiastoLista2" FunctionName="RMModel.Store.pacjenciMiastoLista2" />
+          <FunctionImportMapping FunctionImportName="ilePacjentow" FunctionName="RMModel.Store.ilePacjentow" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
