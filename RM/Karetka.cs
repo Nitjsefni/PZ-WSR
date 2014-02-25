@@ -16,7 +16,7 @@ namespace RM
     {
         public int ID_karetki { get; set; }
         public string typ_numer { get; set; }
-        public int ID_skladu { get; set; }
+        public Nullable<int> ID_skladu { get; set; }
         public string wyposazenie { get; set; }
         public string uwagi { get; set; }
     }

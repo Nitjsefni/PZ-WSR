@@ -17,7 +17,7 @@
     </Key>
     <Property Name="ID_karetki" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="typ_numer" Type="text" Nullable="false" />
-    <Property Name="ID_skladu" Type="int" Nullable="false" />
+    <Property Name="ID_skladu" Type="int" />
     <Property Name="wyposazenie" Type="text" Nullable="false" />
     <Property Name="uwagi" Type="text" />
   </EntityType>
@@ -29,7 +29,7 @@
     <Property Name="imie" Type="varchar" Nullable="false" MaxLength="30" />
     <Property Name="nazwisko" Type="varchar" Nullable="false" MaxLength="30" />
     <Property Name="nr_ubezpieczenia" Type="int" Nullable="false" />
-    <Property Name="miejscowosc" Type="text" Nullable="false" />
+    <Property Name="miejscowosc" Type="varchar" Nullable="false" MaxLength="30" />
     <Property Name="kod_pocztowy" Type="varchar" Nullable="false" MaxLength="7" />
     <Property Name="ulica" Type="text" Nullable="false" />
     <Property Name="opis" Type="text" />
@@ -64,7 +64,6 @@
     <Property Name="liczba_rannych" Type="int" Nullable="false" />
     <Property Name="typ_wypadku" Type="text" Nullable="false" />
     <Property Name="data_godz_zgl" Type="datetime" Nullable="false" />
-    <Property Name="ID_skladu" Type="int" Nullable="false" />
     <Property Name="numer_zgl" Type="int" />
     <Property Name="uwagi" Type="text" />
   </EntityType>
@@ -80,4 +79,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="LekarzePoSpecjalizacji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="parametr" Type="text" Mode="In" />
+  </Function>
 </Schema>

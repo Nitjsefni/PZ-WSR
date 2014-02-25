@@ -12,6 +12,9 @@ namespace RM
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class RMEntities : DbContext
     {
@@ -30,5 +33,14 @@ namespace RM
         public DbSet<Personel1> Personel1 { get; set; }
         public DbSet<Wypadek> Wypadeks { get; set; }
         public DbSet<Sklad> Sklad { get; set; }
+    
+        public virtual ObjectResult<LekarzePoSpecjalizacji_Result> LekarzePoSpecjalizacji(string parametr)
+        {
+            var parametrParameter = parametr != null ?
+                new ObjectParameter("parametr", parametr) :
+                new ObjectParameter("parametr", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<LekarzePoSpecjalizacji_Result>("LekarzePoSpecjalizacji", parametrParameter);
+        }
     }
 }

@@ -19,7 +19,6 @@ namespace RM
         public int liczba_rannych { get; set; }
         public string typ_wypadku { get; set; }
         public System.DateTime data_godz_zgl { get; set; }
-        public int ID_skladu { get; set; }
         public Nullable<int> numer_zgl { get; set; }
         public string uwagi { get; set; }
     }

@@ -36,7 +36,7 @@ namespace RM
             DisplayAmbulance();
             DisplayAccident();
             inicjalizujLekarzy();
-
+            inicjalizujLekarzySpec();
 
         }
 
@@ -638,6 +638,34 @@ namespace RM
           
 
         }
+        public void inicjalizujLekarzySpec()
+        {
+            using (var ctx = new RMEntities())
+            {
+                comboBox1.DataSource = ctx.Personel1.ToList();
+                comboBox1.ValueMember = "specjalizacja";
+                comboBox1.DisplayMember = "specjalizacja";
+            }
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            string lekarz;
+
+            lekarz = comboBox1.SelectedValue.ToString();
+
+
+
+            using (RMEntities context = new RMEntities())
+            {
+
+                var wyszukajLekarzy = context.LekarzePoSpecjalizacji(lekarz);
+
+                dataGridView1.DataSource = wyszukajLekarzy;
+            }
+
+        }
+
+
 
 
 

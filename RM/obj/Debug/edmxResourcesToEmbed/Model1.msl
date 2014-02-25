@@ -50,7 +50,6 @@
           <ScalarProperty Name="liczba_rannych" ColumnName="liczba_rannych" />
           <ScalarProperty Name="typ_wypadku" ColumnName="typ_wypadku" />
           <ScalarProperty Name="data_godz_zgl" ColumnName="data_godz_zgl" />
-          <ScalarProperty Name="ID_skladu" ColumnName="ID_skladu" />
           <ScalarProperty Name="numer_zgl" ColumnName="numer_zgl" />
           <ScalarProperty Name="uwagi" ColumnName="uwagi" />
         </MappingFragment>
@@ -63,5 +62,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="LekarzePoSpecjalizacji" FunctionName="RMModel.Store.LekarzePoSpecjalizacji">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="RMModel.LekarzePoSpecjalizacji_Result">
+          <ScalarProperty Name="ID_lekarz" ColumnName="ID_lekarz" />
+          <ScalarProperty Name="imie" ColumnName="imie" />
+          <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+          <ScalarProperty Name="stanowisko" ColumnName="stanowisko" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

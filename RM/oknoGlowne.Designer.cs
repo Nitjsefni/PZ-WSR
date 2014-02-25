@@ -57,6 +57,7 @@
             this.uwagi_wypadek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.pacjenci = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.wyszukaj_data_btn = new System.Windows.Forms.Button();
             this.wyszukaj_pacjenta_miejsc_box = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -94,6 +95,8 @@
             this.specjalizacja_lekarz = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label11 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.lekarz_cbox2 = new System.Windows.Forms.ComboBox();
@@ -105,10 +108,10 @@
             this.rClickLekarzeDG = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.MenuLekarze_EdytujBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuLekarze_UsunBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.rMEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabcontrol.SuspendLayout();
             this.karetki.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.karetki_dataGrid)).BeginInit();
@@ -367,6 +370,16 @@
             this.pacjenci.TabIndex = 1;
             this.pacjenci.Text = "Pacjenci";
             this.pacjenci.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(701, 531);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 23);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Eksport do XML";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // wyszukaj_data_btn
             // 
@@ -692,6 +705,9 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.label9);
@@ -706,6 +722,25 @@
             this.tabPage1.TabIndex = 4;
             this.tabPage1.Text = "Wyszukiwania";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1097, 291);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "Importuj";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1063, 259);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(139, 13);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Import pacjentów z pliku xml";
             // 
             // label9
             // 
@@ -809,38 +844,36 @@
             this.MenuLekarze_UsunBtn.Text = "Usuń";
             this.MenuLekarze_UsunBtn.Click += new System.EventHandler(this.MenuLekarze_UsunBtn_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(701, 531);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Eksport do XML";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // rMEntitiesBindingSource
             // 
             this.rMEntitiesBindingSource.DataSource = typeof(RM.RMEntities);
             // 
-            // label12
+            // button3
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1063, 259);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(139, 13);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Import pacjentów z pliku xml";
+            this.button3.Location = new System.Drawing.Point(1097, 413);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Wyszukaj";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // comboBox1
             // 
-            this.button2.Location = new System.Drawing.Point(1097, 291);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Importuj";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(1054, 377);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(148, 21);
+            this.comboBox1.TabIndex = 9;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(1041, 348);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(179, 13);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "Wyszukaj lekarzy po specjalizacjach";
             // 
             // oknoGlowne
             // 
@@ -951,6 +984,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button3;
     }
 }
 

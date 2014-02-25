@@ -22,7 +22,7 @@
           </Key>
           <Property Name="ID_karetki" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="typ_numer" Type="text" Nullable="false" />
-          <Property Name="ID_skladu" Type="int" Nullable="false" />
+          <Property Name="ID_skladu" Type="int" />
           <Property Name="wyposazenie" Type="text" Nullable="false" />
           <Property Name="uwagi" Type="text" />
         </EntityType>
@@ -34,7 +34,7 @@
           <Property Name="imie" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="nazwisko" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="nr_ubezpieczenia" Type="int" Nullable="false" />
-          <Property Name="miejscowosc" Type="text" Nullable="false" />
+          <Property Name="miejscowosc" Type="varchar" Nullable="false" MaxLength="30" />
           <Property Name="kod_pocztowy" Type="varchar" Nullable="false" MaxLength="7" />
           <Property Name="ulica" Type="text" Nullable="false" />
           <Property Name="opis" Type="text" />
@@ -69,7 +69,6 @@
           <Property Name="liczba_rannych" Type="int" Nullable="false" />
           <Property Name="typ_wypadku" Type="text" Nullable="false" />
           <Property Name="data_godz_zgl" Type="datetime" Nullable="false" />
-          <Property Name="ID_skladu" Type="int" Nullable="false" />
           <Property Name="numer_zgl" Type="int" />
           <Property Name="uwagi" Type="text" />
         </EntityType>
@@ -85,6 +84,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="LekarzePoSpecjalizacji" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="parametr" Type="text" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -99,6 +101,9 @@
             <End Role="Pacjenci1" EntitySet="Pacjenci1" />
           </AssociationSet>
           <EntitySet Name="Sklad" EntityType="RMModel.Sklad" />
+          <FunctionImport Name="LekarzePoSpecjalizacji" ReturnType="Collection(RMModel.LekarzePoSpecjalizacji_Result)">
+            <Parameter Name="parametr" Mode="In" Type="String" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="Karetka">
           <Key>
@@ -106,7 +111,7 @@
           </Key>
           <Property Name="ID_karetki" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="typ_numer" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="ID_skladu" Type="Int32" Nullable="false" />
+          <Property Name="ID_skladu" Type="Int32" />
           <Property Name="wyposazenie" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
         </EntityType>
@@ -118,7 +123,7 @@
           <Property Name="imie" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="nazwisko" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="nr_ubezpieczenia" Type="Int32" Nullable="false" />
-          <Property Name="miejscowosc" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <Property Name="miejscowosc" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
           <Property Name="kod_pocztowy" Type="String" Nullable="false" MaxLength="7" Unicode="false" FixedLength="false" />
           <Property Name="ulica" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="opis" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
@@ -149,7 +154,6 @@
           <Property Name="liczba_rannych" Type="Int32" Nullable="false" />
           <Property Name="typ_wypadku" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="data_godz_zgl" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="ID_skladu" Type="Int32" Nullable="false" />
           <Property Name="numer_zgl" Type="Int32" />
           <Property Name="uwagi" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
         </EntityType>
@@ -171,6 +175,12 @@
           </Key>
           <Property Type="Int32" Name="ID_Skladu" Nullable="false" />
         </EntityType>
+        <ComplexType Name="LekarzePoSpecjalizacji_Result">
+          <Property Type="Int64" Name="ID_lekarz" Nullable="false" />
+          <Property Type="String" Name="imie" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="nazwisko" Nullable="false" MaxLength="30" />
+          <Property Type="String" Name="stanowisko" Nullable="false" MaxLength="Max" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -226,7 +236,6 @@
                 <ScalarProperty Name="liczba_rannych" ColumnName="liczba_rannych" />
                 <ScalarProperty Name="typ_wypadku" ColumnName="typ_wypadku" />
                 <ScalarProperty Name="data_godz_zgl" ColumnName="data_godz_zgl" />
-                <ScalarProperty Name="ID_skladu" ColumnName="ID_skladu" />
                 <ScalarProperty Name="numer_zgl" ColumnName="numer_zgl" />
                 <ScalarProperty Name="uwagi" ColumnName="uwagi" />
               </MappingFragment>
@@ -239,6 +248,16 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="LekarzePoSpecjalizacji" FunctionName="RMModel.Store.LekarzePoSpecjalizacji">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="RMModel.LekarzePoSpecjalizacji_Result">
+                <ScalarProperty Name="ID_lekarz" ColumnName="ID_lekarz" />
+                <ScalarProperty Name="imie" ColumnName="imie" />
+                <ScalarProperty Name="nazwisko" ColumnName="nazwisko" />
+                <ScalarProperty Name="stanowisko" ColumnName="stanowisko" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
